@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using Shahajjokori.Models;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace Shahajjokori.Controllers
 {
@@ -62,6 +63,41 @@ namespace Shahajjokori.Controllers
             connection.Close();*/
             return View();
         }
+
+        public IActionResult SignIn_Panel(Fundraiser fundraiser)
+        {
+            string connection_string = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection = new SqlConnection(connection_string);
+            connection.Open();
+            string query = "Select * from FUNDRAISERS where f_email = @email and f_password = @password";
+            SqlCommand com = new SqlCommand(query, connection);
+
+            com.Parameters.AddWithValue("@email", fundraiser.f_email);
+            com.Parameters.AddWithValue("@password", fundraiser.f_password);
+
+            SqlDataReader dr = com.ExecuteReader();
+            if (dr.Read())
+            {
+                /*SignInClass signIn = new SignInClass();
+                signIn.id = (int)dr["f_id"];
+                signIn.name = (string)dr["f_name"];
+                signIn.email = (string)dr["f_email"];
+                signIn.password = (string)dr["f_password"];
+                signIn.phone = (string)dr["f_phone"];
+                signIn.about = (string)dr["f_about"];*/
+                var fr = new Fundraiser() { f_id = (int)dr["f_id"], f_name= (string)dr["f_name"], f_email= (string)dr["f_email"] , f_password= (string)dr["f_password"], f_phone= (string)dr["f_phone"], f_about= (string)dr["f_about"]};
+                HttpContext.Session.SetString("FundraiserSession", JsonConvert.SerializeObject(fr));
+                connection.Close();
+                //return View();
+                return RedirectToAction("Index", "Fundraiser");
+            }
+            else
+            {
+                connection.Close();
+                return RedirectToAction("Index", "Home");
+            }
+
+        }
         public IActionResult SignUp_Fundraiser()
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -70,6 +106,7 @@ namespace Shahajjokori.Controllers
             //string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             string query = "Select count(*) from FUNDRAISERS";
             SqlCommand com = new SqlCommand(query, connection);
+
             var count = com.ExecuteScalar();
             ViewData["Total_fundraiser"] = count;
             connection.Close();
