@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Shahajjokori.Models;
+using Shahajjokori.Context;
 
 namespace Shahajjokori
 {
@@ -29,6 +30,7 @@ namespace Shahajjokori
             services.AddControllersWithViews();
             services.AddCoreAdmin();
             services.AddSession();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

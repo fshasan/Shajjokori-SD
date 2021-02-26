@@ -6,12 +6,18 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
+using Microsoft.AspNetCore.Http;
 
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Http;
+
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.Extensions.Hosting.Internal;
+using Microsoft.AspNetCore.Hosting;
+using MySqlX.XDevAPI;
 
 namespace Shahajjokori.Controllers
 {
@@ -19,6 +25,7 @@ namespace Shahajjokori.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IConfiguration configuration;
+
         public HomeController(ILogger<HomeController> logger, IConfiguration config)
         {
             _logger = logger;
@@ -94,7 +101,9 @@ namespace Shahajjokori.Controllers
             else
             {
                 connection.Close();
-                return RedirectToAction("Index", "Home");
+                ViewBag.error_message = "Email or password did not match! Try again.";
+                //ViewData["error_message"] = "Email or password did not match! Try again.";
+                return RedirectToAction("SignIn", "Home");
             }
 
         }
@@ -131,6 +140,16 @@ namespace Shahajjokori.Controllers
             //ViewData["Total_fundraiser"] = count;
             //connection.Close();
             return View(fundraiser);
+        }
+
+        
+
+        public IActionResult Log_out()
+        {
+            //Microsoft.AspNetCore.Session.Abandon();
+            //ApplicationLifetime.StopApplication();
+            HttpContext.Session.Remove("FundraiserSession");
+            return RedirectToAction("Index", "Home");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

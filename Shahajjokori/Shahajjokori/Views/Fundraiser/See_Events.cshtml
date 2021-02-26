@@ -3,9 +3,6 @@
 }
 
 @model List<Event>
-
-<h1>Fundraiser_Panel</h1>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +14,12 @@
     <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
+    <div style="text-align:center">
+        <h1>Fundraiser Panel</h1>
+    </div>
     <div class="container-fluid" style="margin-top:5%">
         <div class="row">
-            <main role="main" class="col-md-3" style="margin-top:2%; margin-bottom:5%;">
+            <main role="main" class="col-md-2" style="margin-top:2%; margin-bottom:5%;">
                 <nav class="nav">
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -32,6 +32,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("See_Events","Fundraiser")">See Events</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">Notifications</a>
                         </li>
@@ -45,22 +46,76 @@
                 </nav>
 
             </main>
-            <main role="main" class="col-md-9">
-                <table>
-                    @foreach (var e in Model)
-                    {
-                        <tr>
-                            <td>@e.e_title</td>
-                        </tr>
-                        <tr>
-                            <td>@e.e_location</td>
-                        </tr>
-                        <tr>
-                            <td>@e.e_exp_amount</td>
-                        </tr>
-                    }
-                </table>
+            <main role="main" class="col-md-10">
+                @foreach (var e in Model)
+                {
+                <table class="table table-striped table-bordered">
 
+                    <tr class="thead-light">
+                        <td>Event Name</td>
+                        <td>@e.e_title</td>
+                    </tr>
+                    <tr class="thead-light">
+                        <td>Status</td>
+                        @if (e.e_state == 0)
+                        {
+                            <td style="color:darkblue">Requested</td>
+                        }
+                        @if (e.e_state == 1)
+                        {
+                            <td style="color:green">Posted</td>
+                        }
+                        @if (e.e_state == 2)
+                        {
+                            <td style="color:red">Halted</td>
+                        }
+                    </tr>
+                    <tr class="thead-light">
+                        <td>Category</td>
+                        @if (e.e_category == 0)
+                        {
+                            <td>Education</td>
+                        }
+
+                    </tr>
+                    <tr class="thead-light">
+                        <td>Location</td>
+                        <td>@e.e_location</td>
+                    </tr>
+                    <tr class="thead-light">
+                        <td>Opening Date</td>
+                        <td>@e.e_opening_date</td>
+                    </tr>
+                    <tr class="thead-light">
+                        <td>Closing Date</td>
+                        <td>@e.e_closing_date</td>
+                    </tr>
+                    <tr class="thead-light">
+                        <td>Expected Amount</td>
+                        <td>@e.e_exp_amount</td>
+                    </tr>
+                    <tr class="thead-light">
+                        <td>Raised Amount</td>
+                        <td>@e.e_raised_amount</td>
+                    </tr>
+                    <tr class="thead-light">
+                        <td>Donor Count</td>
+                        <td>@e.e_donor_count</td>
+                    </tr>
+                    <tr class="thead-light">
+                        <td>Event Details</td>
+                        <td>@e.e_details</td>
+                    </tr>
+                    <tr class="thead-light">
+                        <td>Event Pic</td>
+                        @{
+                            string path = "~/images/" + e.e_pic;
+                        }
+  
+                        <td><img src="@path" alt="logo" style="display: block; height: auto; max-width: 100%;" asp-append-version="true"></td>
+                    </tr>
+                </table>
+                }
             </main>
 
         </div>

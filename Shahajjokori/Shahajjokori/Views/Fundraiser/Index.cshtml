@@ -2,7 +2,6 @@
     Layout = "";
 }
 @model Shahajjokori.Models.Fundraiser
-<h1>Fundraiser_Panel</h1>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +14,9 @@
     <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
+    <div style="text-align:center">
+        <h1>Fundraiser Panel</h1>
+    </div>
     <div class="container-fluid" style="margin-top:5%">
         <div class="row">
             <main role="main" class="col-md-3" style="margin-top:2%; margin-bottom:5%;">
@@ -37,14 +39,14 @@
                             <a class="nav-link" href="#">Add Local Event</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Log out</a>
+                            <a class="nav-link" href="@Url.Action("Log_out","Home")">Log out</a>
                         </li>
                     </ul>
                 </nav>
 
             </main>
             <main role="main" class="col-md-9">
-                <h3>Fundraiser Details</h3>
+                <h3>User Details</h3>
                 <table class="table">
                     <tbody>
                         <tr>

@@ -1,9 +1,8 @@
-﻿
-@{
+﻿@{
     Layout = "";
     ViewData["Title"] = "Create_Event";
 }
-@model Shahajjokori.Models.Event
+@model Shahajjokori.Models.PicEvent
 
 
 <!DOCTYPE html>
@@ -17,6 +16,9 @@
     <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
+    <div style="text-align:center">
+        <h1>Fundraiser Panel</h1>
+    </div>
     <div class="container-fluid" style="margin-top:5%">
         <div class="row">
             <main role="main" class="col-md-3" style="margin-top:2%; margin-bottom:5%;">
@@ -26,11 +28,13 @@
                             <a class="nav-link active" href="@Url.Action("Index","Fundraiser")">User Info</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Create_Event","Event")">Create Event</a>
+                            <a class="nav-link" href="@Url.Action("Create_Event","Fundraiser")">Create Event</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="#">See Events</a>
+                            <a class="nav-link" href="@Url.Action("See_Events","Fundraiser")">See Events</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">Notifications</a>
                         </li>
@@ -45,43 +49,65 @@
 
             </main>
             <main role="main" class="col-md-8">
-                <form asp-action="Create_event_entry" method="post">
-                    <div class="form-group">
+                <form enctype="multipart/form-data" asp-action="Create_event_entry" method="post">
+                    <div class="form-group row">
                         <label for="exampleInputEmail1">Title</label>
                         <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter event name" asp-for="e_title" required>
                         <small id="emailHelp" class="form-text text-muted">Yor name will be shown out in the website with your event.</small>
                     </div>
-                    <div class="form-group">
+
+                    <div class="form-group row">
+                        <label for="sel1">Category of the event</label>
+                        <select class="form-control" asp-for="e_category">
+                            <option value=0>Education</option>
+                            <option value=1>Sponsoring</option>
+                            <option value=2>Emergency Aid</option>
+                            <option value=3>Medical Care</option>
+                            <option value=4>Accidents</option>
+                            <option value=5>Others</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group row">
                         <label for="exampleInputEmail1">Location</label>
                         <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter event location" asp-for="e_location" required>
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group row">
                         <label for="exampleInputPassword1">Opening</label>
-                        <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Enter event opening date" asp-for="e_opening_date"required>
+                        <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Enter event opening date" asp-for="e_opening_date" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group row">
                         <label for="exampleInputEmail1">Closing</label>
-                        <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter event closing date" asp-for="e_closing_date"required>
+                        <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter event closing date" asp-for="e_closing_date" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group row">
                         <label for="exampleInputEmail1">Expected Amount</label>
-                        <input type="number" class="form-control" rows="5" id="exampleInputEmail1" placeholder="Enter expected amount for the event" asp-for="e_closing_date"required>
+                        <input type="number" class="form-control" rows="5" id="exampleInputEmail1" placeholder="Enter expected amount for the event" asp-for="e_exp_amount" required>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Add Picture</label>
-                        <input class="form-control" id="exampleInputEmail1" placeholder="Add picture" asp-for="e_pic"required>
+
+                    <div class="form-group row">
+                        <label>Event Picture</label>
+                        <div class="col-md-12">
+                            <div class="custom-file">
+                                <input class="form-control custom-file-input" id="exampleInputEmail1" asp-for="e_photo">
+                                <label class="custom-file-label">Add picture</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
+
+                    <div class="form-group row">
                         <label for="exampleInputEmail1">Event Details</label>
                         <textarea class="form-control" rows="5" id="exampleInputEmail1" placeholder="Write details about the event (not maore than 300 words)" asp-for="e_details" required></textarea>
                     </div>
+
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">The information given above is true</label>
                     </div>
                     <button type="submit" class="btn btn-primary" href="@Url.Action("Create_event_entry","Fundraiser")" style="margin-top:5%">Create</button>
+
+
                 </form>
 
             </main>
@@ -98,6 +124,15 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+            $(document).ready(function () {
+                $('.custom-file-input').on("change", function () {
+                    var fileName = $(this).val().split("\\").pop();
+                    $(this).next('.custom-file-label').html(fileName);
+                });
+            });
+    </script>
+   
 </body>
 </html>
 
