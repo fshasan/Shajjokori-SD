@@ -105,9 +105,48 @@
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">The information given above is true</label>
                     </div>
-                    <button type="submit" class="btn btn-primary" href="@Url.Action("Create_event_entry","Fundraiser")" style="margin-top:5%">Create</button>
+                    
+        <!--<div class="editfield">
+            <div class="radio">
+                <span class="label">Choose your preferred medium of mobile banking transaction</span>
+                <div id="field_8">
+                    <label><input type="checkbox" name="field_8" id="option_9" value="Yes" onclick="document.getElementById('divUrl1').style.display='block'">bKash</label>
+                    <div class="editfield" id="divUrl1" style="display:none">
+                        <label for="field_19">Acc/no</label>
+                        <input type="text" name="field_19" id="field_19" value="" />
+                    </div>
+                    <label><input type="checkbox" name="field_8" id="option_9" value="Yes" onclick="document.getElementById('divUrl2').style.display='block'">Nagad</label>
+                    <div class="editfield" id="divUrl2" style="display:none">
+                        <label for="field_19">Acc/no</label>
+                        <input type="text" name="field_19" id="field_19" value="" />
+                    </div>
+                    <label><input type="checkbox" name="field_8" id="option_9" value="Yes" onclick="document.getElementById('divUrl3').style.display='block'">DBBL-MB</label>
+                    <div class="editfield" id="divUrl3" style="display:none">
+                        <label for="field_19">Acc/no</label>
+                        <input type="text" name="field_19" id="field_19" value="" />
+                    </div>
+
+                </div>
+            </div>
+            <div id="contain">
+                Add bank accounts if needed <br> <br>
+                <div>
+                    <input type="text" name='+value+' []>
+                    <button type="button" class="addService">Add More</button>
+                </div>
+            </div>
 
 
+            <div id="div2"></div>
+
+            <input type="button" id="btnok" onclick="addText();" value="text" />
+                    <br />
+
+                    
+
+</div>-->
+                
+        <button type="submit" class="btn btn-primary" href="@Url.Action("Create_event_entry","Fundraiser")" style="margin-top:5%">Create</button>
                 </form>
 
             </main>
@@ -131,6 +170,13 @@
                     $(this).next('.custom-file-label').html(fileName);
                 });
             });
+
+            $(document).on('click', '.addService', function () {
+                var html = '<div><input type="text" name="myInput"><button type="button" class="addService">Add More</button></div>';
+                $(this).parent().append(html);
+            });
+
+        
     </script>
    
 </body>

@@ -196,3 +196,5 @@ E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\bin\Debug\netco
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Zstandard.Net.dll
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Renci.SshNet.dll
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SshNet.Security.Cryptography.dll
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_Details.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_section.cshtml.g.cs

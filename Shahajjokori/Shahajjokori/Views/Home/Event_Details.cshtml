@@ -1,0 +1,89 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Shahajjokori.Models.Event
+<!--<h1>@ViewBag.event_id</h1>-->
+<div style="background-color:aliceblue">
+    <div class="container" style="padding-top: 5%;">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 style="text-decoration: underline;">@Html.DisplayFor(model => model.e_title)</h3>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 3%;">
+            <div class="col-md-6">
+                <h5>Created by: @ViewBag.org</h5>
+                <br>
+                <h5>Location: @Html.DisplayFor(model => model.e_location)</h5>
+                <br>
+                @if (ViewBag.event_cat == 0)
+                {
+                    <h5>Category: Education</h5>
+                }
+                @if (ViewBag.event_cat == 1)
+                {
+                    <h5>Category: Education</h5>
+                }
+                @if (ViewBag.event_cat == 2)
+                {
+                    <h5>Category: Emergency Aid</h5>
+                }
+                @if (ViewBag.event_cat == 3)
+                {
+                    <h5>Category: Education</h5>
+                }
+                @if (ViewBag.event_cat == 4)
+                {
+                    <h5>Category: Education</h5>
+                }
+                @if (ViewBag.event_cat == 5)
+                {
+                    <h5>Category: Education</h5>
+                }
+                <br>
+                <h5>Opening: @Html.DisplayFor(model => model.e_opening_date)</h5>
+                <br>
+                <h5>Closing: @Html.DisplayFor(model => model.e_closing_date)</h5>
+                <br>
+                <h5>Expected: @ViewBag.exp_amount Tk.</h5>
+                <br>
+                <h5>Raised: @ViewBag.raised_amount Tk.</h5>
+                <div class="progress" style="margin-top: 5%">
+                    @{
+                        float raised = (float)ViewBag.raised_amount;
+                        float exp = (float)ViewBag.exp_amount;
+                        float percentage = (raised / exp) * 100;
+                        string perc = percentage + "%";
+                    }
+                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="@ViewBag.raised_amount" aria-valuemin="0" aria-valuemax="@ViewBag.exp_amount" style="width:@perc">
+                        @ViewBag.raised_amount
+                    </div>
+                </div>
+                <br>
+
+            </div>
+            <div class="col-md-6">
+                @{
+                    string pic_name = ViewBag.event_pic;
+                    string path = $"~/images/{pic_name}";
+                }
+
+                <img src="@path" alt="" style="height: auto; max-width: 100%;" asp-append-version="true">
+                <br>
+                <h5 style="margin-top: 3%;">@Html.DisplayFor(model => model.e_donor_count) people have donated for this event. </h5>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 5%;">
+            <div class="col-md-12">
+                <h3>About the Event: </h3>
+                <p>@Html.DisplayFor(model => model.e_details)</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

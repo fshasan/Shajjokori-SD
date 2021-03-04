@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model List<Event>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -22,4 +23,33 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
+</div>
+
+<div style="background-color:antiquewhite;">
+    <div class="container" style="padding-top: 5%; padding-bottom:5%; text-align: center;">
+        <h2>Recent Fundraising Events</h2>
+        <br />
+        <div class="row">
+
+            @foreach (var e in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card">
+                        @{
+                            string path = "~/images/" + e.e_pic;
+                        }
+                        <img class="card-img-top" src="@path" alt="logo" style="display: block; height: 15vw; width: 100%; object-fit: cover;" asp-append-version="true">
+
+                        <div class="card-body">
+                            <h4 class="card-title">@e.e_title</h4>
+                            <p>@e.e_location</p>
+                            <a asp-controller="Home" asp-action="Event_Details" asp-route-id="@e.e_id" style="text-decoration: none;">View Details</a>
+
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
 </div>
