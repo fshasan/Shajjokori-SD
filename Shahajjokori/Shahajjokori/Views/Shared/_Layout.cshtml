@@ -26,10 +26,6 @@
                             Donate
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @using (Html.BeginForm("Event_section", "Home"))
-                            {
-                                <a class="dropdown-item" name="option" value="Education">Education</a>
-                            }
                             <a class="dropdown-item" name="option" value="Education" asp-controller="Home" asp-action="Event_section">Education</a>
                             <a class="dropdown-item" href="#" value="">Sponsoring</a>
                             <a class="dropdown-item" href="#">Emergency Aid</a>

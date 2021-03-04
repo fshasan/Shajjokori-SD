@@ -19,6 +19,7 @@ namespace Shahajjokori.Models
         public string e_pic { get; set; }
         public int e_state { get; set; }
         public string e_details { get; set; }
+        public string e_trans { get; set; }
         public int f_id { get; set; }
 
     }

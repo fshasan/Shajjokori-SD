@@ -22,6 +22,7 @@ namespace Shahajjokori.Models
         public IFormFile e_photo { get; set; }
         public int e_state { get; set; }
         public string e_details { get; set; }
+        public string e_trans { get; set; }
         public int f_id { get; set; }
     }
 }

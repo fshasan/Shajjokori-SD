@@ -107,11 +107,15 @@
                         <td>@e.e_details</td>
                     </tr>
                     <tr class="thead-light">
+                        <td>Event Transactions</td>
+                        <td>@e.e_trans</td>
+                    </tr>
+                    <tr class="thead-light">
                         <td>Event Pic</td>
                         @{
                             string path = "~/images/" + e.e_pic;
                         }
-  
+
                         <td><img src="@path" alt="logo" style="display: block; height: auto; max-width: 100%;" asp-append-version="true"></td>
                     </tr>
                 </table>

@@ -200,6 +200,7 @@ namespace Shahajjokori.Controllers
                 e.e_pic = (string)dr["e_pic"];
                 ViewBag.event_pic = (string)dr["e_pic"];
                 e.e_details = (string)dr["e_details"];
+                ViewBag.event_trans = (string)dr["e_trans"];
                 var f_id = (int)dr["f_id"];
                 connection.Close();
 
@@ -212,7 +213,8 @@ namespace Shahajjokori.Controllers
 
                 while (dr2.Read()) {
                     ViewBag.org = (string)dr2["f_name"];
-                    
+                    ViewBag.org_about = (string)dr2["f_about"];
+                    ViewBag.org_phone = (string)dr2["f_phone"];
                 }
                 connection2.Close();
                 return View(e);

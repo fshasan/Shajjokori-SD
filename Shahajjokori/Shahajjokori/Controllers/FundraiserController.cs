@@ -60,7 +60,7 @@ namespace Shahajjokori.Controllers
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             
             //event pic is neglected for the time being
-            string query = "INSERT INTO [dbo].[EVENT] ([e_title],[e_location],[e_opening_date],[e_closing_date],[e_exp_amount],[e_pic],[e_raised_amount],[e_donor_count],[e_state],[e_details],[f_id],[e_category]) VALUES (@title,@location,@o_date,@c_date,@exp,@pic,0,0,0,@details,@f_id, @category)";
+            string query = "INSERT INTO [dbo].[EVENT] ([e_title],[e_location],[e_opening_date],[e_closing_date],[e_exp_amount],[e_pic],[e_raised_amount],[e_donor_count],[e_state],[e_details],[f_id],[e_category],[e_trans] ) VALUES (@title,@location,@o_date,@c_date,@exp,@pic,0,0,0,@details,@f_id, @category, @trans)";
             SqlCommand com = new SqlCommand(query, connection);
             com.Parameters.AddWithValue("@title", e.e_title);
             com.Parameters.AddWithValue("@location", e.e_location);
@@ -74,15 +74,16 @@ namespace Shahajjokori.Controllers
             com.Parameters.AddWithValue("@details", e.e_details);
             com.Parameters.AddWithValue("@f_id", fr.f_id);
             com.Parameters.AddWithValue("@category", e.e_category);
-
+            com.Parameters.AddWithValue("@trans", e.e_trans);
+            
             com.ExecuteNonQuery();
             ViewData["e_key"] = uniqueFileName.ToString();
             connection.Close();
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return View(e);
         }
-
-        /*public IActionResult Create_payment_entry(Payment p, string event_key)
+        /*
+        public IActionResult Create_payment_entry(int id)
         {
             //var fr = JsonConvert.DeserializeObject<Fundraiser>(HttpContext.Session.GetString("FundraiserSession"));
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -153,6 +154,7 @@ namespace Shahajjokori.Controllers
                     e.e_state = (int)rdr["e_state"];
                     e.e_pic = (string)rdr["e_pic"];
                     e.e_details = (string)rdr["e_details"];
+                    e.e_trans = (string)rdr["e_trans"];
 
                     model.Add(e);
                 }

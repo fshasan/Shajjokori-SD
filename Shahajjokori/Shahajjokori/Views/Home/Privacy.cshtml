@@ -4,3 +4,96 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+<div class="container">
+    <div class="row" style="margin-bottom: 3%;">
+        <div class="col-md-12">
+            <div style="border-radius: 25px;border: 2px solid deeppink;padding: 20px;width: 100%;height: 100px;">
+
+                <input type="checkbox" id="yourBox1" name='sport1'>
+                <label>bKash</label>
+                <br />
+                <input type="text" id="yourText1">
+
+            </div>
+        </div>
+
+    </div>
+    <div class="row" style="margin-bottom: 3%;">
+        <div class="col-md-12">
+            <div style="border-radius: 25px;border: 2px solid red;padding: 20px;width: 100%;height: 100px;">
+
+                <input type="checkbox" id="yourBox2" name='sport2'>
+                <label>Nagad</label>
+                <br />
+                <input type="text" id="yourText2">
+
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 3%;">
+        <div class="col-md-12">
+            <div style="border-radius: 25px;border: 2px solid violet;padding: 20px;width: 100%;height: 100px;">
+                <input type="checkbox" id="yourBox3" name='sport3'>
+                <label>DBBL-Mobile Banking</label>
+                <br />
+                <input type="text" id="yourText3">
+
+            </div>
+        </div>
+    </div>
+
+    <button type="button">Create Event</button>
+</div>
+
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script>
+    var checkbox1 = document.querySelector("#yourBox1");
+    var input1 = document.querySelector("#yourText1");
+    var checkbox2 = document.querySelector("#yourBox2");
+    var input2 = document.querySelector("#yourText2");
+    var checkbox3 = document.querySelector("#yourBox3");
+    var input3 = document.querySelector("#yourText3");
+
+    var toogleInput1 = function (e) {
+        input1.disabled = !e.target.checked;
+    };
+    var toogleInput2 = function (e) {
+        input2.disabled = !e.target.checked;
+    };
+    var toogleInput3 = function (e) {
+        input3.disabled = !e.target.checked;
+    };
+
+    toogleInput1({ target: checkbox1 });
+    checkbox1.addEventListener("change", toogleInput1);
+    toogleInput2({ target: checkbox2 });
+    checkbox2.addEventListener("change", toogleInput2);
+    toogleInput3({ target: checkbox3 });
+    checkbox3.addEventListener("change", toogleInput3);
+
+    var checkedValue = document.querySelector('.messageCheckbox:checked').value;
+</script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            var favorite = [];
+            $.each($("input[name='sport1']:checked"), function () {  
+                var inputVal = document.getElementById("yourText1").value;
+                favorite.push(inputVal);
+            });
+            $.each($("input[name='sport2']:checked"), function () {
+                var inputVal = document.getElementById("yourText2").value;
+                favorite.push(inputVal);
+            });
+            $.each($("input[name='sport3']:checked"), function () {
+                var inputVal = document.getElementById("yourText3").value;
+                favorite.push(inputVal);
+            });
+            alert("My favourite sports are: " + favorite.join(", "));
+        });
+    });
+</script>

@@ -1,13 +1,45 @@
 ﻿@{
     ViewData["Title"] = "SignUp_Fundraiser_entry";
-    
+
 }
-
-
 <div style="text-align: center;">
     <h3>The event has been created</h3>
     <h3>and sent to the admin for approval</h3>
 </div>
+
+<div style="text-align: center; background-color: deeppink">
+    <label style="color: white">bKash</label>
+    <input type="checkbox" id="yourBox">
+    <input type="text" id="yourText">
+
+</div>
+<div style="text-align: center; background-color: darkred">
+    <label style="color: white">Nagad</label>
+    <input type="checkbox" id="yourBox">
+    <input type="text" id="yourText">
+
+</div>
+<div style="text-align: center; background-color: darkviolet">
+    <label style="color: white">DBBL-Mobile Banking</label>
+    <input type="checkbox" id="yourBox">
+    <input type="text" id="yourText">
+
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script>
+    var checkbox = document.querySelector("#yourBox");
+    var input = document.querySelector("#yourText");
+
+    var toogleInput = function (e) {
+        input.disabled = !e.target.checked;
+    };
+
+    toogleInput({ target: checkbox });
+    checkbox.addEventListener("change", toogleInput);
+</script>
 <!--
 <div style="text-align: center; margin-top: 5%;">
     <a asp-area="" asp-controller="Home" asp-action="SignIn">Sign in</a> to go to your panel or explore our <a asp-area="" asp-controller="Home" asp-action="Index">site</a>

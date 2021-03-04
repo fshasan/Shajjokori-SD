@@ -53,7 +53,6 @@
                     <div class="form-group row">
                         <label for="exampleInputEmail1">Title</label>
                         <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter event name" asp-for="e_title" required>
-                        <small id="emailHelp" class="form-text text-muted">Yor name will be shown out in the website with your event.</small>
                     </div>
 
                     <div class="form-group row">
@@ -71,7 +70,7 @@
                     <div class="form-group row">
                         <label for="exampleInputEmail1">Location</label>
                         <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter event location" asp-for="e_location" required>
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
                     </div>
                     <div class="form-group row">
                         <label for="exampleInputPassword1">Opening</label>
@@ -101,52 +100,57 @@
                         <textarea class="form-control" rows="5" id="exampleInputEmail1" placeholder="Write details about the event (not maore than 300 words)" asp-for="e_details" required></textarea>
                     </div>
 
+                    <div class="form-group row">
+                        <label for="exampleInputEmail1">Transaction Details (Write your preferred transaction details here)</label>
+                        <textarea class="form-control" rows="5" id="exampleInputEmail1" placeholder="Example:&#10;bKash: 01XXXXXXXXX&#10;Nagad: 01XXXXXXXXX" asp-for="e_trans" required></textarea>
+                    </div>
+
+                    <!--<div class="editfield">
+                <div class="radio">
+                    <span class="label">Choose your preferred medium of mobile banking transaction</span>
+                    <div id="field_8">
+                        <label><input type="checkbox" name="field_8" id="option_9" value="Yes" onclick="document.getElementById('divUrl1').style.display='block'">bKash</label>
+                        <div class="editfield" id="divUrl1" style="display:none">
+                            <label for="field_19">Acc/no</label>
+                            <input type="text" name="field_19" id="field_19" value="" />
+                        </div>
+                        <label><input type="checkbox" name="field_8" id="option_9" value="Yes" onclick="document.getElementById('divUrl2').style.display='block'">Nagad</label>
+                        <div class="editfield" id="divUrl2" style="display:none">
+                            <label for="field_19">Acc/no</label>
+                            <input type="text" name="field_19" id="field_19" value="" />
+                        </div>
+                        <label><input type="checkbox" name="field_8" id="option_9" value="Yes" onclick="document.getElementById('divUrl3').style.display='block'">DBBL-MB</label>
+                        <div class="editfield" id="divUrl3" style="display:none">
+                            <label for="field_19">Acc/no</label>
+                            <input type="text" name="field_19" id="field_19" value="" />
+                        </div>
+
+                    </div>
+                </div>
+                <div id="contain">
+                    Add bank accounts if needed <br> <br>
+                    <div>
+                        <input type="text" name='+value+' []>
+                        <button type="button" class="addService">Add More</button>
+                    </div>
+                </div>
+
+
+                <div id="div2"></div>
+
+                <input type="button" id="btnok" onclick="addText();" value="text" />
+                        <br />
+
+
+
+    </div>-->
+                    <label>Information provided above can not be changed, so check again before submitting for approval. Thank you.</label>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">The information given above is true</label>
+
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                        <label class="form-check-label" for="exampleCheck1">Everything is checked and conditions are accepted.</label>
                     </div>
-                    
-        <!--<div class="editfield">
-            <div class="radio">
-                <span class="label">Choose your preferred medium of mobile banking transaction</span>
-                <div id="field_8">
-                    <label><input type="checkbox" name="field_8" id="option_9" value="Yes" onclick="document.getElementById('divUrl1').style.display='block'">bKash</label>
-                    <div class="editfield" id="divUrl1" style="display:none">
-                        <label for="field_19">Acc/no</label>
-                        <input type="text" name="field_19" id="field_19" value="" />
-                    </div>
-                    <label><input type="checkbox" name="field_8" id="option_9" value="Yes" onclick="document.getElementById('divUrl2').style.display='block'">Nagad</label>
-                    <div class="editfield" id="divUrl2" style="display:none">
-                        <label for="field_19">Acc/no</label>
-                        <input type="text" name="field_19" id="field_19" value="" />
-                    </div>
-                    <label><input type="checkbox" name="field_8" id="option_9" value="Yes" onclick="document.getElementById('divUrl3').style.display='block'">DBBL-MB</label>
-                    <div class="editfield" id="divUrl3" style="display:none">
-                        <label for="field_19">Acc/no</label>
-                        <input type="text" name="field_19" id="field_19" value="" />
-                    </div>
-
-                </div>
-            </div>
-            <div id="contain">
-                Add bank accounts if needed <br> <br>
-                <div>
-                    <input type="text" name='+value+' []>
-                    <button type="button" class="addService">Add More</button>
-                </div>
-            </div>
-
-
-            <div id="div2"></div>
-
-            <input type="button" id="btnok" onclick="addText();" value="text" />
-                    <br />
-
-                    
-
-</div>-->
-                
-        <button type="submit" class="btn btn-primary" href="@Url.Action("Create_event_entry","Fundraiser")" style="margin-top:5%">Create</button>
+                    <button type="submit" class="btn btn-primary" href="@Url.Action("Create_event_entry","Fundraiser")" style="margin-top:5%">Create</button>
                 </form>
 
             </main>
