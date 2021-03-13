@@ -1,0 +1,147 @@
+﻿@{ Layout = "";
+    var f_id = ViewContext.RouteData.Values["id"];
+}
+
+@model List<Donation>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="assets/css/login.css">
+    <style>
+        a {
+            color: #2F4F4F;
+        }
+
+            a:hover {
+                //border: 1px solid #4FA9DC;
+                color: #2F4F4F;
+                font-weight: bold;
+            }
+
+            a:active {
+            }
+
+        .active {
+            //background: #4FA9DC;
+            //color: white;
+            font-weight: bold;
+            border-bottom: 1px solid #2F4F4F;
+        }
+
+        h1, a, h3, p {
+            font-family: 'B612', sans-serif;
+            font-family: 'IBM Plex Serif', serif;
+            font-family: 'Karla', sans-serif;
+            font-family: 'Varela', sans-serif;
+        }
+        #x {
+            position: relative;
+            float: right;
+            top:-10px;
+            background-color:transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3" style="margin-left: 2%;">
+                <div style="text-align:center; margin-top:3%;">
+                    <h1 style="text-decoration: underline; text-decoration-color: darkgreen;">Shahajjokori</h1>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div style="text-align:center; margin-top:3%;">
+                    <h2>Fundraiser Panel</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="margin-top:5%">
+        <div class="row">
+            <main role="main" class="col-md-3" style="margin-bottom:5%;">
+                <nav class="nav" style="margin-left: 35%;">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link " href="@Url.Action("fundraiser_index","Fundraiser",  new { id = f_id})">User Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Create_Event","Fundraiser",  new { id = f_id})">Create Event</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="@Url.Action("See_Events","Fundraiser", new { id = f_id})">See Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="@Url.Action("Notification","Fundraiser", new { id = f_id})">Updates of Donations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Notification_from_admin","Fundraiser", new { id = f_id})">Notification from Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Create_Local_Event","Fundraiser", new { id = f_id})">Add Local Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Home")">Log out</a>
+                            <script type="text/javascript">
+                                function preventBack() { window.history.forward(); }
+                                setTimeout("preventBack()", 0);
+                                window.onunload = function () { null };
+                            </script>
+                        </li>
+                    </ul>
+                </nav>
+
+            </main>
+            <main role="main" class="col-md-8" style="margin-left: 2%; margin-right: 2%;">
+                @if (Model.Count==0)
+                {
+                    <h5>No notifications available at the moment.</h5>
+                }
+
+                    @foreach (var e in Model)
+                    {
+                        
+            <div style="        margin-top: 1%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+
+        padding-left: 2%;
+        border-radius: 25px;
+        background: #9BCD9B;">
+                <form asp-action="Cancel_Received" method="post">
+                    <button class="btn" id="x" type="submit" asp-controller="Fundraiser" asp-action="Cancel_Received" asp-route-id="@e.d_id" asp-route-fid="@f_id" asp-route-prim="@e.d_prim">
+                        X
+                    </button>
+                </form>
+                
+                <p>@e.d_name has sent you Tk @e.d_amount for the event "@e.d_title". TrxID: @e.d_tid at @e.d_date @e.d_time</p>
+                <form asp-action="Received" method="post">
+                    <button type="submit" class="btn" asp-controller="Fundraiser" asp-action="Received" asp-route-id="@e.d_id" asp-route-fid="@f_id" asp-route-amount="@e.d_amount" asp-route-prim="@e.d_prim" style="background:#2F4F4F; color:white">Received</button>
+                </form>
+            </div>
+                           
+                     }
+                
+            </main>
+
+        </div>
+
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - Shahajjokori - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
+

@@ -1,0 +1,50 @@
+﻿
+@{ ViewData["Title"] = "SignUp_Donor"; }
+@model Shahajjokori.Models.Fundraiser
+
+<div style="text-align: center; margin-top:3%;">
+    <h1>Sign Up as a Donor</h1>
+    <!--<h5>A Total of @ViewData["Total_fundraiser"] Fundraisers have joined with us!</h5>-->
+    Already have an account? <a asp-area="" asp-controller="Home" asp-action="SignIn">Sign in</a> here
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="margin-top: 6%; margin-bottom: 5%;">
+            <img src="~/images/Sign-up-Fundraiser.jpg" alt="logo" style="display: block; height: auto; max-width: 100%;">
+        </div>
+        <div class="col-md-6" style="margin-top:5%; margin-bottom: 5%;">
+            <p style="color:red;">@ViewData["message"]</p>
+            <form asp-action="SignUp_Donor_Entry" method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name" asp-for="f_name" required>
+                    <small id="emailHelp" class="form-text text-muted">Your name will be public and will be shown with your event.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" asp-for="f_email" required>
+                    <small id="emailHelp" class="form-text text-muted">Your email will not be shared or used for advertising purposes.</small>
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password" asp-for="f_password" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Confirm Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password " asp-for="f_password1" required>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                    <label class="form-check-label" for="exampleCheck1">I accept the terms and conditions</label>
+                </div>
+                <button type="submit" class="btn btn-primary" href="@Url.Action("SignUp_Donor_Entry","Home")" style="margin-top:5%">Sign Up</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+

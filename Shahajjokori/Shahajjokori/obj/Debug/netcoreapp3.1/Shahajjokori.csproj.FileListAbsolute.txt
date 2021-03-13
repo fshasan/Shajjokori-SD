@@ -182,7 +182,6 @@ E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\bin\Debug\netco
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Mvc.Grid.Core.dll
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.MvcApplicationPartsAssemblyInfo.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Fundraiser_Panel.cshtml.g.cs
-E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Index.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_event_entry.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_Event.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\See_Events.cshtml.g.cs
@@ -198,3 +197,660 @@ E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\bin\Debug\netco
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SshNet.Security.Cryptography.dll
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_Details.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_section.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.StaticWebAssets.xml
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.exe
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.deps.json
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.runtimeconfig.json
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.runtimeconfig.dev.json
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.pdb
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.Views.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.Views.pdb
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\DotNetEd.CoreAdmin.Views.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\DotNetEd.CoreAdmin.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Humanizer.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\MySql.Data.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Zstandard.Net.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Mvc.Grid.Core.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Renci.SshNet.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SshNet.Security.Cryptography.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.csprojAssemblyReference.cache
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.AssemblyInfoInputs.cache
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.AssemblyInfo.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.csproj.CoreCompileInputs.cache
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.MvcApplicationPartsAssemblyInfo.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.MvcApplicationPartsAssemblyInfo.cache
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.RazorAssemblyInfo.cache
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.RazorAssemblyInfo.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\staticwebassets\Shahajjokori.StaticWebAssets.Manifest.cache
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\staticwebassets\Shahajjokori.StaticWebAssets.xml
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\scopedcss\bundle\Shahajjokori.styles.css
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.TagHelpers.input.cache
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.TagHelpers.output.cache
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.RazorCoreGenerate.cache
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Event\Create_Event.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_Event.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_event_entry.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Index.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\See_Events.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_Details.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_section.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Fundraiser_Panel.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignIn.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignIn_Panel.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignUp_Fundraiser.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignUp_Fundraiser_entry.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.RazorTargetAssemblyInfo.cache
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.RazorTargetAssemblyInfo.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.Views.pdb
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.csproj.CopyComplete
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.dll
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.pdb
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.genruntimeconfig.cache
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\admin_index.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Signin_Admin.cshtml.g.cs
+D:\Courses\ISD\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Event_Request.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\appsettings.Development.json
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\appsettings.json
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.StaticWebAssets.xml
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.exe
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.deps.json
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.runtimeconfig.json
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.runtimeconfig.dev.json
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.pdb
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.Views.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.Views.pdb
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\DotNetEd.CoreAdmin.Views.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\DotNetEd.CoreAdmin.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Humanizer.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\MySql.Data.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Zstandard.Net.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Mvc.Grid.Core.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Renci.SshNet.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SshNet.Security.Cryptography.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.csprojAssemblyReference.cache
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.AssemblyInfoInputs.cache
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.AssemblyInfo.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.csproj.CoreCompileInputs.cache
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.MvcApplicationPartsAssemblyInfo.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.MvcApplicationPartsAssemblyInfo.cache
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.RazorAssemblyInfo.cache
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.RazorAssemblyInfo.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\staticwebassets\Shahajjokori.StaticWebAssets.Manifest.cache
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\staticwebassets\Shahajjokori.StaticWebAssets.xml
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\scopedcss\bundle\Shahajjokori.styles.css
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.TagHelpers.input.cache
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.TagHelpers.output.cache
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.RazorCoreGenerate.cache
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\admin_index.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Event_Request.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Event\Create_Event.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_Event.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_event_entry.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\See_Events.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_Details.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_section.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Fundraiser_Panel.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignIn.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Signin_Admin.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignIn_Panel.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignUp_Fundraiser.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignUp_Fundraiser_entry.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.RazorTargetAssemblyInfo.cache
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.RazorTargetAssemblyInfo.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.Views.pdb
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.csproj.CopyComplete
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.dll
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.pdb
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.genruntimeconfig.cache
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Approved_Events.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Halted_Events.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_Local_Event.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_payment_entry.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_section_show_all.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_local_event_entry.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\fundraiser_index.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Local_event_show.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_Local_Details.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Donated.cshtml.g.cs
+E:\3.2\ISD - Lab\Shahajjokori-5thMarch\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Notification.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\appsettings.Development.json
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\appsettings.json
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.StaticWebAssets.xml
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.exe
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.deps.json
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.runtimeconfig.json
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.runtimeconfig.dev.json
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.pdb
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.Views.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Shahajjokori.Views.pdb
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\DotNetEd.CoreAdmin.Views.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\DotNetEd.CoreAdmin.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Humanizer.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\MySql.Data.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Zstandard.Net.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Mvc.Grid.Core.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\Renci.SshNet.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\SshNet.Security.Cryptography.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.csprojAssemblyReference.cache
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.AssemblyInfoInputs.cache
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.AssemblyInfo.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.csproj.CoreCompileInputs.cache
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.MvcApplicationPartsAssemblyInfo.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.MvcApplicationPartsAssemblyInfo.cache
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.RazorAssemblyInfo.cache
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.RazorAssemblyInfo.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\staticwebassets\Shahajjokori.StaticWebAssets.Manifest.cache
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\staticwebassets\Shahajjokori.StaticWebAssets.xml
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\scopedcss\bundle\Shahajjokori.styles.css
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.TagHelpers.input.cache
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.TagHelpers.output.cache
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.RazorCoreGenerate.cache
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\admin_index.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Approved_Events.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Event_Request.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Halted_Events.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Event\Create_Event.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_Event.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_event_entry.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_Local_Event.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_local_event_entry.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_payment_entry.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\fundraiser_index.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Notification.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\See_Events.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Donated.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_Details.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_Local_Details.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_section.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_section_show_all.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Fundraiser_Panel.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Local_event_show.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignIn.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Signin_Admin.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignIn_Panel.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignUp_Fundraiser.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignUp_Fundraiser_entry.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.RazorTargetAssemblyInfo.cache
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.RazorTargetAssemblyInfo.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.Views.pdb
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.csproj.CopyComplete
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.dll
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.pdb
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Shahajjokori.genruntimeconfig.cache
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignUp_Donor.cshtml.g.cs
+G:\Software-Development-5\Shajjokori-SD-main\Shajjokori-SD-main\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Donor\donor_index.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\admin_index.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Approved_Events.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Event_Request.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Halted_Events.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Donor\donor_index.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_Local_Event.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_local_event_entry.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Create_payment_entry.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\fundraiser_index.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Notification.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Donated.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_Local_Details.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Event_section_show_all.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Local_event_show.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Signin_Admin.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignUp_Donor.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Search_Event.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Fundraiser\Notification_from_admin.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Donor\Index.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Donor\Event_Details.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Donor\Event_Local_Details.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Donor\Event_section.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Donor\Event_section_show_all.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Donor\Local_event_show.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Donor\Search_Event.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Donor\Donated.cshtml.g.cs

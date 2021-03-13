@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Shahajjokori</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <!--
+    <link rel="stylesheet" href="~/css/site.css" />-->
     <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Shahajjokori</a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="text-decoration: underline; text-decoration-color: darkgreen; font-size:x-large">Shahajjokori</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -26,61 +27,99 @@
                             Donate
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" name="option" value="Education" asp-controller="Home" asp-action="Event_section">Education</a>
-                            <a class="dropdown-item" href="#" value="">Sponsoring</a>
-                            <a class="dropdown-item" href="#">Emergency Aid</a>
-                            <a class="dropdown-item" href="#">Medical Care</a>
-                            <a class="dropdown-item" href="#">Accidents</a>
-                            <a class="dropdown-item" href="#">Others</a>
+                            <a class="dropdown-item" name="option" asp-controller="Home" asp-action="Event_section" asp-route-id="Education">Education</a>
+                            <a class="dropdown-item" name="option" asp-controller="Home" asp-action="Event_section" asp-route-id="Sponsoring">Sponsoring</a>
+                            <a class="dropdown-item" name="option" asp-controller="Home" asp-action="Event_section" asp-route-id="Emergency Aid">Emergency Aid</a>
+                            <a class="dropdown-item" name="option" asp-controller="Home" asp-action="Event_section" asp-route-id="Medical Care">Medical Care</a>
+                            <a class="dropdown-item" name="option" asp-controller="Home" asp-action="Event_section" asp-route-id="Accidents">Accidents</a>
+                            <a class="dropdown-item" name="option" asp-controller="Home" asp-action="Event_section" asp-route-id="Others">Others</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" name="option" value="All" asp-controller="Home" asp-action="Event_section">Show All</a>
+                            <a class="dropdown-item" name="option" asp-controller="Home" asp-action="Event_section_show_all" asp-route-id="Show All">Show All</a>
 
                         </div>
                     </li>
+                    @if (ViewBag.d_id != null)
+                    {
                     <li class="nav-item dropdown" style="float:right">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Sign Up
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="">Donor</a>
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SignUp_Fundraiser">Fundraiser</a>
-                        </div>
+                        <a class="nav-link" asp-area="" asp-controller="Donor" asp-action="donor_index" asp-route-id="@ViewBag.d_id">@ViewBag.d_name</a>
+                    </li> 
+                    }
+                    else
+                    {
+                        <li class="nav-item dropdown" style="float:right">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Sign Up
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SignUp_Donor">Donor</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SignUp_Fundraiser">Fundraiser</a>
+                            </div>
 
-                    </li>
-                    <li class="nav-item dropdown" style="float:right">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Sign In
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Donor</a>
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SignIn">Fundraiser</a>
-                            <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Admin</a>
-                        </div>
+                        </li>
+                        <li class="nav-item dropdown" style="float:right">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="SignIn">Sign In</a>
+                        </li>
+                    }
 
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search Events" aria-label="Search">
-                    <button class="btn btn-outline-success mr-sm-0" type="submit">Search</button>
+                        <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Signin_Admin">Admin</a>
+     </div>-->
+                <form class="form-inline my-2 my-lg-0" asp-controller="Home" asp-action="Search_Event" method="post">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search Events" aria-label="Search" name="search">
+                    <button class="btn btn-outline-success mr-sm-0" type="submit" asp-area="" asp-controller="Home" asp-action="Search_event" asp-route-value="search">Search</button>
                 </form>
+               
+
+            </div>
+            </nav>
+
+        </header>
+        <div class="container-fluid">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <!--<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="text-decoration: underline; text-decoration-color: darkgreen; font-size:large">Shahajjokori</a>-->
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Index" style="text-decoration: underline; text-decoration-color: darkgreen; font-size:x-large">Shahajjokori</a>
+                    </div>
+                    <div class="col-md-4">
+                        <!--<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="text-decoration: underline; text-decoration-color: darkgreen; font-size:large">Shahajjokori</a>-->
+                        <h5 style="margin-top:4%; margin-left:3%; color: darkgreen;">FUNDRAISE FOR</h5><br />
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Education">Education</a>
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Sponsoring">Sponsoring</a>
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Emergency Aid">Emergency Aid</a>
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Medical Care">Medical Care</a>
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Accidents">Accidents</a>
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Others">Others</a>
+
+                    </div>
+                    <div class="col-md-4">
+                        <!--<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="text-decoration: underline; text-decoration-color: darkgreen; font-size:large">Shahajjokori</a>-->
+                        <h5 style="margin-top:4%; margin-left:3%; color: darkgreen;">LEARN MORE</h5><br />
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Education">Who Are We</a>
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Education">How Shahajjokori Works</a>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12" style="text-align:center; margin-top:3%;">
+                        &copy; 2021 - Shahajjokori 
+                    </div>
+                </div>
                 
             </div>
-        </nav>
-
-    </header>
-    <div class="container-fluid">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - Shahajjokori - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
-</body>
-</html>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+    </body>
+    </html>

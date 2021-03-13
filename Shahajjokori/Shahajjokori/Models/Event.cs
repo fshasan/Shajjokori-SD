@@ -21,6 +21,7 @@ namespace Shahajjokori.Models
         public string e_details { get; set; }
         public string e_trans { get; set; }
         public int f_id { get; set; }
+        public string e_local_org_by { get; set; }
 
     }
 }

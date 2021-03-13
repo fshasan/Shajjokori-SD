@@ -1,0 +1,98 @@
+﻿@{ Layout = "";
+    var id = ViewContext.RouteData.Values["id"];}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=B612&display=swap" rel="stylesheet">
+    <style>
+        a {
+            color: #2F4F4F;
+        }
+
+            a:hover {
+                //border: 1px solid #4FA9DC;
+                color: #2F4F4F;
+                font-weight: bold;
+            }
+
+            a:active {
+            }
+
+        .active {
+            //background: #4FA9DC;
+            //color: white;
+            font-weight: bold;
+            border-bottom: 1px solid #2F4F4F;
+        }
+
+        h1, a, h3, p {
+            font-family: 'B612', sans-serif;
+            font-family: 'IBM Plex Serif', serif;
+            font-family: 'Karla', sans-serif;
+            font-family: 'Varela', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3" style="margin-left: 2%;">
+                <div style="text-align:center; margin-top:3%;">
+                    <h1 style="text-decoration: underline; text-decoration-color: darkgreen;">Shahajjokori</h1>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div style="text-align:center; margin-top:3%;">
+                    <h2>Fundraiser Panel</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="margin-top:5%">
+        <div class="row">
+            <main role="main" class="col-md-3" style="margin-top:2%; margin-bottom:5%;">
+                <nav class="nav">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="@Url.Action("fundraiser_index","Fundraiser",  new { id = id})">User Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Create_Event","Fundraiser",  new { id = id})">Create Event</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("See_Events","Fundraiser", new { id = id})">See Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Notifications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Create_Local_Event","Fundraiser", new { id = id})">Add Local Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Home")">Log out</a>
+                            <script type="text/javascript">
+                                function preventBack() { window.history.forward(); }
+                                setTimeout("preventBack()", 0);
+                                window.onunload = function () { null };
+                            </script>
+                        </li>
+                    </ul>
+                </nav>
+            </main>
+            <div class="col-md-9">
+
+                <h3>The Local Event has been created successfully</h3>
+                <h3>and has been sent to the Admin for approval. Thank you.</h3>
+            </div>
+        </div>
+    </div>
+</body>

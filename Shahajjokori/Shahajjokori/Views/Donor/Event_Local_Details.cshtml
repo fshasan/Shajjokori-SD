@@ -1,0 +1,86 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{ }
+
+@model Shahajjokori.Models.Local_Event
+<!--<h1>@ViewBag.event_id</h1>-->
+<div style="background-color: #FDF5E6;">
+    <div class="container" style="padding-top: 5%;">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 style="text-decoration: underline;text-decoration-color: cadetblue">@Html.DisplayFor(model => model.le_title)</h3>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 3%;">
+            <div class="col-md-6">
+                <h5>Created by: <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" style="font-size: 20px; text-decoration: none; margin-bottom:1%;">@ViewBag.org</button></h5>
+
+                <h5>Location: @Html.DisplayFor(model => model.le_location)</h5>
+                
+                <br>
+                <h5>Opening: @Html.DisplayFor(model => model.le_opening_date)</h5>
+                <br>
+                <h5>Closing: @Html.DisplayFor(model => model.le_closing_date)</h5>
+                <br>
+                
+
+            </div>
+            <div class="col-md-6">
+                @{ string pic_name = ViewBag.event_pic;
+                                string path = $"~/images/{pic_name}"; }
+
+                <img src="@path" alt="" style="height: 20vw; max-width: 100%;" asp-append-version="true">
+                <br>
+                
+            </div>
+        </div>
+        <div class="row" style="margin-top: 5%;">
+            <div class="col-md-12">
+                <h3>About the Event: </h3>
+                <p>@Html.DisplayFor(model => model.le_details)</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@ViewBag.org</h5>
+
+            </div>
+            <div class="modal-body">
+                @ViewBag.org_about
+            </div>
+
+            <div class="modal-footer">
+                Contact: @ViewBag.org_phone
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@ViewBag.org</h5>
+
+            </div>
+            <div class="modal-body" style="white-space:pre-line;">
+                @ViewBag.event_trans
+            </div>
+
+            <div class="modal-footer">
+                Contact: @ViewBag.org_phone
+            </div>
+        </div>
+    </div>
+</div>
+
+

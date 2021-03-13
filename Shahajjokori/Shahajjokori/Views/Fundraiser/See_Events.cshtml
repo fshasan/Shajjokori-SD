@@ -1,5 +1,5 @@
-﻿@{
-    Layout = "";
+﻿@{ Layout = "";
+    var f_id = ViewContext.RouteData.Values["id"];
 }
 
 @model List<Event>
@@ -12,114 +12,193 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="assets/css/login.css">
+    <style>
+        a {
+            color: #2F4F4F;
+        }
+
+            a:hover {
+                //border: 1px solid #4FA9DC;
+                color: #2F4F4F;
+                font-weight: bold;
+            }
+
+            a:active {
+            }
+
+        .active {
+            //background: #4FA9DC;
+            //color: white;
+            font-weight: bold;
+            border-bottom: 1px solid #2F4F4F;
+        }
+
+        h1, a, h3, p {
+            font-family: 'B612', sans-serif;
+            font-family: 'IBM Plex Serif', serif;
+            font-family: 'Karla', sans-serif;
+            font-family: 'Varela', sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <div style="text-align:center">
-        <h1>Fundraiser Panel</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3" style="margin-left: 2%;">
+                <div style="text-align:center; margin-top:3%;">
+                    <h1 style="text-decoration: underline; text-decoration-color: darkgreen;">Shahajjokori</h1>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div style="text-align:center; margin-top:3%;">
+                    <h2>Fundraiser Panel</h2>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="container-fluid" style="margin-top:5%">
         <div class="row">
-            <main role="main" class="col-md-2" style="margin-top:2%; margin-bottom:5%;">
-                <nav class="nav">
+            <main role="main" class="col-md-3" style="margin-bottom:5%;">
+                <nav class="nav" style="margin-left: 35%;">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="@Url.Action("Index","Fundraiser")">User Info</a>
+                            <a class="nav-link " href="@Url.Action("fundraiser_index","Fundraiser",  new { id = f_id})">User Info</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Create_Event","Fundraiser")">Create Event</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("See_Events","Fundraiser")">See Events</a>
+                            <a class="nav-link" href="@Url.Action("Create_Event","Fundraiser",  new { id = f_id})">Create Event</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Notifications</a>
+                            <a class="nav-link active" href="@Url.Action("See_Events","Fundraiser", new { id = f_id})">See Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Add Local Event</a>
+                            <a class="nav-link" href="@Url.Action("Notification","Fundraiser", new { id = f_id})">Updates of Donations</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Log out</a>
+                            <a class="nav-link" href="@Url.Action("Notification_from_admin","Fundraiser", new { id = f_id})">Notification from Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Create_Local_Event","Fundraiser", new { id = f_id})">Add Local Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Home")">Log out</a>
+                            <script type="text/javascript">
+                                function preventBack() { window.history.forward(); }
+                                setTimeout("preventBack()", 0);
+                                window.onunload = function () { null };
+                            </script>
                         </li>
                     </ul>
                 </nav>
 
             </main>
-            <main role="main" class="col-md-10">
+            <main role="main" class="col-md-8" style="margin-left: 2%; margin-right: 2%;">
+                @if (Model.Count == 0)
+                {
+                    <h5>No events available at the moment.</h5>
+                }
                 @foreach (var e in Model)
                 {
-                <table class="table table-striped table-bordered">
+                    <table class="table table-striped table-bordered">
 
-                    <tr class="thead-light">
-                        <td>Event Name</td>
-                        <td>@e.e_title</td>
-                    </tr>
-                    <tr class="thead-light">
-                        <td>Status</td>
-                        @if (e.e_state == 0)
-                        {
-                            <td style="color:darkblue">Requested</td>
-                        }
-                        @if (e.e_state == 1)
-                        {
-                            <td style="color:green">Posted</td>
-                        }
-                        @if (e.e_state == 2)
-                        {
-                            <td style="color:red">Halted</td>
-                        }
-                    </tr>
-                    <tr class="thead-light">
-                        <td>Category</td>
-                        @if (e.e_category == 0)
-                        {
-                            <td>Education</td>
-                        }
+                        <tr class="thead-light">
+                            <td>Event Name</td>
+                            <td>@e.e_title</td>
+                        </tr>
+                        <tr class="thead-light">
+                            <td>Status</td>
+                            @if (e.e_state == 0)
+                            {
+                                <td style="color:darkblue">Requested</td>
+                            }
+                            @if (e.e_state == 1)
+                            {
+                                <td style="color:green">Posted</td>
+                            }
+                            @if (e.e_state == 2)
+                            {
+                                <td style="color:red">Halted</td>
+                            }
+                        </tr>
+                        <tr class="thead-light">
+                            <td>Category</td>
+                            @if (e.e_category == 0)
+                            {
+                                <td>Education</td>
+                            }
+                            @if (e.e_category == 1)
+                            {
+                                <td>Sponsoring</td>
+                            }
+                            @if (e.e_category == 2)
+                            {
+                                <td>Emergency Aid</td>
+                            }
+                            @if (e.e_category == 3)
+                            {
+                                <td>Medical Care</td>
+                            }
+                            @if (e.e_category == 4)
+                            {
+                                <td>Accidents</td>
+                            }
+                            @if (e.e_category == 5)
+                            {
+                                <td>Others</td>
+                            }
 
-                    </tr>
-                    <tr class="thead-light">
-                        <td>Location</td>
-                        <td>@e.e_location</td>
-                    </tr>
-                    <tr class="thead-light">
-                        <td>Opening Date</td>
-                        <td>@e.e_opening_date</td>
-                    </tr>
-                    <tr class="thead-light">
-                        <td>Closing Date</td>
-                        <td>@e.e_closing_date</td>
-                    </tr>
-                    <tr class="thead-light">
-                        <td>Expected Amount</td>
-                        <td>@e.e_exp_amount</td>
-                    </tr>
-                    <tr class="thead-light">
-                        <td>Raised Amount</td>
-                        <td>@e.e_raised_amount</td>
-                    </tr>
-                    <tr class="thead-light">
-                        <td>Donor Count</td>
-                        <td>@e.e_donor_count</td>
-                    </tr>
-                    <tr class="thead-light">
-                        <td>Event Details</td>
-                        <td>@e.e_details</td>
-                    </tr>
-                    <tr class="thead-light">
-                        <td>Event Transactions</td>
-                        <td>@e.e_trans</td>
-                    </tr>
-                    <tr class="thead-light">
-                        <td>Event Pic</td>
-                        @{
-                            string path = "~/images/" + e.e_pic;
-                        }
+                        </tr>
+                        <tr class="thead-light">
+                            <td>Location</td>
+                            <td>@e.e_location</td>
+                        </tr>
+                        <tr class="thead-light">
+                            <td>Opening Date</td>
+                            <td>@e.e_opening_date</td>
+                        </tr>
+                        <tr class="thead-light">
+                            <td>Closing Date</td>
+                            <td>@e.e_closing_date</td>
+                        </tr>
+                        <tr class="thead-light">
+                            <td>Expected Amount</td>
+                            <td>@e.e_exp_amount</td>
+                        </tr>
+                        <tr class="thead-light">
+                            <td>Raised Amount</td>
+                            <td>@e.e_raised_amount</td>
+                        </tr>
+                        <tr class="thead-light">
+                            <td>Donor Count</td>
+                            <td>@e.e_donor_count</td>
+                        </tr>
+                        <tr class="thead-light">
+                            <td>Event Details</td>
+                            <td>@e.e_details</td>
+                        </tr>
+                        <tr class="thead-light">
+                            <td>Event Transactions</td>
+                            <td>@e.e_trans</td>
+                        </tr>
+                        <tr class="thead-light">
+                            <td>Event Pic</td>
+                            @{ string path = "~/images/" + e.e_pic; }
 
-                        <td><img src="@path" alt="logo" style="display: block; height: auto; max-width: 100%;" asp-append-version="true"></td>
-                    </tr>
-                </table>
-                }
+                            <td><img src="@path" alt="logo" style="display: block; height: auto; max-width: 100%;" asp-append-version="true"></td>
+                        </tr>
+
+                        <tr class="thead-light">
+                            <td>Action</td>
+                            <td>
+                                <form asp-action="Event_state_delete" method="post">
+
+                                    <button type="submit" class="btn btn-danger" asp-controller="Fundraiser" asp-action="Event_state_delete" asp-route-id="@e.e_id" asp-route-fid="@f_id">Delete</button>
+
+                                </form>
+
+                            </td>
+                        </tr>
+                    </table>}
             </main>
 
         </div>

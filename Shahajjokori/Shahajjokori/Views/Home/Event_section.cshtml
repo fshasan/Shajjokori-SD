@@ -2,24 +2,35 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    // var test = Context.GetRouteData().Values["id"];
+    Layout = "_Layout";
 }
 @model List<Event>
 
-<div class="container" style="margin-top: 5%;">
+<div class="container" style="text-align: center;">
+    <div class="row" style="margin-top: 5%; margin-bottom: 3%;">
+        <div class="col-md-12" style="text-align: center;">
+            <h2 style="text-decoration: underline; text-decoration-color:cadetblue;">@ViewContext.RouteData.Values["option"]</h2>
+        </div> 
+    </div>
     <div class="row">
         @foreach (var e in Model)
         {
             <div class="col-md-4">
-                <div class="card">
+                <div class="card" style="margin-top: 5%;">
                     @{
                         string path = "~/images/" + e.e_pic;
                     }
-                    <img class="card-img-top" src="@path" alt="logo" style="display: block; height: auto; max-width: 100%;" asp-append-version="true">
+                    <img class="card-img-top" src="@path" alt="logo" style="        display: block;
+        height: 15vw;
+        max-width: 100%;
+        object-fit: cover;
+" asp-append-version="true">
 
                     <div class="card-body">
                         <h4 class="card-title">@e.e_title</h4>
                         <p>@e.e_location</p>
-                        <a asp-controller="Home" asp-action="Event_Details" asp-route-id="@e.e_id">View Details</a>
+                        <a asp-controller="Home" asp-action="Event_Details" asp-route-id="@e.e_id" style="text-decoration:none">View Details</a>
                         <!--<form asp-action="Event_Details" method="post">
                             <input type="button" value="@e.e_id" />View Details
                             <input type="button" value="Event_Details" onclick="location.href='@Url.Action("Event_Details", "Home")' + @e.e_id" />
