@@ -76,17 +76,34 @@ namespace Shahajjokori.Controllers
         }
         public IActionResult donor_index(int id)
         {
-            var dnr = JsonConvert.DeserializeObject<Fundraiser>(HttpContext.Session.GetString("FundraiserSession"));
-            //return View(fr);
+            var fr = JsonConvert.DeserializeObject<Fundraiser>(HttpContext.Session.GetString("FundraiserSession"));
+            ViewBag.d_name = fr.f_name;
+            ViewBag.d_id = fr.f_id;
+
+            string connection_string1 = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection1 = new SqlConnection(connection_string1);
+            connection1.Open();
+            //string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
+            string query1 = $"select sum(amount) from DONATED where d_id = {fr.f_id}";
+            SqlCommand com1 = new SqlCommand(query1, connection1);
+
+            var count = (int)com1.ExecuteScalar();
+            ViewData["total_amount"] = count;
+            //ViewData["message"] = message;
+            connection1.Close();
+
+
 
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
             string query = $"select * from FUNDRAISERS where f_id = {id}";
-
             SqlCommand com = new SqlCommand(query, connection);
 
+
+            //string connection_string1 = configuration.GetConnectionString("DefaultConnectionString");
             using (SqlConnection conn = new SqlConnection(connection_string))
+
             {
                 conn.Open();
                 SqlDataReader rdr = com.ExecuteReader();
@@ -106,8 +123,12 @@ namespace Shahajjokori.Controllers
 
             }
 
-            //return RedirectToAction("Index", "Home");
-            return View(dnr);
+
+
+
+
+
+            return View(fr);
 
         }
 
@@ -523,7 +544,7 @@ namespace Shahajjokori.Controllers
             }
             //ViewData["Total_fundraiser"] = count;
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
-            string query = "INSERT INTO [dbo].[DONATED]([e_id],[e_title],[amount],[tid],[name],[state],[date],[time]) VALUES(@e_id,@e_title,@amount,@tid, @name,0,@date, @time)";
+            string query = "INSERT INTO [dbo].[DONATED]([e_id],[e_title],[amount],[tid],[name],[state],[date],[time],[d_id]) VALUES(@e_id,@e_title,@amount,@tid, @name,0,@date, @time, @d_id)";
             SqlCommand com = new SqlCommand(query, connection);
             com.Parameters.AddWithValue("@e_id", donation.d_id);
             com.Parameters.AddWithValue("@e_title", donation.d_title);
@@ -532,11 +553,67 @@ namespace Shahajjokori.Controllers
             com.Parameters.AddWithValue("@name", donation.d_name);
             com.Parameters.AddWithValue("@date", date);
             com.Parameters.AddWithValue("@time", time);
+            com.Parameters.AddWithValue("@d_id", fr.f_id);
 
             com.ExecuteNonQuery();
             //ViewData["Total_fundraiser"] = count;
             //connection.Close();
             return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult DonationHistory()
+        {
+
+            var fr = JsonConvert.DeserializeObject<Fundraiser>(HttpContext.Session.GetString("FundraiserSession"));
+            ViewBag.d_name = fr.f_name;
+            ViewBag.d_id = fr.f_id;
+
+            string connection_string = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection = new SqlConnection(connection_string);
+            connection.Open();
+            string query = $"select * from DONATED where state=1 and d_id = {fr.f_id} order by date, time desc";
+            SqlCommand com = new SqlCommand(query, connection);
+
+            var model = new List<Donation>();
+            using (SqlConnection conn = new SqlConnection(connection_string))
+            {
+                //conn.Open();
+                SqlDataReader rdr = com.ExecuteReader();
+                while (rdr.Read())
+                {
+                    var d = new Donation();
+                    d.d_prim = (int)rdr["e_prim"];
+                    d.d_id = (int)rdr["e_id"];
+
+                    d.d_name = (string)rdr["name"];
+                    d.d_amount = (int)rdr["amount"];
+                    d.d_tid = (string)rdr["tid"];
+                    d.d_title = (string)rdr["e_title"];
+                    d.d_amount = (int)rdr["amount"];
+                    d.d_tid = (string)rdr["tid"];
+                    d.d_time = (string)rdr["time"];
+                    d.d_date = (string)rdr["date"];
+
+                    model.Add(d);
+                }
+
+            }
+            return View(model);
+
+        }
+
+        public IActionResult Clear_Notification(int id, int fid, int amount, int prim)
+        {
+            string connection_string = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection = new SqlConnection(connection_string);
+            connection.Open();
+            string query2 = $"Update DONATED set state = 3 where e_prim = {prim}";
+            SqlCommand com2 = new SqlCommand(query2, connection);
+
+            com2.ExecuteNonQuery();
+            connection.Close();
+            //return RedirectToAction("Create_event_entry","Fundraiser");
+            return RedirectToAction("DonationHistory", "Donor", new { id = fid });
         }
     }
 }

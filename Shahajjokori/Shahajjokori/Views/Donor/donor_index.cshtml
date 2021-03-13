@@ -54,6 +54,7 @@
             <div class="col-md-8">
                 <div style="text-align:center; margin-top:3%;">
                     <h2>Donor Panel</h2>
+                    <p>You have donated total @ViewData["total_amount"] Tk.</p>
                 </div>
             </div>
         </div>
@@ -67,11 +68,7 @@
                             <a class="nav-link active" href="@Url.Action("donor_index","Donor",  new { id = id})">User Info</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Donated_Events","Donor",  new { id = id})">Create Event</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Notifications","Donor", new { id = id})">See Events</a>
+                            <a class="nav-link" href="@Url.Action("DonationHistory","Donor",  new { id = id})">Donated Events</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("Index","Home")">Log out</a>
@@ -85,6 +82,8 @@
                 </nav>
 
             </main>
+
+            
             <main role="main" class="col-md-6" style="margin-left: 5%; margin-right: 5%;">
 
                 <table class="table">

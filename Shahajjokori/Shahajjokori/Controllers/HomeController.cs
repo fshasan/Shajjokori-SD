@@ -41,10 +41,6 @@ namespace Shahajjokori.Controllers
         [Route("Home/Index/{id}")]
         public IActionResult Index()
         {
-            //var dnr = JsonConvert.DeserializeObject<Fundraiser>(HttpContext.Session.GetString("FundraiserSession"));
-            //ViewBag.d_name = dnr.f_name;
-            //ViewBag.d_id = dnr.f_id;
-
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
@@ -77,9 +73,52 @@ namespace Shahajjokori.Controllers
 
                     model.Add(e);
                 }
+                conn.Close();
+                rdr.Close();
 
             }
-           
+            connection.Close();
+
+            string connection_string1 = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection1 = new SqlConnection(connection_string1);
+            connection1.Open();
+            string query1 = $"select * from EVENT where e_state=10";
+
+            SqlCommand com1 = new SqlCommand(query1, connection1);
+
+            //var model = new List<Event>();
+            using (SqlConnection conn = new SqlConnection(connection_string1))
+            {
+                conn.Open();
+                SqlDataReader rdr = com1.ExecuteReader();
+                while (rdr.Read())
+                {
+                    var e = new Event();
+                    e.e_id = (int)rdr["e_id"];
+                    e.e_title = (string)rdr["e_title"];
+                    ViewBag.e_tilte = e.e_title;
+                    e.e_category = (int)rdr["e_category"];
+                    e.e_location = (string)rdr["e_location"];
+                    ViewBag.e_tilte = e.e_location;
+                    e.e_opening_date = (string)rdr["e_opening_date"];
+                    e.e_closing_date = (string)rdr["e_closing_date"];
+                    e.e_exp_amount = (int)rdr["e_exp_amount"];
+                    e.e_raised_amount = (int)rdr["e_raised_amount"];
+                    ViewBag.e_raised_amount = e.e_raised_amount;
+                    e.e_donor_count = (int)rdr["e_donor_count"];
+                    ViewBag.e_donor_count = e.e_donor_count;
+                    e.e_state = (int)rdr["e_state"];
+                    e.e_pic = (string)rdr["e_pic"];
+                    ViewBag.e_pic = e.e_pic;
+                    e.e_details = (string)rdr["e_details"];
+                    ViewBag.e_details = e.e_details;
+
+                    //model.Add(e);
+                }
+                conn.Close();
+
+            }
+
 
             return View(model);
             //return View();
@@ -551,7 +590,7 @@ namespace Shahajjokori.Controllers
             return View(fundraiser);
         }
 
-        public IActionResult SignUp_Donor_entry(Fundraiser fundraiser)
+        public IActionResult SignUp_Donor_Entry(Fundraiser fundraiser)
         {
             if (fundraiser.f_password != fundraiser.f_password1)
             {
@@ -708,6 +747,52 @@ namespace Shahajjokori.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+
+        public IActionResult Success_event_show()
+        {
+            string connection_string1 = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection1 = new SqlConnection(connection_string1);
+            connection1.Open();
+            string query1 = $"select * from EVENT where e_state=10 or e_state=11";
+
+            SqlCommand com1 = new SqlCommand(query1, connection1);
+
+            var model = new List<Event>();
+            using (SqlConnection conn = new SqlConnection(connection_string1))
+            {
+                conn.Open();
+                SqlDataReader rdr = com1.ExecuteReader();
+                while (rdr.Read())
+                {
+                    var e = new Event();
+                    e.e_id = (int)rdr["e_id"];
+                    e.e_title = (string)rdr["e_title"];
+                    ViewBag.e_tilte = e.e_title;
+                    e.e_category = (int)rdr["e_category"];
+                    e.e_location = (string)rdr["e_location"];
+                    ViewBag.e_tilte = e.e_location;
+                    e.e_opening_date = (string)rdr["e_opening_date"];
+                    e.e_closing_date = (string)rdr["e_closing_date"];
+                    e.e_exp_amount = (int)rdr["e_exp_amount"];
+                    e.e_raised_amount = (int)rdr["e_raised_amount"];
+                    ViewBag.e_raised_amount = e.e_raised_amount;
+                    e.e_donor_count = (int)rdr["e_donor_count"];
+                    ViewBag.e_donor_count = e.e_donor_count;
+                    e.e_state = (int)rdr["e_state"];
+                    e.e_pic = (string)rdr["e_pic"];
+                    ViewBag.e_pic = e.e_pic;
+                    e.e_details = (string)rdr["e_details"];
+                    ViewBag.e_details = e.e_details;
+
+                    model.Add(e);
+                }
+                conn.Close();
+
+            }
+
+
+            return View(model);
+        }
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

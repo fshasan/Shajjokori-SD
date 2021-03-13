@@ -1,13 +1,10 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@{ ViewData["Title"] = "Home Page"; }
 @model List<Event>
 <style>
     .see_more a.main-nav-item:hover {
         color: #DDD;
         border: 1px;
     }
-    
 </style>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -31,7 +28,7 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-
+<!--Recent Fundraising Events-->
 <div style="background-color: #FDF5E6;">
     <div class="container" style="padding-top: 5%; padding-bottom:5%; text-align: center;">
         <h2 style="margin-bottom: 2%;">Recent Fundraising Events</h2>
@@ -61,33 +58,53 @@
         <div class="row">
             <div class="col-md-12" style="text-align:center">
                 <div class="see_more">
-                    <a class="btn btn-outline-secondary" name="option" asp-controller="Home" asp-action="Event_section_show_all" asp-route-id="Show All" >See All Events</a>
+                    <a class="btn btn-outline-secondary" name="option" asp-controller="Home" asp-action="Event_section_show_all" asp-route-id="Show All">See All Events</a>
                 </div>
-                
+
             </div>
         </div>
 
     </div>
-    
+
 </div>
 
-<div style="background: url('@Url.Content("~/images/pexels-photo-6994985.jpeg")'); padding-top:5%; padding-bottom: 5%;">
+<!--Local Events-->
+<div style="background: url('@Url.Content("~/images/pexels-photo-6994985.jpeg")'); padding-top:10%; padding-bottom: 10%;">
     <div class="container" style="text-align:center">
         <div class="row">
             <div class="col-md-6" style="font-size:large">
                 <p style="color: white; font-size:larger; ">Check out the events happening where you can participate yourself!</p><br>
-                <a class="btn btn-success" name="option" asp-controller="Home" asp-action="Local_event_show" style="        color: white;
-        font-size: large;
-        text-decoration: none;
-        margin-top: 5%;
-">Local Events</a>
+                <a class="btn btn-success" name="option" asp-controller="Home" asp-action="Local_event_show" style="color: white;font-size: large;text-decoration: none;margin-top: 5%;">Local Events</a>
             </div>
             <div class="col-md-6">
-                
+
             </div>
         </div>
 
     </div>
 
 </div>
+<!--Success Stories-->
+<div style="padding-top:5%; padding-bottom: 5%;background-color: #FDF5E6;">
+    <div class="container" style="text-align:center">
+        <h2 style="margin-bottom: 3%;">Success Stories</h2>
+        <div class="row">
 
+            <div class="col-md-6">
+                @{ string pic_name = ViewBag.e_pic;
+                    string path1 = $"~/images/{pic_name}"; }
+
+                <img src="@path1" alt="" style="height: 20vw; max-width: 100%;" asp-append-version="true">
+
+            </div>
+            <div class="col-md-6" style="font-size:large">
+                <h4>@ViewBag.e_title</h4>
+                <p style="color: black; font-size:larger; ">@ViewBag.e_details</p><br>
+                <p style="color: black; font-size:larger; ">They managed to raise @ViewBag.e_raised_amount Tk. with us!</p><br>
+                <a class="btn btn-success" name="option" asp-controller="Home" asp-action="Success_event_show" style="color: white;font-size: large;text-decoration: none;margin-top: 5%;">See All</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
