@@ -167,31 +167,25 @@
 
                     <td><img src="@path" alt="logo" style="display: block; height: auto; max-width: 100%;" asp-append-version="true"></td>
                 </tr>
-                <!--
+                
                 <tr class="thead-light">
                     <td>Action</td>
                     <td>
                         @if (e.e_state == 11)
                         {
-            <p style="color:green">Shown in the site</p>}
+                            <p style="color:green">Shown in the site</p>
+                        }
                         @if (e.e_state == 10)
                         {
-            <form asp-action="Event_state_handle_set_show_success" method="post">
+                            <form asp-action="Event_state_handle_set_show_success" method="post">
 
-                <button type="submit" class="btn btn-success" asp-controller="Admin" asp-action="Event_state_handle_set_show_success" asp-route-id="@e.e_id">Show as opening</button>
+                                 <button type="submit" class="btn btn-success" asp-controller="Admin" asp-action="Event_state_handle_set_show_success" asp-route-id="@e.e_id">Show as opening</button>
 
-            </form>                }
+                            </form>                
+                         }
                     </td>
                 </tr>
-                <tr class="thead-light">
-                    <td>Dummy</td>
-                    <td>
-                        @if (e.e_state == 11)
-                        {<p style="color:green">Shown in the site</p>}
-                        @if (e.e_state == 10)
-                        {<p style="color:red">Not Shown in the site</p>}      
-                    </td>
-                </tr>-->
+                
 
             </table>}
             </main>

@@ -44,17 +44,32 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
+            
+            //updating events whose closing date is gone
+            string query3 = "SELECT CONVERT(VARCHAR(10), getdate(),105)";
+            SqlCommand com3 = new SqlCommand(query3, connection);
+
+            string date = com3.ExecuteScalar().ToString();
+
+            string query = $"Update EVENT set e_state=7 where e_closing_date<='{date}'";
+            SqlCommand com = new SqlCommand(query, connection);
+
+            com.ExecuteNonQuery();
+
+            //string connection_string = configuration.GetConnectionString("DefaultConnectionString");
+            //SqlConnection connection = new SqlConnection(connection_string);
+            //connection.Open();
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             //var id = fr.f_id;
-            string query = $"select TOP 3 * from EVENT where e_state=1";
+            string query1 = $"select TOP 3 * from EVENT where e_state=1";
 
-            SqlCommand com = new SqlCommand(query, connection);
+            SqlCommand com1 = new SqlCommand(query1, connection);
 
             var model = new List<Event>();
             using (SqlConnection conn = new SqlConnection(connection_string))
             {
                 conn.Open();
-                SqlDataReader rdr = com.ExecuteReader();
+                SqlDataReader rdr = com1.ExecuteReader();
                 while (rdr.Read())
                 {
                     var e = new Event();
@@ -82,15 +97,15 @@ namespace Shahajjokori.Controllers
             string connection_string1 = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection1 = new SqlConnection(connection_string1);
             connection1.Open();
-            string query1 = $"select * from EVENT where e_state=10";
+            string query2 = $"select * from EVENT where e_state=11";
 
-            SqlCommand com1 = new SqlCommand(query1, connection1);
+            SqlCommand com2 = new SqlCommand(query2, connection1);
 
             //var model = new List<Event>();
             using (SqlConnection conn = new SqlConnection(connection_string1))
             {
                 conn.Open();
-                SqlDataReader rdr = com1.ExecuteReader();
+                SqlDataReader rdr = com2.ExecuteReader();
                 while (rdr.Read())
                 {
                     var e = new Event();
@@ -697,6 +712,16 @@ namespace Shahajjokori.Controllers
             com.ExecuteNonQuery();
             //ViewData["Total_fundraiser"] = count;
             //connection.Close();
+
+            //string connection_string1 = configuration.GetConnectionString("DefaultConnectionString");
+            //SqlConnection connection1 = new SqlConnection(connection_string1);
+            //connection1.Open();
+            ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
+            //var id = fr.f_id;
+            string query3 = $"update EVENT set e_state=10 where e_exp_amount <= e_raised_amount";
+
+            SqlCommand com3 = new SqlCommand(query3, connection);
+            com3.ExecuteNonQuery();
             return RedirectToAction("Index","Home");
         }
 

@@ -86,8 +86,11 @@
 </div>
 <!--Success Stories-->
 <div style="padding-top:5%; padding-bottom: 5%;background-color: #FDF5E6;">
-    <div class="container" style="text-align:center">
-        <h2 style="margin-bottom: 3%;">Success Stories</h2>
+    <div class="container" style="text-align:left">
+        <div style="text-align:center">
+            <h2 style="margin-bottom: 5%;">Success Stories</h2>
+        </div>
+        
         <div class="row">
 
             <div class="col-md-6">
@@ -99,9 +102,12 @@
             </div>
             <div class="col-md-6" style="font-size:large">
                 <h4>@ViewBag.e_title</h4>
-                <p style="color: black; font-size:larger; ">@ViewBag.e_details</p><br>
+                <p style="color: black;">@ViewBag.e_details</p><br>
                 <p style="color: black; font-size:larger; ">They managed to raise @ViewBag.e_raised_amount Tk. with us!</p><br>
-                <a class="btn btn-success" name="option" asp-controller="Home" asp-action="Success_event_show" style="color: white;font-size: large;text-decoration: none;margin-top: 5%;">See All</a>
+                <div style="text-align:center">
+                    <a class="btn btn-outline-secondary" name="option" asp-controller="Home" asp-action="Success_event_show" style="font-size: large;text-decoration: none;margin-top: 5%;">See All</a>
+                </div>
+                
             </div>
         </div>
 

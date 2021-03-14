@@ -134,7 +134,7 @@ namespace Shahajjokori.Controllers
             com.ExecuteNonQuery();
             connection.Close();
             //return RedirectToAction("Create_event_entry","Fundraiser");
-            return RedirectToAction("Event_Request", "Admin");
+            return RedirectToAction("Halted_Events", "Admin");
         }
 
         public IActionResult Event_state_handle_delete(int id)
@@ -159,19 +159,20 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            string query = $"Update EVENT set e_state=11 where e_id={id}";
+
+            string query1 = $"UPDATE EVENT SET e_state=10 WHERE e_state=11";
+            SqlCommand com1 = new SqlCommand(query1, connection);
+
+            com1.ExecuteNonQuery();
+
+            string query = $"UPDATE EVENT SET e_state=11 WHERE e_id = {id}";
             SqlCommand com = new SqlCommand(query, connection);
 
             com.ExecuteNonQuery();
 
-            //string query1 = $"Update EVENT set e_state=1 where e_id={id}";
-            //SqlCommand com1 = new SqlCommand(query1, connection);
-
-            //com1.ExecuteNonQuery();
-
             connection.Close();
             //return RedirectToAction("Create_event_entry","Fundraiser");
-            return RedirectToAction("admin_index", "Admin");
+            return RedirectToAction("Event_Success", "Admin");
         }
 
 
@@ -259,17 +260,6 @@ namespace Shahajjokori.Controllers
 
         public IActionResult Event_Success()
         {
-            string connection_string1 = configuration.GetConnectionString("DefaultConnectionString");
-            SqlConnection connection1 = new SqlConnection(connection_string1);
-            connection1.Open();
-            ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
-            //var id = fr.f_id;
-            string query1 = $"update EVENT set e_state=10 where e_exp_amount <= e_raised_amount";
-
-            SqlCommand com1 = new SqlCommand(query1, connection1);
-            com1.ExecuteNonQuery();
-
-
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
