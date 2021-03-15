@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Shahajjokori</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <!--
-    <link rel="stylesheet" href="~/css/site.css" />-->
-    <link rel="stylesheet" href="assets/css/login.css">
+
+    <!--<link rel="stylesheet" href="~/css/site.css" />-->
+    <!--<link rel="stylesheet" href="assets/css/login.css">-->
 </head>
 <body>
     <header>
@@ -40,9 +40,21 @@
                     </li>
                     @if (ViewBag.d_id != null)
                     {
-                    <li class="nav-item dropdown" style="float:right">
-                        <a class="nav-link" asp-area="" asp-controller="Donor" asp-action="donor_index" asp-route-id="@ViewBag.d_id">@ViewBag.d_name</a>
-                    </li> 
+                     <li class="nav-item" style="float:right">
+                        <a class="nav-link" asp-controller="Donor" asp-action="donor_index" asp-route-id="@ViewBag.d_id">@ViewBag.d_name</a>
+                     </li>
+                     
+                     <li class="nav-item">
+                            <a class="nav-link" asp-controller="Donor" asp-action="DonationHistory" asp-route-id="@ViewBag.d_id">Donation History</a>
+                     </li>
+                     <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Home")">Log out</a>
+                            <script type="text/javascript">
+                                function preventBack() { window.history.forward(); }
+                                setTimeout("preventBack()", 0);
+                                window.onunload = function () { null };
+                            </script>
+                        </li>
                     }
                     else
                     {
@@ -77,12 +89,10 @@
             </nav>
 
         </header>
-        <div class="container-fluid">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
-
+    <div class="container-fluid">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
         <footer class="border-top footer text-muted">
             <div class="container">
                 <div class="row">
@@ -111,12 +121,15 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12" style="text-align:center; margin-top:3%;">
-                        &copy; 2021 - Shahajjokori 
+                        &copy; 2021 - Shahajjokori
                     </div>
                 </div>
-                
+
             </div>
         </footer>
+    </div>
+
+        
         <script src="~/lib/jquery/dist/jquery.min.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>

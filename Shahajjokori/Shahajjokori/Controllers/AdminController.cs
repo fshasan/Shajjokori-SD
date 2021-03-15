@@ -134,7 +134,7 @@ namespace Shahajjokori.Controllers
             com.ExecuteNonQuery();
             connection.Close();
             //return RedirectToAction("Create_event_entry","Fundraiser");
-            return RedirectToAction("Halted_Events", "Admin");
+            return RedirectToAction("Event_Request", "Admin");
         }
 
         public IActionResult Event_state_handle_delete(int id)

@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12" style="margin-top: 3%; text-align:center">
-            <h2>Thank you for your donation</h2>
+            <h2>Thank you for your donation &#10084;</h2>
         </div>
     </div>
 
@@ -43,7 +43,13 @@
                         <small>This will help the fundraiser to identify your transaction</small>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" href="@Url.Action("Donation_entry","Home")" style="margin-top:5%">Done</button>
+                    <button type="submit" onclick="myFunction()" class="btn btn-primary" href="@Url.Action("Donation_entry","Home")" style="margin-top:5%">Done</button>
+                    <script>
+                        function myFunction() {
+                            
+                            alert("Thank you for your coopertaion");
+                        }
+                    </script>
                 </form>
             </div>
 

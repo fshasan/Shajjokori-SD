@@ -1083,3 +1083,4 @@ G:\Software-Development-5\Shajjokori-SD-main(1)\Shajjokori-SD-main\Shahajjokori\
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Donor\DonationHistory.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Event_Success.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Success_event_show.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Donor\Donor_Notification.cshtml.g.cs

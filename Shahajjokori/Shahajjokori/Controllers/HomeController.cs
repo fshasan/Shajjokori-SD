@@ -718,10 +718,22 @@ namespace Shahajjokori.Controllers
             //connection1.Open();
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             //var id = fr.f_id;
-            string query3 = $"update EVENT set e_state=10 where e_exp_amount <= e_raised_amount";
+
+            //e_rev_state=3 means funds fully collected
+            string query3 = $"update EVENT set e_state=10, e_rev_state = 3 where (e_exp_amount <= e_raised_amount) and e_id = {donation.d_id}";
 
             SqlCommand com3 = new SqlCommand(query3, connection);
             com3.ExecuteNonQuery();
+
+            //e_rev_state=2 means funds half collected
+            string query4 = $"Update EVENT set e_rev_state = 2 where e_raised_amount>=(e_exp_amount/2)";
+
+            SqlCommand com4 = new SqlCommand(query4, connection);
+            com4.ExecuteNonQuery();
+
+            
+
+
             return RedirectToAction("Index","Home");
         }
 

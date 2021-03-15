@@ -558,7 +558,7 @@ namespace Shahajjokori.Controllers
             com.ExecuteNonQuery();
             //ViewData["Total_fundraiser"] = count;
             //connection.Close();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Donor");
         }
 
         public IActionResult DonationHistory()

@@ -102,7 +102,7 @@
             <main role="main" class="col-md-8" style="margin-left: 2%; margin-right: 2%;">
                 @if (Model.Count == 0)
                 {
-                    <h5>No notifications available at the moment</h5>
+                    <h5>No notifications are available at the moment</h5>
                 }
 
                 @foreach (var e in Model)
@@ -129,7 +129,28 @@
                             <p>Your event "@e.e_title" have been halted</p>
                         </div>
                     }
-
+                    @if (e.e_rev_state == 2)
+                    {
+                        <div style="margin-top: 1%;padding-top: 1%;padding-bottom: 1%;padding-left: 2%;border-radius: 25px;background: #e8e8b5;">
+                            <form asp-action="Cancel_Admin_Notification" method="post">
+                                <button class="btn" id="x" type="submit" asp-controller="Fundraiser" asp-action="Cancel_Admin_Notification" asp-route-id="@e.e_id" asp-route-fid="@f_id">
+                                    X
+                                </button>
+                            </form>
+                            <p>Good news! Your event "@e.e_title" has got half of its expected amount.</p>
+                        </div>
+                    }
+                    @if (e.e_rev_state == 3)
+                    {
+                        <div style="margin-top: 1%;padding-top: 1%;padding-bottom: 1%;padding-left: 2%;border-radius: 25px;background: #9BCD9B;">
+                            <form asp-action="Cancel_Admin_Notification" method="post">
+                                <button class="btn" id="x" type="submit" asp-controller="Fundraiser" asp-action="Cancel_Admin_Notification" asp-route-id="@e.e_id" asp-route-fid="@f_id">
+                                    X
+                                </button>
+                            </form>
+                            <p>Congratulations! Your event "@e.e_title" has reached its expected amount.</p>
+                        </div>
+                    }
 
 
                 }

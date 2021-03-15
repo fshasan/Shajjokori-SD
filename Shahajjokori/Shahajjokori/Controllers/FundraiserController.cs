@@ -307,6 +307,7 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
+            //state 0 means notification that has not been dealt with
             string query = $"select * from DONATED where state=0 and e_id in (select e_id from EVENT where f_id ={id}) order by date, time desc";
             SqlCommand com = new SqlCommand(query, connection);
             
@@ -342,7 +343,9 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            string query = $"select * from EVENT where (e_state=1 or e_state=2) and e_id in (select e_id from EVENT where f_id ={id})";
+
+            //state 1 means approved, 2 means halted
+            string query = $"select * from EVENT where (e_state=1 or e_state=2 or e_state=10) and (e_rev_state = 0 or e_rev_state=2 or e_rev_state=3) and e_id in (select e_id from EVENT where f_id ={id})";
             SqlCommand com = new SqlCommand(query, connection);
 
             var model = new List<Event>();
@@ -366,7 +369,7 @@ namespace Shahajjokori.Controllers
                     e.e_pic = (string)rdr["e_pic"];
                     e.e_details = (string)rdr["e_details"];
                     e.e_trans = (string)rdr["e_trans"];
-
+                    e.e_rev_state = (int)rdr["e_rev_state"];
                     model.Add(e);
                 }
 
@@ -383,12 +386,26 @@ namespace Shahajjokori.Controllers
             SqlCommand com = new SqlCommand(query, connection);
 
             com.ExecuteNonQuery();
-            connection.Close();
-            connection.Open();
+           
             string query2 = $"Update DONATED set state = 1 where e_prim = {prim}";
             SqlCommand com2 = new SqlCommand(query2, connection);
 
             com2.ExecuteNonQuery();
+
+            string query4 = $"Update EVENT set e_rev_state = 2 where e_raised_amount>=(e_exp_amount/2)";
+
+            SqlCommand com4 = new SqlCommand(query4, connection);
+            com4.ExecuteNonQuery();
+
+            //e_rev_state=3 means funds fully collected
+            string query3 = $"update EVENT set e_state=10, e_rev_state = 3 where e_exp_amount <= e_raised_amount";
+
+            SqlCommand com3 = new SqlCommand(query3, connection);
+            com3.ExecuteNonQuery();
+
+            //e_rev_state=2 means funds half collected
+            
+
             connection.Close();
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("Notification", "Fundraiser", new { id = fid });
@@ -414,7 +431,8 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            string query2 = $"Update EVENT set e_state = 5 where e_id = {id}";
+            //e_rev_state=1 means notification has been showed and fundraiser cancelled it
+            string query2 = $"Update EVENT set e_rev_state = 1 where e_id = {id}";
             SqlCommand com2 = new SqlCommand(query2, connection);
 
             com2.ExecuteNonQuery();
