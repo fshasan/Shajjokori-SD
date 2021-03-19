@@ -5,7 +5,7 @@
     Layout = "_Layout"; }
 @model List<Local_Event>
 
-<div class="container" style="text-align: center;">
+<div class="container" style="text-align: center; margin-bottom:20%;">
     <div class="row" style="margin-top: 5%; margin-bottom: 3%;">
         <div class="col-md-12" style="text-align: center;">
             <h2 style="text-decoration: underline;text-decoration-color: cadetblue;">Local Events</h2>
@@ -14,7 +14,8 @@
     <div class="row">
         @foreach (var e in Model)
         {
-            <div class="col-md-4">
+        <div class="col-md-4">
+            <a asp-controller="Home" asp-action="Event_Local_Details" asp-route-id="@e.le_id" style="text-decoration:none;color:black;">
                 <div class="card" style="margin-top: 5%;">
                     @{ string path = "~/images/" + e.le_pic; }
                     <img class="card-img-top" src="@path" alt="logo" style="        display: block;
@@ -26,12 +27,12 @@
                     <div class="card-body">
                         <h4 class="card-title">@e.le_title</h4>
                         <p>@e.le_location</p>
-                        <a asp-controller="Home" asp-action="Event_Local_Details" asp-route-id="@e.le_id" style="text-decoration:none;">View Details</a>
+
 
                     </div>
                 </div>
-
-            </div>}
+            </a>
+        </div>}
     </div>
 </div>
 

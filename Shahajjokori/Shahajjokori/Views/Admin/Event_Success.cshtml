@@ -16,7 +16,6 @@
         }
 
             a:hover {
-                //border: 1px solid #4FA9DC;
                 color: #2F4F4F;
                 font-weight: bold;
             }
@@ -25,8 +24,6 @@
             }
 
         .active {
-            //background: #4FA9DC;
-            //color: white;
             font-weight: bold;
             border-bottom: 1px solid #2F4F4F;
         }
@@ -76,11 +73,16 @@
                         <li class="nav-item">
                             <a class="nav-link  active" href="@Url.Action("Event_Success","Admin")">Successful Events</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Local_Events_Shown","Admin")">Local Events Shown</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Local_Events_Halted","Admin")">Local Events Halted</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("Index","Home")">Log out</a>
                             <script type="text/javascript">
-    function preventBack() { window.history.forward(); }
+                                function preventBack() { window.history.forward(); }
                                 setTimeout("preventBack()", 0);
                                 window.onunload = function () { null };</script>
                         </li>
@@ -101,34 +103,7 @@
                     <td>@e.e_title</td>
                 </tr>
 
-                <tr class="thead-light">
-                    <td>Category</td>
-                    @if (e.e_category == 0)
-                    {
-            <td>Education</td>
-}
-                    @if (e.e_category == 1)
-                    {
-            <td>Sponsoring</td>
-}
-                    @if (e.e_category == 2)
-                    {
-            <td>Emergency Aid</td>
-}
-                    @if (e.e_category == 3)
-                    {
-            <td>Medical Care</td>
-}
-                    @if (e.e_category == 4)
-                    {
-            <td>Accidents</td>
-}
-                    @if (e.e_category == 5)
-                    {
-            <td>Others</td>
-}
-
-                </tr>
+               
                 <tr class="thead-light">
                     <td>Location</td>
                     <td>@e.e_location</td>
@@ -157,10 +132,7 @@
                     <td>Event Details</td>
                     <td>@e.e_details</td>
                 </tr>
-                <tr class="thead-light">
-                    <td>Event Transactions</td>
-                    <td>@e.e_trans</td>
-                </tr>
+                
                 <tr class="thead-light">
                     <td>Event Pic</td>
                     @{ string path = "~/images/" + e.e_pic; }

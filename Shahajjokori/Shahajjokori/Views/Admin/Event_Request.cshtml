@@ -16,7 +16,6 @@
         }
 
             a:hover {
-                //border: 1px solid #4FA9DC;
                 color: #2F4F4F;
                 font-weight: bold;
             }
@@ -25,8 +24,6 @@
             }
 
         .active {
-            //background: #4FA9DC;
-            //color: white;
             font-weight: bold;
             border-bottom: 1px solid #2F4F4F;
         }
@@ -75,6 +72,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("Event_Success","Admin")">Successful Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Local_Events_Shown","Admin")">Local Events Shown</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Local_Events_Halted","Admin")">Local Events Halted</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("Index","Home")">Log out</a>

@@ -23,9 +23,9 @@ namespace Shahajjokori.Controllers
     {
         private readonly ILogger<DonorController> _logger;
         private readonly IConfiguration configuration;
-        private readonly IHostingEnvironment hostingEnvironment;
+        private readonly IWebHostEnvironment hostingEnvironment;
 
-        public DonorController(ILogger<DonorController> logger, IConfiguration config, IHostingEnvironment hostingEnvironment)
+        public DonorController(ILogger<DonorController> logger, IConfiguration config, IWebHostEnvironment hostingEnvironment)
         {
             _logger = logger;
             configuration = config;
@@ -208,14 +208,16 @@ namespace Shahajjokori.Controllers
             return RedirectToAction("donor_index", "Donor", new { id = f_id });
         }
 
-        /*
-        [Route("Fundraiser/Notification/{id}")]
-        public IActionResult Notification(int id)
+        public IActionResult Donor_Notification(int id)
         {
+            var fr = JsonConvert.DeserializeObject<Fundraiser>(HttpContext.Session.GetString("FundraiserSession"));
+            ViewBag.d_name = fr.f_name;
+            ViewBag.d_id = fr.f_id;
+
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            string query = $"select * from DONATED where state=0 and e_id in (select e_id from EVENT where f_id ={id}) order by date, time desc";
+            string query = $"select * from DONATED where d_received=1 and d_id ={id}";
             SqlCommand com = new SqlCommand(query, connection);
 
             var model = new List<Donation>();
@@ -243,7 +245,7 @@ namespace Shahajjokori.Controllers
 
             }
             return View(model);
-        } */
+        } 
 
         public IActionResult Event_section(string option)
         {
@@ -279,7 +281,7 @@ namespace Shahajjokori.Controllers
             {
                 value = 5;
             }
-            string query1 = $"select * from EVENT where e_category = {value} and e_state=1";
+            string query1 = $"select * from EVENT where e_category = {value} and e_state=1 or e_state=3";
             SqlCommand com1 = new SqlCommand(query1, connection);
 
             var model1 = new List<Event>();
@@ -321,7 +323,7 @@ namespace Shahajjokori.Controllers
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
 
-            string query1 = $"select * from EVENT where e_state=1";
+            string query1 = $"select * from EVENT where e_state=1 or e_state=3";
             SqlCommand com1 = new SqlCommand(query1, connection);
 
             var model1 = new List<Event>();
@@ -571,7 +573,7 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            string query = $"select * from DONATED where state=1 and d_id = {fr.f_id} order by date, time desc";
+            string query = $"select * from DONATED where state=0 and d_id = {fr.f_id} order by date, time desc";
             SqlCommand com = new SqlCommand(query, connection);
 
             var model = new List<Donation>();
@@ -614,6 +616,20 @@ namespace Shahajjokori.Controllers
             connection.Close();
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("DonationHistory", "Donor", new { id = fid });
+        }
+
+        public IActionResult Cancel_Notification(int id, int fid, int prim)
+        {
+            string connection_string = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection = new SqlConnection(connection_string);
+            connection.Open();
+            string query2 = $"Update DONATED set d_received = 2 where e_prim = {prim}";
+            SqlCommand com2 = new SqlCommand(query2, connection);
+
+            com2.ExecuteNonQuery();
+            connection.Close();
+            //return RedirectToAction("Create_event_entry","Fundraiser");
+            return RedirectToAction("Donation_Notification", "Donor", new { id = fid });
         }
     }
 }

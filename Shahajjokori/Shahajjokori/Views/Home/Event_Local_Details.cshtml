@@ -14,30 +14,30 @@
         </div>
         <div class="row" style="margin-top: 3%;">
             <div class="col-md-6">
-                <h5>Created by: <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" style="font-size: 20px; text-decoration: none; margin-bottom:1%;">@ViewBag.org</button></h5>
+                <h6>Created by: <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" style="text-decoration: none; margin-bottom:1%;">@ViewBag.org</button></h6>
 
-                <h5>Location: @Html.DisplayFor(model => model.le_location)</h5>
-                
+                <h6>Location: @Html.DisplayFor(model => model.le_location)</h6>
+
                 <br>
-                <h5>Opening: @Html.DisplayFor(model => model.le_opening_date)</h5>
+                <h6>Opening: @Html.DisplayFor(model => model.le_opening_date)</h6>
                 <br>
-                <h5>Closing: @Html.DisplayFor(model => model.le_closing_date)</h5>
+                <h6>Closing: @Html.DisplayFor(model => model.le_closing_date)</h6>
                 <br>
-                
+
 
             </div>
             <div class="col-md-6">
                 @{ string pic_name = ViewBag.event_pic;
-                                string path = $"~/images/{pic_name}"; }
+                    string path = $"~/images/{pic_name}"; }
 
                 <img src="@path" alt="" style="height: 20vw; max-width: 100%;" asp-append-version="true">
                 <br>
-                
+
             </div>
         </div>
         <div class="row" style="margin-top: 5%;">
             <div class="col-md-12">
-                <h3>About the Event: </h3>
+                <h4>About the Event: </h4>
                 <p>@Html.DisplayFor(model => model.le_details)</p>
             </div>
         </div>
@@ -54,33 +54,30 @@
 
             </div>
             <div class="modal-body">
-                @ViewBag.org_about
+                <div>
+                    @ViewBag.org_about
+                    <input type="text" value="@ViewBag.org_phone" id="number" hidden>
+                </div>
+                <br />
+                <div>
+                    <p>Contact Number: @ViewBag.org_phone</p>
+                </div>
             </div>
 
             <div class="modal-footer">
-                Contact: @ViewBag.org_phone
+                <button onclick="myFunction()" style="border: none; background-color: transparent;">Copy Number</button>
+                <script>function myFunction() {
+                        var copyText = document.getElementById("number");
+                        copyText.select();
+                        copyText.setSelectionRange(0, 99999)
+                        document.execCommand("copy");
+                        alert("Copied the text: " + copyText.value);
+                    }</script>
             </div>
+
         </div>
     </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">@ViewBag.org</h5>
-
-            </div>
-            <div class="modal-body" style="white-space:pre-line;">
-                @ViewBag.event_trans
-            </div>
-
-            <div class="modal-footer">
-                Contact: @ViewBag.org_phone
-            </div>
-        </div>
-    </div>
-</div>
 
 

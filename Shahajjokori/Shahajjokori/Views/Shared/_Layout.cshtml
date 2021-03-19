@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left:15px;">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Who Are We</a>
+                        <a class="nav-link" href="/Home/WhoAreWe">Who Are We</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,6 +46,9 @@
                      
                      <li class="nav-item">
                             <a class="nav-link" asp-controller="Donor" asp-action="DonationHistory" asp-route-id="@ViewBag.d_id">Donation History</a>
+                     </li>
+                     <li class="nav-item">
+                            <a class="nav-link" asp-controller="Donor" asp-action="Donor_Notification" asp-route-id="@ViewBag.d_id">Notification</a>
                      </li>
                      <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("Index","Home")">Log out</a>
@@ -93,40 +96,45 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-        <footer class="border-top footer text-muted">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <!--<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="text-decoration: underline; text-decoration-color: darkgreen; font-size:large">Shahajjokori</a>-->
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Index" style="text-decoration: underline; text-decoration-color: darkgreen; font-size:x-large">Shahajjokori</a>
-                    </div>
-                    <div class="col-md-4">
-                        <!--<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="text-decoration: underline; text-decoration-color: darkgreen; font-size:large">Shahajjokori</a>-->
-                        <h5 style="margin-top:4%; margin-left:3%; color: darkgreen;">FUNDRAISE FOR</h5><br />
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Education">Education</a>
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Sponsoring">Sponsoring</a>
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Emergency Aid">Emergency Aid</a>
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Medical Care">Medical Care</a>
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Accidents">Accidents</a>
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Others">Others</a>
+        @if (ViewBag.d_id == null)
+        {
+            <footer class="border-top footer text-muted">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <!--<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="text-decoration: underline; text-decoration-color: darkgreen; font-size:large">Shahajjokori</a>-->
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index" style="text-decoration: underline; text-decoration-color: darkgreen; font-size:x-large">Shahajjokori</a>
+                        </div>
+                        <div class="col-md-4">
+                            <!--<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="text-decoration: underline; text-decoration-color: darkgreen; font-size:large">Shahajjokori</a>-->
+                            <h5 style="margin-top:4%; margin-left:3%; color: darkgreen;">FUNDRAISE FOR</h5><br />
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Education">Education</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Sponsoring">Sponsoring</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Emergency Aid">Emergency Aid</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Medical Care">Medical Care</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Accidents">Accidents</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Others">Others</a>
+
+                        </div>
+                        <div class="col-md-4">
+                            <!--<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="text-decoration: underline; text-decoration-color: darkgreen; font-size:large">Shahajjokori</a>-->
+                            <h5 style="margin-top:4%; margin-left:3%; color: darkgreen;">LEARN MORE</h5><br />
+                            <a class="nav-link text-dark" href="/Home/WhoAreWe#whoarewe">Who Are We</a>
+                            <a class="nav-link text-dark" href="/Home/WhoAreWe#howwework">How Shahajjokori Works</a>
+                            <a class="nav-link text-dark" href="/Home/WhoAreWe#helpus">Help Us</a>
+                        </div>
 
                     </div>
-                    <div class="col-md-4">
-                        <!--<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="text-decoration: underline; text-decoration-color: darkgreen; font-size:large">Shahajjokori</a>-->
-                        <h5 style="margin-top:4%; margin-left:3%; color: darkgreen;">LEARN MORE</h5><br />
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Education">Who Are We</a>
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Event_section" asp-route-id="Education">How Shahajjokori Works</a>
+                    <div class="row">
+                        <div class="col-md-12" style="text-align:center; margin-top:3%;">
+                            &copy; 2021 - Shahajjokori
+                        </div>
                     </div>
 
                 </div>
-                <div class="row">
-                    <div class="col-md-12" style="text-align:center; margin-top:3%;">
-                        &copy; 2021 - Shahajjokori
-                    </div>
-                </div>
+            </footer>
+        }
 
-            </div>
-        </footer>
     </div>
 
         

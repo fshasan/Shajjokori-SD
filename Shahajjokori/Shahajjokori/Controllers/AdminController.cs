@@ -23,9 +23,9 @@ namespace Shahajjokori.Controllers
     {
         private readonly ILogger<FundraiserController> _logger;
         private readonly IConfiguration configuration;
-        private readonly IHostingEnvironment hostingEnvironment;
-
-        public AdminController(ILogger<FundraiserController> logger, IConfiguration config, IHostingEnvironment hostingEnvironment)
+        //private readonly IWebHostingEnvironment hostingEnvironment;
+        private readonly IWebHostEnvironment hostingEnvironment;
+        public AdminController(ILogger<FundraiserController> logger, IConfiguration config, IWebHostEnvironment hostingEnvironment)
         {
             _logger = logger;
             configuration = config;
@@ -105,7 +105,7 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            string query = $"Update EVENT set e_state=1 where e_id={id}";
+            string query = $"Update EVENT set e_state=1, e_posted=1 where e_id={id}";
             SqlCommand com = new SqlCommand(query, connection);
 
             com.ExecuteNonQuery();
@@ -128,7 +128,7 @@ namespace Shahajjokori.Controllers
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
 
             //event pic is neglected for the time being
-            string query = $"Update EVENT set e_state=2 where e_id={id}";
+            string query = $"Update EVENT set e_state=2, e_halted=1 where e_id={id}";
             SqlCommand com = new SqlCommand(query, connection);
 
             com.ExecuteNonQuery();
@@ -136,7 +136,7 @@ namespace Shahajjokori.Controllers
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("Event_Request", "Admin");
         }
-
+        /*
         public IActionResult Event_state_handle_delete(int id)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -153,19 +153,19 @@ namespace Shahajjokori.Controllers
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("Halted_Events", "Admin");
         }
-        
+        */
         public IActionResult Event_state_handle_set_show_success(int id)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
 
-            string query1 = $"UPDATE EVENT SET e_state=10 WHERE e_state=11";
+            string query1 = $"UPDATE SUCCESS_EVENT SET e_state=10 WHERE e_state=11";
             SqlCommand com1 = new SqlCommand(query1, connection);
 
             com1.ExecuteNonQuery();
 
-            string query = $"UPDATE EVENT SET e_state=11 WHERE e_id = {id}";
+            string query = $"UPDATE SUCCESS_EVENT SET e_state=11 WHERE e_id = {id}";
             SqlCommand com = new SqlCommand(query, connection);
 
             com.ExecuteNonQuery();
@@ -183,7 +183,7 @@ namespace Shahajjokori.Controllers
             connection.Open();
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             //var id = fr.f_id;
-            string query = $"select * from EVENT where e_state = 1 order by e_id desc";
+            string query = $"select * from EVENT where e_state = 1 or e_posted=1 order by e_id desc";
 
             SqlCommand com = new SqlCommand(query, connection);
 
@@ -224,7 +224,7 @@ namespace Shahajjokori.Controllers
             connection.Open();
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             //var id = fr.f_id;
-            string query = $"select * from EVENT where e_state = 2 order by e_id desc";
+            string query = $"select * from EVENT where e_state = 2 or e_halted=1 order by e_id desc";
 
             SqlCommand com = new SqlCommand(query, connection);
 
@@ -265,7 +265,7 @@ namespace Shahajjokori.Controllers
             connection.Open();
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             //var id = fr.f_id;
-            string query = $"select * from EVENT where e_state = 10 or e_state=11 order by e_id desc";
+            string query = $"select * from SUCCESS_EVENT order by e_id desc";
 
             SqlCommand com = new SqlCommand(query, connection);
 
@@ -279,7 +279,6 @@ namespace Shahajjokori.Controllers
                     var e = new Event();
                     e.e_id = (int)rdr["e_id"];
                     e.e_title = (string)rdr["e_title"];
-                    e.e_category = (int)rdr["e_category"];
                     e.e_location = (string)rdr["e_location"];
                     e.e_opening_date = (string)rdr["e_opening_date"];
                     e.e_closing_date = (string)rdr["e_closing_date"];
@@ -289,7 +288,7 @@ namespace Shahajjokori.Controllers
                     e.e_state = (int)rdr["e_state"];
                     e.e_pic = (string)rdr["e_pic"];
                     e.e_details = (string)rdr["e_details"];
-                    e.e_trans = (string)rdr["e_trans"];
+                    //e.e_trans = (string)rdr["e_trans"];
 
                     model.Add(e);
                 }
@@ -373,6 +372,103 @@ namespace Shahajjokori.Controllers
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("admin_index", "Admin", new { id = a_id });
 
+        }
+
+        public IActionResult Local_Events_Shown()
+        {
+            string connection_string = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection = new SqlConnection(connection_string);
+            connection.Open();
+
+            string query1 = $"select * from LOCAL_EVENT where le_state=1 order by le_id desc";
+            SqlCommand com1 = new SqlCommand(query1, connection);
+
+            var model = new List<Local_Event>();
+            using (SqlConnection conn = new SqlConnection(connection_string))
+            {
+                conn.Open();
+                SqlDataReader rdr = com1.ExecuteReader();
+                while (rdr.Read())
+                {
+                    var e = new Local_Event();
+                    e.le_id = (int)rdr["le_id"];
+                    e.le_title = (string)rdr["le_title"];
+                    e.le_org_by = (string)rdr["le_org_by"];
+                    e.le_location = (string)rdr["le_location"];
+                    e.le_opening_date = (string)rdr["le_opening_date"];
+                    e.le_closing_date = (string)rdr["le_closing_date"];
+                    e.le_state = (int)rdr["le_state"];
+                    e.le_pic = (string)rdr["le_pic"];
+                    e.le_details = (string)rdr["le_details"];
+
+                    model.Add(e);
+                }
+
+            }
+
+            return View(model);
+        }
+        public IActionResult Local_Events_Halted()
+        {
+            string connection_string = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection = new SqlConnection(connection_string);
+            connection.Open();
+
+            string query1 = $"select * from LOCAL_EVENT where le_state=2 order by le_id desc";
+            SqlCommand com1 = new SqlCommand(query1, connection);
+
+            var model = new List<Local_Event>();
+            using (SqlConnection conn = new SqlConnection(connection_string))
+            {
+                conn.Open();
+                SqlDataReader rdr = com1.ExecuteReader();
+                while (rdr.Read())
+                {
+                    var e = new Local_Event();
+                    e.le_id = (int)rdr["le_id"];
+                    e.le_title = (string)rdr["le_title"];
+                    e.le_org_by = (string)rdr["le_org_by"];
+                    e.le_location = (string)rdr["le_location"];
+                    e.le_opening_date = (string)rdr["le_opening_date"];
+                    e.le_closing_date = (string)rdr["le_closing_date"];
+                    e.le_state = (int)rdr["le_state"];
+                    e.le_pic = (string)rdr["le_pic"];
+                    e.le_details = (string)rdr["le_details"];
+
+                    model.Add(e);
+                }
+
+            }
+
+            return View(model);
+        }
+
+        public IActionResult Local_Event_state_handle_approve(int id)
+        {
+            string connection_string = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection = new SqlConnection(connection_string);
+            connection.Open();
+            string query = $"Update LOCAL_EVENT set le_state=1 where le_id={id}";
+            SqlCommand com = new SqlCommand(query, connection);
+
+            com.ExecuteNonQuery();
+
+            connection.Close();
+            return RedirectToAction("Local_Events_Halted", "Admin");
+        }
+
+        public IActionResult Local_Event_state_handle_halt(int id)
+        {
+            string connection_string = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection = new SqlConnection(connection_string);
+            connection.Open();
+            string query = $"Update LOCAL_EVENT set le_state=2 where le_id={id}";
+            SqlCommand com = new SqlCommand(query, connection);
+
+            com.ExecuteNonQuery();
+            connection.Close();
+            //return RedirectToAction("Create_event_entry","Fundraiser");
+            return RedirectToAction("Local_Events_Shown", "Admin");
         }
     }
 }

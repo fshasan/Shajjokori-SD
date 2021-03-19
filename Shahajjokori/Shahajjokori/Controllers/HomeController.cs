@@ -61,7 +61,7 @@ namespace Shahajjokori.Controllers
             //connection.Open();
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             //var id = fr.f_id;
-            string query1 = $"select TOP 3 * from EVENT where e_state=1";
+            string query1 = $"select TOP 3 * from EVENT where e_state=1 or e_state=3 order by e_id desc";
 
             SqlCommand com1 = new SqlCommand(query1, connection);
 
@@ -97,7 +97,7 @@ namespace Shahajjokori.Controllers
             string connection_string1 = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection1 = new SqlConnection(connection_string1);
             connection1.Open();
-            string query2 = $"select * from EVENT where e_state=11";
+            string query2 = $"select * from SUCCESS_EVENT where e_state=11";
 
             SqlCommand com2 = new SqlCommand(query2, connection1);
 
@@ -112,7 +112,7 @@ namespace Shahajjokori.Controllers
                     e.e_id = (int)rdr["e_id"];
                     e.e_title = (string)rdr["e_title"];
                     ViewBag.e_tilte = e.e_title;
-                    e.e_category = (int)rdr["e_category"];
+                   
                     e.e_location = (string)rdr["e_location"];
                     ViewBag.e_tilte = e.e_location;
                     e.e_opening_date = (string)rdr["e_opening_date"];
@@ -225,7 +225,7 @@ namespace Shahajjokori.Controllers
             {
                 value = 5;
             }
-            string query1 = $"select * from EVENT where e_category = {value} and e_state=1";
+            string query1 = $"select * from EVENT where e_category = {value} and e_state=1 or e_state=3";
                 SqlCommand com1 = new SqlCommand(query1, connection);
 
                 var model1 = new List<Event>();
@@ -263,7 +263,7 @@ namespace Shahajjokori.Controllers
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
             
-            string query1 = $"select * from EVENT where e_state=1";
+            string query1 = $"select * from EVENT where e_state=1 or e_state=3";
             SqlCommand com1 = new SqlCommand(query1, connection);
 
             var model1 = new List<Event>();
@@ -720,7 +720,7 @@ namespace Shahajjokori.Controllers
             //var id = fr.f_id;
 
             //e_rev_state=3 means funds fully collected
-            string query3 = $"update EVENT set e_state=10, e_rev_state = 3 where (e_exp_amount <= e_raised_amount) and e_id = {donation.d_id}";
+           /* string query3 = $"update EVENT set e_state=10, e_rev_state = 3 where (e_exp_amount <= e_raised_amount) and e_id = {donation.d_id}";
 
             SqlCommand com3 = new SqlCommand(query3, connection);
             com3.ExecuteNonQuery();
@@ -732,7 +732,7 @@ namespace Shahajjokori.Controllers
             com4.ExecuteNonQuery();
 
             
-
+            */
 
             return RedirectToAction("Index","Home");
         }
@@ -751,7 +751,7 @@ namespace Shahajjokori.Controllers
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
 
-            string query = $"select * from EVENT where e_state=1 and (e_title LIKE '%{search}%' or e_location LIKE '%{search}%')";
+            string query = $"select * from EVENT where (e_state=1 or e_state=3) and (e_title LIKE '%{search}%' or e_location LIKE '%{search}%')";
             SqlCommand com = new SqlCommand(query, connection);
 
             var model = new List<Event>();
@@ -790,7 +790,7 @@ namespace Shahajjokori.Controllers
             string connection_string1 = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection1 = new SqlConnection(connection_string1);
             connection1.Open();
-            string query1 = $"select * from EVENT where e_state=10 or e_state=11";
+            string query1 = $"select * from SUCCESS_EVENT";
 
             SqlCommand com1 = new SqlCommand(query1, connection1);
 
@@ -805,16 +805,15 @@ namespace Shahajjokori.Controllers
                     e.e_id = (int)rdr["e_id"];
                     e.e_title = (string)rdr["e_title"];
                     ViewBag.e_tilte = e.e_title;
-                    e.e_category = (int)rdr["e_category"];
-                    e.e_location = (string)rdr["e_location"];
+                    //e.e_location = (string)rdr["e_location"];
                     ViewBag.e_tilte = e.e_location;
                     e.e_opening_date = (string)rdr["e_opening_date"];
                     e.e_closing_date = (string)rdr["e_closing_date"];
-                    e.e_exp_amount = (int)rdr["e_exp_amount"];
+                    //e.e_exp_amount = (int)rdr["e_exp_amount"];
                     e.e_raised_amount = (int)rdr["e_raised_amount"];
-                    ViewBag.e_raised_amount = e.e_raised_amount;
+                    //ViewBag.e_raised_amount = e.e_raised_amount;
                     e.e_donor_count = (int)rdr["e_donor_count"];
-                    ViewBag.e_donor_count = e.e_donor_count;
+                    //ViewBag.e_donor_count = e.e_donor_count;
                     e.e_state = (int)rdr["e_state"];
                     e.e_pic = (string)rdr["e_pic"];
                     ViewBag.e_pic = e.e_pic;
@@ -833,6 +832,32 @@ namespace Shahajjokori.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult WhoAreWe()
+        {
+            string connection_string = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection = new SqlConnection(connection_string);
+            connection.Open();
+
+            string query = $"select * from INFO";
+            SqlCommand com = new SqlCommand(query, connection);
+
+            using (SqlConnection conn = new SqlConnection(connection_string))
+            {
+                conn.Open();
+                SqlDataReader rdr = com.ExecuteReader();
+                while (rdr.Read())
+                {
+                    ViewBag.whoarewe = (string)rdr["WhoAreWe"];
+                    ViewBag.howWeWork = (string)rdr["HowWeWork"];
+                    ViewBag.helpus = (string)rdr["HelpUs"];
+                    ViewBag.contact = (string)rdr["Contact"];
+                    
+                }
+
+            }
+            return View();
         }
     }
 }

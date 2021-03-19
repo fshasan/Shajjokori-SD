@@ -24,9 +24,9 @@ namespace Shahajjokori.Controllers
     {
         private readonly ILogger<FundraiserController> _logger;
         private readonly IConfiguration configuration;
-        private readonly IHostingEnvironment hostingEnvironment;
+        private readonly IWebHostEnvironment hostingEnvironment;
 
-        public FundraiserController(ILogger<FundraiserController> logger, IConfiguration config, IHostingEnvironment hostingEnvironment)
+        public FundraiserController(ILogger<FundraiserController> logger, IConfiguration config, IWebHostEnvironment hostingEnvironment)
         {
             _logger = logger;
             configuration = config;
@@ -164,7 +164,7 @@ namespace Shahajjokori.Controllers
             //ViewData["e_key"] = uniqueFileName.ToString();
             connection.Close();
             //return RedirectToAction("Create_Event", "Fundraiser");
-            return View(e);
+            return RedirectToAction("fundraiser_index", "Fundraiser", new { id = fr.f_id });
 
         }
 
@@ -192,7 +192,7 @@ namespace Shahajjokori.Controllers
             connection.Open();
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             var id1 = id;
-            string query = $"select * from EVENT where f_id = {id1}";
+            string query = $"select * from EVENT where f_id = {id1} order by e_id desc";
             
             SqlCommand com = new SqlCommand(query, connection);
 
@@ -308,7 +308,7 @@ namespace Shahajjokori.Controllers
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
             //state 0 means notification that has not been dealt with
-            string query = $"select * from DONATED where state=0 and e_id in (select e_id from EVENT where f_id ={id}) order by date, time desc";
+            string query = $"select * from DONATED where state=0 and e_id in (select e_id from EVENT where f_id ={id}) order by date desc";
             SqlCommand com = new SqlCommand(query, connection);
             
             var model = new List<Donation>();
@@ -345,7 +345,7 @@ namespace Shahajjokori.Controllers
             connection.Open();
 
             //state 1 means approved, 2 means halted
-            string query = $"select * from EVENT where (e_state=1 or e_state=2 or e_state=10) and (e_rev_state = 0 or e_rev_state=2 or e_rev_state=3) and e_id in (select e_id from EVENT where f_id ={id})";
+            string query = $"select * from EVENT where f_id = {id} and (e_halted=1 or e_posted=1 or e_success=1 or e_expired=1 or e_half_fund = 1 or e_full_fund=1)";
             SqlCommand com = new SqlCommand(query, connection);
 
             var model = new List<Event>();
@@ -365,11 +365,16 @@ namespace Shahajjokori.Controllers
                     e.e_exp_amount = (int)rdr["e_exp_amount"];
                     e.e_raised_amount = (int)rdr["e_raised_amount"];
                     e.e_donor_count = (int)rdr["e_donor_count"];
-                    e.e_state = (int)rdr["e_state"];
+                    //e.e_state = (int)rdr["e_state"];
                     e.e_pic = (string)rdr["e_pic"];
                     e.e_details = (string)rdr["e_details"];
                     e.e_trans = (string)rdr["e_trans"];
-                    e.e_rev_state = (int)rdr["e_rev_state"];
+                    //e.e_rev_state = (int)rdr["e_rev_state"];
+                    ViewBag.e_posted = (int)rdr["e_posted"];
+                    ViewBag.e_halted = (int)rdr["e_halted"];
+                    ViewBag.e_expired = (int)rdr["e_expired"];
+                    ViewBag.e_half_fund = (int)rdr["e_half_fund"];
+                    ViewBag.e_full_fund = (int)rdr["e_full_fund"];
                     model.Add(e);
                 }
 
@@ -382,29 +387,32 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
+            //increasing amount
             string query = $"Update EVENT set e_raised_amount = e_raised_amount + {amount}, e_donor_count=e_donor_count+1 where e_id = {id}";
             SqlCommand com = new SqlCommand(query, connection);
-
             com.ExecuteNonQuery();
            
-            string query2 = $"Update DONATED set state = 1 where e_prim = {prim}";
+            //setting the state of received so that donor may be notified
+            string query2 = $"Update DONATED set state = 1,d_received = 1 where e_prim = {prim}";
             SqlCommand com2 = new SqlCommand(query2, connection);
-
             com2.ExecuteNonQuery();
-
-            string query4 = $"Update EVENT set e_rev_state = 2 where e_raised_amount>=(e_exp_amount/2)";
+            
+            //e_rev_state=2 means funds half collected
+            string query4 = $"Update EVENT set e_half_fund=1 where e_raised_amount>=(e_exp_amount/2) and e_id = {id} and e_half_fund != 2";
 
             SqlCommand com4 = new SqlCommand(query4, connection);
             com4.ExecuteNonQuery();
 
             //e_rev_state=3 means funds fully collected
-            string query3 = $"update EVENT set e_state=10, e_rev_state = 3 where e_exp_amount <= e_raised_amount";
+            string query3 = $"update EVENT set e_state=10, e_full_fund=1 where e_exp_amount <= e_raised_amount and e_id = {id} and e_full_fund != 2";
 
             SqlCommand com3 = new SqlCommand(query3, connection);
             com3.ExecuteNonQuery();
 
-            //e_rev_state=2 means funds half collected
-            
+            string query5 = $"INSERT INTO SUCCESS_EVENT(e_id, e_title, e_details, e_exp_amount, e_raised_amount, e_donor_count, f_id, e_opening_date, e_closing_date, e_pic, e_state) SELECT e_id, e_title, e_details, e_exp_amount, e_raised_amount, e_donor_count, f_id, e_opening_date, e_closing_date, e_pic, e_state FROM EVENT WHERE e_state=10 and f_id={fid} and e_id not in (select e_id from SUCCESS_EVENT)";
+
+            SqlCommand com5 = new SqlCommand(query5, connection);
+            com5.ExecuteNonQuery();
 
             connection.Close();
             //return RedirectToAction("Create_event_entry","Fundraiser");
@@ -426,16 +434,42 @@ namespace Shahajjokori.Controllers
             return RedirectToAction("Notification", "Fundraiser", new { id = fid });
         }
 
-        public IActionResult Cancel_Admin_Notification(int id, int fid)
+        public IActionResult Cancel_Admin_Notification(int id, int fid, int aid)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
             //e_rev_state=1 means notification has been showed and fundraiser cancelled it
-            string query2 = $"Update EVENT set e_rev_state = 1 where e_id = {id}";
-            SqlCommand com2 = new SqlCommand(query2, connection);
-
-            com2.ExecuteNonQuery();
+            if (aid == 1)
+            {
+                string query1 = $"Update EVENT set e_posted = 2 where e_id = {id}";
+                SqlCommand com1 = new SqlCommand(query1, connection);
+                com1.ExecuteNonQuery();
+            }
+            if (aid == 2)
+            {
+                string query1 = $"Update EVENT set e_halted = 2 where e_id = {id}";
+                SqlCommand com1 = new SqlCommand(query1, connection);
+                com1.ExecuteNonQuery();
+            }
+            if (aid == 3)
+            {
+                string query1 = $"Update EVENT set e_half_fund = 2 where e_id = {id}";
+                SqlCommand com1 = new SqlCommand(query1, connection);
+                com1.ExecuteNonQuery();
+            }
+            if (aid == 4)
+            {
+                string query1 = $"Update EVENT set e_full_fund = 2 where e_id = {id}";
+                SqlCommand com1 = new SqlCommand(query1, connection);
+                com1.ExecuteNonQuery();
+            }
+            if (aid == 5)
+            {
+                string query1 = $"Update EVENT set e_expired = 2 where e_id = {id}";
+                SqlCommand com1 = new SqlCommand(query1, connection);
+                com1.ExecuteNonQuery();
+            }
             connection.Close();
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("Notification_from_admin", "Fundraiser", new { id = fid });

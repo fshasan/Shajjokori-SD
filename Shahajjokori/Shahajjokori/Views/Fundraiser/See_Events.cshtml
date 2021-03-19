@@ -217,9 +217,9 @@
 
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted" style="position: absolute; bottom: 0; width: 100%; white-space: nowrap; line-height:100px;">
         <div class="container">
-            &copy; 2021 - Shahajjokori - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - Shahajjokori - <a href="@Url.Action("fundraiser_index","Fundraiser",  new { id = f_id})">User Info</a> - <a href="@Url.Action("Create_Event","Fundraiser",  new { id = f_id})">Create Event</a> - <a href="@Url.Action("See_Events","Fundraiser", new { id = f_id})">See Events</a> - <a href="@Url.Action("Notification","Fundraiser", new { id = f_id})">Updates of Donations</a> - <a href="@Url.Action("Notification_from_admin","Fundraiser", new { id = f_id})">Notification from Admin</a> - <a href="@Url.Action("Create_Local_Event","Fundraiser", new { id = f_id})">Add Local Event</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
