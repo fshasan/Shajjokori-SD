@@ -1,7 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{ }
+@{  }
 
 @model Shahajjokori.Models.Event
 <!--<h1>@ViewBag.event_id</h1>-->
@@ -14,40 +14,44 @@
         </div>
         <div class="row" style="margin-top: 3%;">
             <div class="col-md-6">
-                <p style="font-size:larger">Created by: <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" style="font-size:19px; text-decoration: none; margin-bottom:0.5%; color:black;">@ViewBag.org</button></p>
+                <p style="font-size:larger">Created by: <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" onclick="Copy2();" style="font-size:19px; text-decoration: none; margin-bottom:0.5%; color:black;">@ViewBag.org</button></p>
+                <script type="text/javascript">
+                    function Copy2() {
+                        number.innerHTML='0'+@ViewBag.org_phone;
+
+                    }
+                </script>
                 <p style="font-size:larger; margin-top:-1%">Location: @Html.DisplayFor(model => model.e_location)</p>
-                
+
                 @if (ViewBag.event_cat == 0)
                 {
-    <p style="font-size:larger">Category: Education</p>}
+            <p style="font-size:larger">Category: Education</p>}
                 @if (ViewBag.event_cat == 1)
                 {
-    <p style="font-size:larger">Category: Education</p>}
+            <p style="font-size:larger">Category: Education</p>}
                 @if (ViewBag.event_cat == 2)
                 {
-    <p style="font-size:larger">Category: Emergency Aid</p>}
+            <p style="font-size:larger">Category: Emergency Aid</p>}
                 @if (ViewBag.event_cat == 3)
                 {
-    <p style="font-size:larger">Category: Education</p>}
+            <p style="font-size:larger">Category: Education</p>}
                 @if (ViewBag.event_cat == 4)
                 {
-    <p style="font-size:larger">Category: Education</p>}
+            <p style="font-size:larger">Category: Education</p>}
                 @if (ViewBag.event_cat == 5)
                 {
-    <p style="font-size:larger">Category: Education</p>}
-                
+            <p style="font-size:larger">Category: Education</p>}
+
                 <p style="font-size:larger">Opening: @Html.DisplayFor(model => model.e_opening_date)</p>
-                
+
                 <p style="font-size:larger">Closing: @Html.DisplayFor(model => model.e_closing_date)</p>
-                
-                <p style="font-size:larger">Expected: @ViewBag.exp_amount Tk.</p>
-                
-                <p style="font-size:larger">Raised: @ViewBag.raised_amount Tk.</p>
+
+                <p style="font-size:large;">Raised <span style="font-size:xx-large;">@ViewBag.raised_amount</span> Tk. out of @ViewBag.exp_amount</p>
                 <div class="progress" style="margin-top: 5%">
                     @{ float raised = (float)ViewBag.raised_amount;
-                                    float exp = (float)ViewBag.exp_amount;
-                                    float percentage = (raised / exp) * 100;
-                                    string perc = percentage + "%"; }
+                        float exp = (float)ViewBag.exp_amount;
+                        float percentage = (raised / exp) * 100;
+                        string perc = percentage + "%"; }
                     <div class="progress-bar bg-info" role="progressbar" aria-valuenow="@ViewBag.raised_amount" aria-valuemin="0" aria-valuemax="@ViewBag.exp_amount" style="width:@perc">
                         @ViewBag.raised_amount
                     </div>
@@ -60,10 +64,17 @@
                                 string path = $"~/images/{pic_name}"; }
 
                 <img src="@path" alt="" style="height: 20vw; max-width: 100%;" asp-append-version="true">
-                
+
                 <p style="font-size:larger; margin-top: 3%;">This event has received @Html.DisplayFor(model => model.e_donor_count) donations.</p>
                 <br />
-                <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal2">I want to Donate</button>
+                <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal2" style="margin-right:5%;">I want to Donate</button><button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal3" onclick="Copy();">Share</button>
+                <script type="text/javascript">
+                    function Copy() {
+                        urlCopied.innerHTML = window.location.href;
+                        urlCopied.innerHTML = urlCopied.innerHTML.replace("Donor", "Home");
+                        urlCopied.innerHTML = urlCopied.innerHTML.split('?')[0];
+                    }
+                </script>
             </div>
         </div>
         <div class="row" style="margin-top: 5%;">
@@ -77,19 +88,17 @@
 </div>
 
 
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">@ViewBag.org</h5>
-
             </div>
             <div class="modal-body">
                 <div>
                     @ViewBag.org_about
-                    <input type="text" value="@ViewBag.org_phone" id="number" hidden>
+                    <textarea id="number" style="width:0%; height:0px;"></textarea>
                 </div>
                 <br />
                 <div>
@@ -103,12 +112,13 @@
                     function myFunction() {
                         var copyText = document.getElementById("number");
                         copyText.select();
-                        copyText.setSelectionRange(0, 99999)
+                        //copyText.setSelectionRange(0, 99999)
                         document.execCommand("copy");
-                        alert("Copied the text: " + copyText.value);
+                        alert("Copied the number: " + copyText.value);
                     }
                 </script>
             </div>
+
         </div>
     </div>
 </div>
@@ -118,8 +128,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">@ViewBag.event_title</h5>
-
+                <h5 class="modal-title" id="exampleModalLabel">@ViewBag.e_title</h5>
             </div>
             <div class="modal-body" style="white-space:pre-line;">
                 <p>Available accounts for transaction:</p>
@@ -128,7 +137,40 @@
 
             <div class="modal-footer" style="text-align:center;">
 
-                <a class="btn btn-primary" asp-controller="Donor" asp-action="Donated" asp-route-id="@ViewBag.event_id" style="margin-top:5%">I have donated</a>
+                <a class="btn btn-primary" asp-controller="Home" asp-action="Donated" asp-route-id="@ViewBag.event_id" style="margin-top:5%">I have donated</a>
+
+                <!--<input class="modal-footer" id="myInput" value="@ViewBag.org_phone" style="border: none; background-color: transparent;" readonly>-->
+                <!--<button onclick="myFunction()" style="border: none; background-color: transparent;">Copy Number</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@ViewBag.e_title</h5>
+            </div>
+            <div class="modal-body">
+                <textarea id="urlCopied" style="width:100%;"></textarea>
+            </div>
+
+            <div class="modal-footer" style="text-align:center;">
+
+
+                <button onclick="myFunction2()" style="border: none; background-color: transparent;">Copy link</button>
+                <script>
+                    function myFunction2() {
+                        var copyText = document.getElementById("urlCopied");
+                        copyText.select();
+                        copyText.setSelectionRange(0, 99999)
+                        document.execCommand("copy");
+                        alert("Copied the link: " + copyText.value);
+                    }
+                </script>
+
 
                 <!--<input class="modal-footer" id="myInput" value="@ViewBag.org_phone" style="border: none; background-color: transparent;" readonly>-->
                 <!--<button onclick="myFunction()" style="border: none; background-color: transparent;">Copy Number</button>-->

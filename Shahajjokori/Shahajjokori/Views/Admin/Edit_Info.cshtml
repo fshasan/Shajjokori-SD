@@ -58,7 +58,7 @@
                 <nav class="nav" style="margin-left: 35%;">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="@Url.Action("admin_index","Admin")">Admin Info</a>
+                            <a class="nav-link" href="@Url.Action("admin_index","Admin")">Admin Info</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("Event_Request","Admin")">Event Request</a>
@@ -80,6 +80,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("Local_Events_Halted","Admin")">Local Events Halted</a>
                         </li>
+                        <li class="nav-item  active">
+                            <a class="nav-link" href="@Url.Action("Edit_Info","Admin")">Edit Information</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("Index","Home")">Log out</a>
                             <script type="text/javascript">function preventBack() { window.history.forward(); }
@@ -91,7 +94,7 @@
 
             </main>
             <main role="main" class="col-md-7" style="margin-left: 5%; margin-right: 5%;">
-                <h3>Admin Details</h3>
+                <h3>Information</h3>
                 <table class="table">
                     <tbody>
 

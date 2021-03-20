@@ -14,14 +14,18 @@
         </div>
         <div class="row" style="margin-top: 3%;">
             <div class="col-md-6">
-                <h6>Created by: <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" style="text-decoration: none; margin-bottom:1%;">@ViewBag.org</button></h6>
+                <p style="font-size:large">Created by: <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" onclick="Copy2();" style="font-size:19px; text-decoration: none; margin-bottom:0.5%; color:black;">@ViewBag.org</button></p>
+                <script type="text/javascript">
+                    function Copy2() {
+                        number.innerHTML='0'+@ViewBag.org_phone;
 
-                <h6>Location: @Html.DisplayFor(model => model.le_location)</h6>
+                    }
+                </script>
+                <p style="font-size:large">Location: @Html.DisplayFor(model => model.le_location)</p>
 
-                <br>
-                <h6>Opening: @Html.DisplayFor(model => model.le_opening_date)</h6>
-                <br>
-                <h6>Closing: @Html.DisplayFor(model => model.le_closing_date)</h6>
+                <p style="font-size:large">Opening: @Html.DisplayFor(model => model.le_opening_date)</p>
+
+                <p style="font-size:large">Closing: @Html.DisplayFor(model => model.le_closing_date)</p>
                 <br>
 
 
@@ -32,13 +36,19 @@
 
                 <img src="@path" alt="" style="height: 20vw; max-width: 100%;" asp-append-version="true">
                 <br>
+                <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal3" onclick="Copy();" style="margin-top:5%;">Share</button>
+                <script type="text/javascript">
+                    function Copy() {
+                        urlCopied.innerHTML = window.location.href;
 
+                    }
+                </script>
             </div>
         </div>
         <div class="row" style="margin-top: 5%;">
             <div class="col-md-12">
                 <h4>About the Event: </h4>
-                <p>@Html.DisplayFor(model => model.le_details)</p>
+                <p style="font-size:large">@Html.DisplayFor(model => model.le_details)</p>
             </div>
         </div>
 
@@ -56,7 +66,7 @@
             <div class="modal-body">
                 <div>
                     @ViewBag.org_about
-                    <input type="text" value="@ViewBag.org_phone" id="number" hidden>
+                    <textarea id="number" style="width:0%; height:0px;"></textarea>
                 </div>
                 <br />
                 <div>
@@ -66,7 +76,8 @@
 
             <div class="modal-footer">
                 <button onclick="myFunction()" style="border: none; background-color: transparent;">Copy Number</button>
-                <script>function myFunction() {
+                <script>
+    function myFunction() {
                         var copyText = document.getElementById("number");
                         copyText.select();
                         copyText.setSelectionRange(0, 99999)
@@ -79,5 +90,36 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@ViewBag.e_title</h5>
+            </div>
+            <div class="modal-body">
+                <textarea id="urlCopied" style="width:100%;"></textarea>
+            </div>
 
+            <div class="modal-footer" style="text-align:center;">
+
+
+                <button onclick="myFunction2()" style="border: none; background-color: transparent;">Copy link</button>
+                <script>
+                    function myFunction2() {
+                        var copyText = document.getElementById("urlCopied");
+                        copyText.select();
+                        copyText.setSelectionRange(0, 99999)
+                        document.execCommand("copy");
+                        alert("Copied the link: " + copyText.value);
+                    }
+                </script>
+
+
+                <!--<input class="modal-footer" id="myInput" value="@ViewBag.org_phone" style="border: none; background-color: transparent;" readonly>-->
+                <!--<button onclick="myFunction()" style="border: none; background-color: transparent;">Copy Number</button>-->
+            </div>
+        </div>
+    </div>
+</div>
 

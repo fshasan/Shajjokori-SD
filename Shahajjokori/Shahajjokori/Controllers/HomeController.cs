@@ -398,6 +398,7 @@ namespace Shahajjokori.Controllers
             {
                 Local_Event e = new Local_Event();
                 e.le_title = (string)dr["le_title"];
+                ViewBag.e_title = (string)dr["le_title"];
                 e.le_location = (string)dr["le_location"];
                 e.le_opening_date = (string)dr["le_opening_date"];
                 e.le_closing_date = (string)dr["le_closing_date"];
@@ -501,33 +502,6 @@ namespace Shahajjokori.Controllers
             //ViewData["error_message"] = "Email or password did not match! Try again.";
 
             return RedirectToAction("SignIn", "Home", new { message = "Email or password did not match! Try again." });
-
-            /*string query1 = "Select * from FUNDRAISERS where f_email = @email1 and f_password = @password1 and f_category = 2";
-            SqlCommand com1 = new SqlCommand(query1, connection);
-
-            com.Parameters.AddWithValue("@email1", fundraiser.f_email);
-            com.Parameters.AddWithValue("@password1", strBuilder.ToString());
-
-            SqlDataReader dr1 = com.ExecuteReader();
-            if (dr1.Read())
-            {
-                var f_id = (int)dr["f_id"];
-                var fr = new Fundraiser() { f_id = (int)dr["f_id"], f_name = (string)dr["f_name"], f_email = (string)dr["f_email"], f_password = (string)dr["f_password"]};
-                HttpContext.Session.SetString("FundraiserSession", JsonConvert.SerializeObject(fr));
-                connection.Close();
-                //return View();
-                dr1.Close();
-                return RedirectToAction("donor_index", "Donor", new { id = f_id });
-            }
-
-            else
-            {
-                connection.Close();
-                ViewBag.error_message = "Email or password did not match! Try again.";
-                //ViewData["error_message"] = "Email or password did not match! Try again.";
-         
-                return RedirectToAction("SignIn", "Home", new { message = "Email or password did not match! Try again."});
-            }*/
             
         }
         public IActionResult SignUp_Fundraiser(string message)
@@ -851,6 +825,28 @@ namespace Shahajjokori.Controllers
                     ViewBag.helpus = (string)rdr["HelpUs"];
                     ViewBag.contact = (string)rdr["Contact"];
                     
+                }
+
+            }
+            return View();
+        }
+        public IActionResult Terms()
+        {
+            string connection_string = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection = new SqlConnection(connection_string);
+            connection.Open();
+
+            string query = $"select * from INFO";
+            SqlCommand com = new SqlCommand(query, connection);
+
+            using (SqlConnection conn = new SqlConnection(connection_string))
+            {
+                conn.Open();
+                SqlDataReader rdr = com.ExecuteReader();
+                while (rdr.Read())
+                {
+                    ViewBag.terms = (string)rdr["Terms"];
+                    ViewBag.trems_don = (string)rdr["Terms_donor"];
                 }
 
             }

@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ShahajjokoriEventsContext",
+      "suggestion": "true",
+      "ignored": "true"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ShahajjokoriContext",
+      "suggestion": "true",
+      "ignored": "true"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "ShahajjokoriDB",
+      "suggestion": "true",
+      "ignored": "true"
+    },
+    "mssql4": {
+      "type": "mssql",
+      "connectionId": "EventContext",
+      "suggestion": "true",
+      "ignored": "true"
+    },
+    "mssql5": {
+      "type": "mssql",
+      "connectionId": "EventsContext",
+      "suggestion": "true",
+      "ignored": "true"
+    }
+  }
+}

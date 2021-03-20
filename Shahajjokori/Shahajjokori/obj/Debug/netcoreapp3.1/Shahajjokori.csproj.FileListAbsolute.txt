@@ -147,7 +147,6 @@ E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\bin\Debug\netco
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignUp_Fundraiser.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignUp_Fundraiser_entry.cshtml.g.cs
-E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignIn_Panel.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
@@ -1087,3 +1086,4 @@ E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netco
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Local_Events_Halted.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Local_Events_Shown.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Edit_Info.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Terms.cshtml.g.cs
