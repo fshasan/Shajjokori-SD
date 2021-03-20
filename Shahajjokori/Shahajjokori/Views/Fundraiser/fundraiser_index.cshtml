@@ -83,13 +83,18 @@
                             <a class="nav-link" href="@Url.Action("Create_Local_Event","Fundraiser", new { id = id})">Add Local Event</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Index","Home")">Log out</a>
-                            <script type="text/javascript">
-                                function preventBack() { window.history.forward(); }
-                                setTimeout("preventBack()", 0);
-                                window.onunload = function () { null };
-                            </script>
+                            <a class="nav-link" href="@Url.Action("Log_out","Fundraiser")">Log out</a>
+                            
                         </li>
+                        <!--
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Index","Home")">Log out</a>
+        <script type="text/javascript">
+            function preventBack() { window.history.forward(); }
+            setTimeout("preventBack()", 0);
+            window.onunload = function () { null };
+        </script>
+    </li>-->
                     </ul>
                 </nav>
 

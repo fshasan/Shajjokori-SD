@@ -14,24 +14,25 @@
     <div class="row">
         @foreach (var e in Model)
         {
-            <div class="col-md-4">
+        <div class="col-md-4">
+            <a asp-controller="Donor" asp-action="Event_Local_Details" asp-route-id="@e.le_id" style="text-decoration:none;color:black;">
                 <div class="card" style="margin-top: 5%;">
                     @{ string path = "~/images/" + e.le_pic; }
-                    <img class="card-img-top" src="@path" alt="logo" style="        display: block;
-        height: 15vw;
-        max-width: 100%;
-        object-fit: cover;
-" asp-append-version="true">
+                    <img class="card-img-top" src="@path" alt="logo" style="display: block;height: 15vw;max-width: 100%;object-fit: cover;" asp-append-version="true">
 
                     <div class="card-body">
                         <h4 class="card-title">@e.le_title</h4>
                         <p>@e.le_location</p>
-                        <a asp-controller="Donor" asp-action="Event_Local_Details" asp-route-id="@e.le_id" style="text-decoration:none;">View Details</a>
-
                     </div>
-                </div>
 
+                </div>
+            </a>
             </div>}
     </div>
 </div>
+<footer style=" bottom: 0; width: 100%; white-space: nowrap; line-height:100px;">
+    <div class="container">
+        &copy; 2021 - Shahajjokori - <a style="color:black" asp-controller="Donor" asp-action="donor_index" asp-route-id="@ViewBag.d_id">@ViewBag.d_name</a> - <a style="color:black" asp-controller="Donor" asp-action="DonationHistory" asp-route-id="@ViewBag.d_id">Donation History</a> - <a style="color:black" asp-controller="Donor" asp-action="Donor_Notification" asp-route-id="@ViewBag.d_id">Notification</a>
+    </div>
+</footer>
 

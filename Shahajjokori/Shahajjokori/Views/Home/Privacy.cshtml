@@ -1,55 +1,335 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    Layout = "";
+    ViewData["Title"] = "Create_Event";
+    var f_id = ViewContext.RouteData.Values["id"];
+
 }
-<h1>@ViewData["Title"]</h1>
+@model Shahajjokori.Models.PicEvent
 
-    <button type="button" onclick="getLocation()" style="margin-top:5%">Get Current Location</button>
-    <p id="demo"></p>
 
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script>
-        var x = document.getElementById("demo");
-        
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="assets/css/login.css">
+    <style>
+        a {
+            color: #2F4F4F;
+        }
+
+            a:hover {
+                //border: 1px solid #4FA9DC;
+                color: #2F4F4F;
+                font-weight: bold;
             }
+
+            a:active {
+            }
+
+        .active {
+            //background: #4FA9DC;
+            //color: white;
+            font-weight: bold;
+            border-bottom: 1px solid #2F4F4F;
         }
 
-        function showPosition(position) {
-            //x.innerHTML = "Latitude: " + position.coords.latitude +
-            //    "<br>Longitude: " + position.coords.longitude;
-            var locAPI = "http://api.positionstack.com/v1/forward?access_key=2df731ae5c00f8b77f82f634ffb83a0f&query="+position.coords.latitude+","+position.coords.longitude+"";
-
-            //var locAPI = "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&sensor=true";
-            x.innerHTML = locAPI;
+        h1, a, h3, p {
+            font-family: 'B612', sans-serif;
+            font-family: 'IBM Plex Serif', serif;
+            font-family: 'Karla', sans-serif;
+            font-family: 'Varela', sans-serif;
         }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3" style="margin-left: 2%;">
+                <div style="text-align:center; margin-top:3%;">
+                    <h1 style="text-decoration: underline; text-decoration-color: darkgreen;">Shahajjokori</h1>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div style="text-align:center; margin-top:3%;">
+                    <h2>Fundraiser Panel</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="margin-top:5%">
+        <div class="row">
+            <main role="main" class="col-md-3" style=" margin-bottom:5%;">
+                <nav class="nav" style="margin-left: 35%;">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link " href="@Url.Action("fundraiser_index","Fundraiser",  new { id = f_id})">User Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="@Url.Action("Create_Event","Fundraiser",  new { id = f_id})">Create Event</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("See_Events","Fundraiser", new { id = f_id})">See Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Notification","Fundraiser", new { id = f_id})">Updates of Donations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Notification_from_admin","Fundraiser", new { id = f_id})">Notification from Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Create_Local_Event","Fundraiser", new { id = f_id})">Add Local Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Home")">Log out</a>
+                            <script type="text/javascript">
+                                function preventBack() { window.history.forward(); }
+                                setTimeout("preventBack()", 0);
+                                window.onunload = function () { null };
+                            </script>
+                        </li>
+                    </ul>
+                </nav>
+
+            </main>
+            <main role="main" class="col-md-6" style="margin-left: 5%; margin-right: 5%;">
+
+                <form enctype="multipart/form-data" asp-action="Create_Event_Entry" method="post">
+                    <div class="form-group row">
+                        <label for="exampleInputEmail1">Title</label>
+                        <input class="form-control" id="title" aria-describedby="emailHelp" placeholder="Enter event name" asp-for="e_title" required>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="sel1">Category of the event</label>
+                        <select class="form-control" asp-for="e_category">
+                            <option value=0>Education</option>
+                            <option value=1>Sponsoring</option>
+                            <option value=2>Emergency Aid</option>
+                            <option value=3>Medical Care</option>
+                            <option value=4>Accidents</option>
+                            <option value=5>Others</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="exampleInputEmail1">Location</label>
+                        <input class="form-control" id="exampleLocation" placeholder="Enter event location" asp-for="e_location" required>
+
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="exampleInputPassword1">Opening Date</label>
+                    </div>
+                    <div class="form-group row">
+                        <input type="date" class="form-control" asp-for="e_opening_date" style="width: 30%; margin-top:-1.5%;" required>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail1">Closing Date</label>
+                    </div>
+                    <div class="form-group row">
+                        <input type="date" class="form-control" asp-for="e_closing_date" style="width: 30%; margin-top:-1.5%;" required>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail1">Expected Amount</label>
+                        <input type="number" class="form-control" rows="5" id="exampleInputEmail1" placeholder="Enter expected amount for the event" asp-for="e_exp_amount" required>
+                    </div>
+
+                    <div class="form-group row">
+                        <label>Event Picture</label>
+
+                        <div class="custom-file">
+                            <label class="custom-file-label" style="width: 77.1px"></label>
+                            <input class="form-control custom-file-input" id="exampleInputEmail1" asp-for="e_photo" required>
+
+                        </div>
+                        @section Scripts{
+                            <script>
+                                $(document).ready(function () {
+                                    $('.custom-file-input').on("change", function () {
+                                        var fileName = $(this).val().split("\\").pop();
+                                        $(this).next('.custom-file-label').html(fileName);
+                                    });
+                                });
+                            </script>
+
+                        }
+
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="exampleInputEmail1">Event Details</label>
+                        <textarea class="form-control" rows="5" id="InputDetails" placeholder="Write details about the event (not maore than 1000 words)" maxlength="1000" asp-for="e_details" required></textarea>
+                        <script>
+                            $("#InputDetails").on('input', function () {
+                                if ($(this).val().length >= 300) {
+                                    alert('Event details have reached the limit of 1000');
+                                }
+                            });
+                        </script>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="exampleInputEmail1">Transaction Accounts (select and write the account numbers)</label>
+                        <div style="border-radius: 5px; border: 2px solid deeppink; padding: 20px; width: 100%; height: 100px; margin-top: 2%;background: url('@Url.Content("~/images/bkash-bground.png")');">
+
+                            <input type="checkbox" id="yourBox1" name='sport1'>
+                            <label style="color:white">bKash</label>
+                            <br />
+                            <input type="text" id="yourText1">
+
+                        </div>
+
+                        <div style="border-radius: 5px;border: 2px solid red;padding: 20px;width: 100%;height: 100px;margin-top: 2%;background: url('@Url.Content("~/images/nagad.jpg")');">
+
+                            <input type="checkbox" id="yourBox2" name='sport2'>
+                            <label>Nagad</label>
+                            <br />
+                            <input type="text" id="yourText2">
+
+                        </div>
+
+                        <div style="border-radius: 5px;border: 2px solid violet;padding: 20px;width: 100%;height: 100px;margin-top: 2%;background: url('@Url.Content("~/images/dbbl.jpg")');">
+                            <input type="checkbox" id="yourBox3" name='sport3'>
+                            <label style="color:white">Rocket</label>
+                            <br />
+                            <input type="text" id="yourText3">
+
+                        </div>
+                    </div>
+                    <div class="form-group row" style="text-align: center">
+                        <button type="button" id="rand" class="btn btn-primary">Confirm Accounts</button>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail1">Transaction Details Provided</label>
+                        <textarea class="form-control" rows="5" id="trans" placeholder="" asp-for="e_trans" readonly required></textarea>
+
+                    </div>
+                    <div class="form-group row">
+                        <label>Information provided above can not be changed, so check again before submitting for approval. Thank you.</label>
+                    </div>
+                    <div class="form-group row">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                            <label class="form-check-label" for="exampleCheck1">Everything is checked and the conditions are accepted.</label>
+                        </div>
+
+                    </div>
+                    <div style="text-align:center">
+                        <div class="form-group row">
+                            <button type="submit" id="submit-button" class="btn btn-primary" onclick="myFunction();" href="@Url.Action("Index","Home")" style="margin-top:5%">Create Event</button>
+                            
+                            <script>
+                                function myFunction() {
+                                    if (("#title").val().length != 0)
+                                    {
+                                        $('#myModal').modal('show');
+                                    }
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </form>
+
+
+                <script>
+                    document.getElementById('rand').onclick = function () {
+                        var favorite = [];
+                        $.each($("input[name='sport1']:checked"), function () {
+                            var inputVal = document.getElementById("yourText1").value;
+                            favorite.push("bKash: ".concat(inputVal));
+                        });
+                        $.each($("input[name='sport2']:checked"), function () {
+                            var inputVal = document.getElementById("yourText2").value;
+                            favorite.push("Nagad: ".concat(inputVal));
+                        });
+                        $.each($("input[name='sport3']:checked"), function () {
+                            var inputVal = document.getElementById("yourText3").value;
+                            favorite.push("Rocket: ".concat(inputVal));
+                        });
+                        //var someValue = @ViewBag.event_id;
+                        //var value = someValue.toString();
+                        //favorite.push(value);
+
+                        //var payment = favorite.join(", ");
+                        //alert("My favourite sports are: " + favorite.join(", "));
+                        //document.getElementById('test').value = "value";
+                        document.getElementById('trans').innerHTML = favorite.join("\n");
+                    }
+                </script>
+
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <footer class="border-top footer text-muted" style="position: absolute; bottom: 0; width: 100%; white-space: nowrap; line-height:100px;">
+        <div class="container">
+            &copy; 2021 - Shahajjokori - <a href="@Url.Action("fundraiser_index","Fundraiser",  new { id = f_id})">User Info</a> - <a href="@Url.Action("Create_Event","Fundraiser",  new { id = f_id})">Create Event</a> - <a href="@Url.Action("See_Events","Fundraiser", new { id = f_id})">See Events</a> - <a href="@Url.Action("Notification","Fundraiser", new { id = f_id})">Updates of Donations</a> - <a href="@Url.Action("Notification_from_admin","Fundraiser", new { id = f_id})">Notification from Admin</a> - <a href="@Url.Action("Create_Local_Event","Fundraiser", new { id = f_id})">Add Local Event</a>
+        </div>
+    </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    Your Event has been successfully created.
+                </div>
+                <div class="modal-footer" style="text-align:center;">
+
+                    <a class="btn btn-primary" asp-controller="Home" asp-action="Index" style="margin-top:5%">Ok</a>
+
+                    <!--<input class="modal-footer" id="myInput" value="@ViewBag.org_phone" style="border: none; background-color: transparent;" readonly>-->
+                    <!--<button onclick="myFunction()" style="border: none; background-color: transparent;">Copy Number</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        var checkbox1 = document.querySelector("#yourBox1");
+        var input1 = document.querySelector("#yourText1");
+        var checkbox2 = document.querySelector("#yourBox2");
+        var input2 = document.querySelector("#yourText2");
+        var checkbox3 = document.querySelector("#yourBox3");
+        var input3 = document.querySelector("#yourText3");
+
+        var toogleInput1 = function (e) {
+            input1.disabled = !e.target.checked;
+        };
+        var toogleInput2 = function (e) {
+            input2.disabled = !e.target.checked;
+        };
+        var toogleInput3 = function (e) {
+            input3.disabled = !e.target.checked;
+        };
+
+        toogleInput1({ target: checkbox1 });
+        checkbox1.addEventListener("change", toogleInput1);
+        toogleInput2({ target: checkbox2 });
+        checkbox2.addEventListener("change", toogleInput2);
+        toogleInput3({ target: checkbox3 });
+        checkbox3.addEventListener("change", toogleInput3);
+
+        var checkedValue = document.querySelector('.messageCheckbox:checked').value;
     </script>
 
 
 
+</body>
+</html>
 
-<script type="text/javascript">
-    function getLocationConstant() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
-        } else {
-            alert("Your browser or device doesn't support Geolocation");
-        }
-    }
 
-    // If we have a successful location update
-    function onGeoSuccess(event) {
-        document.getElementById("Latitude").value = event.coords.latitude;
-        document.getElementById("Longitude").value = event.coords.longitude;
-        document.getElementById("Position1").value = event.coords.latitude + ", " + event.coords.longitude;
 
-    }
-
-    // If something has gone wrong with the geolocation request
-    function onGeoError(event) {
-        alert("Error code " + event.code + ". " + event.message);
-    }
-</script>

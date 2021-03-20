@@ -5,7 +5,7 @@
                 Layout = "_Layout"; }
 @model List<Event>
 
-<div class="container" style="text-align: center;">
+<div class="container" style="text-align: center; margin-bottom:8%;">
     <div class="row" style="margin-top: 5%; margin-bottom: 3%;">
         <div class="col-md-12" style="text-align: center;">
             <h2 style="text-decoration: underline; text-decoration-color:cadetblue;">All Events</h2>
@@ -14,24 +14,31 @@
     <div class="row">
         @foreach (var e in Model)
         {
-<div class="col-md-4">
-    <div class="card" style="margin-top: 5%;">
-        @{ string path = "~/images/" + e.e_pic; }
-        <img class="card-img-top" src="@path" alt="logo" style="        display: block;
+        <div class="col-md-4">
+            <a asp-controller="Donor" asp-action="Event_Details" asp-route-id="@e.e_id" style="text-decoration:none;color:black;">
+                <div class="card" style="margin-top: 5%;">
+                    @{ string path = "~/images/" + e.e_pic; }
+                    <img class="card-img-top" src="@path" alt="logo" style="        display: block;
         height: 15vw;
         max-width: 100%;
         object-fit: cover;
 " asp-append-version="true">
 
-        <div class="card-body">
-            <h4 class="card-title">@e.e_title</h4>
-            <p>@e.e_location</p>
-            <a asp-controller="Donor" asp-action="Event_Details" asp-route-id="@e.e_id" style="text-decoration:none;">View Details</a>
+                    <div class="card-body">
+                        <h4 class="card-title">@e.e_title</h4>
+                        <p>@e.e_location</p>
 
-        </div>
-    </div>
 
+                    </div>
+
+                </div>
+            </a>
 </div>}
     </div>
 </div>
+<footer style=" bottom: 0; width: 100%; white-space: nowrap; line-height:100px;">
+    <div class="container">
+        &copy; 2021 - Shahajjokori - <a style="color:black" asp-controller="Donor" asp-action="donor_index" asp-route-id="@ViewBag.d_id">@ViewBag.d_name</a> - <a style="color:black" asp-controller="Donor" asp-action="DonationHistory" asp-route-id="@ViewBag.d_id">Donation History</a> - <a style="color:black" asp-controller="Donor" asp-action="Donor_Notification" asp-route-id="@ViewBag.d_id">Notification</a>
+    </div>
+</footer>
 

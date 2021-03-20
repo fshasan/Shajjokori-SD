@@ -225,7 +225,7 @@ namespace Shahajjokori.Controllers
             {
                 value = 5;
             }
-            string query1 = $"select * from EVENT where e_category = {value} and e_state=1 or e_state=3";
+            string query1 = $"select * from EVENT where e_category = {value} and e_state=1";
                 SqlCommand com1 = new SqlCommand(query1, connection);
 
                 var model1 = new List<Event>();
@@ -263,7 +263,7 @@ namespace Shahajjokori.Controllers
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
             
-            string query1 = $"select * from EVENT where e_state=1 or e_state=3";
+            string query1 = $"select * from EVENT where e_state=1";
             SqlCommand com1 = new SqlCommand(query1, connection);
 
             var model1 = new List<Event>();
@@ -313,6 +313,7 @@ namespace Shahajjokori.Controllers
                 ViewBag.event_id = (int)dr["e_id"];
                 e.e_title = (string)dr["e_title"];
                 ViewBag.e_title = (string)dr["e_title"];
+                e.e_category = (int)dr["e_category"];
                 ViewBag.event_cat = (int)dr["e_category"];
                 e.e_location = (string)dr["e_location"];
                 e.e_opening_date = (string)dr["e_opening_date"];
@@ -804,9 +805,7 @@ namespace Shahajjokori.Controllers
                     var e = new Event();
                     e.e_id = (int)rdr["e_id"];
                     e.e_title = (string)rdr["e_title"];
-                    ViewBag.e_tilte = e.e_title;
-                    //e.e_location = (string)rdr["e_location"];
-                    ViewBag.e_tilte = e.e_location;
+                    e.e_location = (string)rdr["e_location"];
                     e.e_opening_date = (string)rdr["e_opening_date"];
                     e.e_closing_date = (string)rdr["e_closing_date"];
                     //e.e_exp_amount = (int)rdr["e_exp_amount"];
@@ -816,9 +815,7 @@ namespace Shahajjokori.Controllers
                     //ViewBag.e_donor_count = e.e_donor_count;
                     e.e_state = (int)rdr["e_state"];
                     e.e_pic = (string)rdr["e_pic"];
-                    ViewBag.e_pic = e.e_pic;
                     e.e_details = (string)rdr["e_details"];
-                    ViewBag.e_details = e.e_details;
 
                     model.Add(e);
                 }

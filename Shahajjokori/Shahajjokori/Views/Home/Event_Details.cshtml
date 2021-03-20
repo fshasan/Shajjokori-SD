@@ -14,42 +14,42 @@
         </div>
         <div class="row" style="margin-top: 3%;">
             <div class="col-md-6">
-                <h6>Created by: <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" style="text-decoration: none; margin-bottom:1%;">@ViewBag.org</button></h6>
+                <p style="font-size:larger">Created by: <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" style="font-size:19px; text-decoration: none; margin-bottom:0.5%; color:black;">@ViewBag.org</button></p>
 
-                <h6>Location: @Html.DisplayFor(model => model.e_location)</h6>
-                <br>
+                <p style="font-size:larger">Location: @Html.DisplayFor(model => model.e_location)</p>
+                
                 @if (ViewBag.event_cat == 0)
                 {
-                <h6>Category: Education</h6>
+                <p style="font-size:larger">Category: Education</p>
                 }
                 @if (ViewBag.event_cat == 1)
                 {
-                <h6>Category: Education</h6>
+                <p style="font-size:larger">Category: Sponsoring</p>
                 }
                 @if (ViewBag.event_cat == 2)
                 {
-                <h6>Category: Emergency Aid</h6>
+                <p style="font-size:larger">Category: Emergency Aid</p>
                 }
                 @if (ViewBag.event_cat == 3)
                 {
-                <h6>Category: Education</h6>
+                <p style="font-size:larger">Category: Medical Care</p>
                 }
                 @if (ViewBag.event_cat == 4)
                 {
-                <h6>Category: Education</h6>
+                <p style="font-size:larger">Category: Accidents</p>
                 }
                 @if (ViewBag.event_cat == 5)
                 {
-                <h6>Category: Education</h6>
+                <p style="font-size:larger">Category: Others</p>
                 }
-                <br>
-                <h6>Opening: @Html.DisplayFor(model => model.e_opening_date)</h6>
-                <br>
-                <h6>Closing: @Html.DisplayFor(model => model.e_closing_date)</h6>
-                <br>
-                <h6>Expected: @ViewBag.exp_amount Tk.</h6>
-                <br>
-                <h6>Raised: @ViewBag.raised_amount Tk.</h6>
+                
+                <p style="font-size:larger">Opening: @Html.DisplayFor(model => model.e_opening_date)</p>
+                
+                <p style="font-size:larger">Closing: @Html.DisplayFor(model => model.e_closing_date)</p>
+                
+                <p style="font-size:larger">Expected: @ViewBag.exp_amount Tk.</p>
+               
+                <p style="font-size:larger">Raised: @ViewBag.raised_amount Tk.</p>
                 <div class="progress" style="margin-top: 5%">
                     @{ float raised = (float)ViewBag.raised_amount;
                                     float exp = (float)ViewBag.exp_amount;
@@ -59,7 +59,7 @@
                         @ViewBag.raised_amount
                     </div>
                 </div>
-                <br>
+                
 
             </div>
             <div class="col-md-6">
@@ -67,16 +67,16 @@
                                 string path = $"~/images/{pic_name}"; }
 
                 <img src="@path" alt="" style="height: 20vw; max-width: 100%;" asp-append-version="true">
-                <br>
-                <h6 style="margin-top: 3%;">This event has received @Html.DisplayFor(model => model.e_donor_count) donations.</h6>
+                
+                <p style="font-size:larger; margin-top: 3%;">This event has received @Html.DisplayFor(model => model.e_donor_count) donations.</p>
                 <br />
-                <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal2">Donate</button>
+                <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal2">I want to Donate</button>
             </div>
         </div>
         <div class="row" style="margin-top: 5%;">
             <div class="col-md-12">
                 <h4>About the Event: </h4>
-                <p>@Html.DisplayFor(model => model.e_details)</p>
+                <p style="font-size:larger">@Html.DisplayFor(model => model.e_details)</p>
             </div>
         </div>
 
@@ -129,10 +129,8 @@
                 <h5 class="modal-title" id="exampleModalLabel">@ViewBag.e_title</h5>
             </div>
             <div class="modal-body" style="white-space:pre-line;">
+                <p>Available accounts for transaction:</p>
                 <p>@ViewBag.event_trans</p>
-                <br />
-                <p>Contact number: @ViewBag.org_phone</p>
-                
             </div>
 
             <div class="modal-footer" style="text-align:center;">

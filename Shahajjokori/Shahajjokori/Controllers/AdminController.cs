@@ -136,24 +136,7 @@ namespace Shahajjokori.Controllers
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("Event_Request", "Admin");
         }
-        /*
-        public IActionResult Event_state_handle_delete(int id)
-        {
-            string connection_string = configuration.GetConnectionString("DefaultConnectionString");
-            SqlConnection connection = new SqlConnection(connection_string);
-            connection.Open();
-            ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
-
-            //event pic is neglected for the time being
-            string query = $"DELETE FROM EVENT WHERE e_id = {id}";
-            SqlCommand com = new SqlCommand(query, connection);
-
-            com.ExecuteNonQuery();
-            connection.Close();
-            //return RedirectToAction("Create_event_entry","Fundraiser");
-            return RedirectToAction("Halted_Events", "Admin");
-        }
-        */
+        
         public IActionResult Event_state_handle_set_show_success(int id)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -469,6 +452,54 @@ namespace Shahajjokori.Controllers
             connection.Close();
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("Local_Events_Shown", "Admin");
+        }
+
+        public IActionResult Edit_Info()
+        {
+            string connection_string = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection = new SqlConnection(connection_string);
+            connection.Open();
+            string query = $"select * from INFO";
+
+            SqlCommand com = new SqlCommand(query, connection);
+
+            using (SqlConnection conn = new SqlConnection(connection_string))
+            {
+                conn.Open();
+                SqlDataReader rdr = com.ExecuteReader();
+                while (rdr.Read())
+                {
+                    var a = new Info();
+                    a.WhoAreWe = (string)rdr["WhoAreWe"];
+                    a.HowWeWork = (string)rdr["HowWeWork"];
+                    a.HelpUs = (string)rdr["HelpUs"];
+                    a.Contact = (string)rdr["Contact"];
+                    return View(a);
+
+                }
+
+            }
+            return View();
+        }
+        public IActionResult Update_general_info_admin(Info info)
+        {
+            string connection_string = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection = new SqlConnection(connection_string);
+            connection.Open();
+            string query = $"Update INFO set WhoAreWe=@whoarewe, HowWeWork=@howwework, HelpUs=@helpus, Contact=@contact";
+            SqlCommand com = new SqlCommand(query, connection);
+            com.Parameters.AddWithValue("@whoarewe", info.WhoAreWe);
+            com.Parameters.AddWithValue("@howwework", info.HowWeWork);
+            com.Parameters.AddWithValue("@helpus", info.HelpUs);
+            com.Parameters.AddWithValue("@contact", info.Contact);
+
+
+            com.ExecuteNonQuery();
+
+            connection.Close();
+            //return View();
+            //return RedirectToAction("Create_event_entry","Fundraiser");
+            return RedirectToAction("Edit_Info", "Admin");
         }
     }
 }

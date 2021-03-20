@@ -1,0 +1,178 @@
+﻿@{ Layout = ""; }
+
+@model Shahajjokori.Models.Info
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!--<link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="assets/css/login.css">-->
+    <style>
+        a {
+            color: #2F4F4F;
+        }
+
+            a:hover {
+                color: #2F4F4F;
+                font-weight: bold;
+            }
+
+            a:active {
+            }
+
+        .active {
+            font-weight: bold;
+            border-bottom: 1px solid #2F4F4F;
+        }
+
+        h1, a, h3, p {
+            font-family: 'B612', sans-serif;
+            font-family: 'IBM Plex Serif', serif;
+            font-family: 'Karla', sans-serif;
+            font-family: 'Varela', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3" style="margin-left: 2%;">
+                <div style="text-align:center; margin-top:3%;">
+                    <h1 style="text-decoration: underline; text-decoration-color: darkgreen;">Shahajjokori</h1>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div style="text-align:center; margin-top:3%;">
+                    <h2>Admin Panel</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="margin-top:5%">
+        <div class="row">
+            <main role="main" class="col-md-3" style=" margin-bottom:5%;">
+                <nav class="nav" style="margin-left: 35%;">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="@Url.Action("admin_index","Admin")">Admin Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Event_Request","Admin")">Event Request</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Approved_Events","Admin")">Approved Events</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Halted_Events","Admin")">Halted Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Event_Success","Admin")">Successful Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Local_Events_Shown","Admin")">Local Events Shown</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Local_Events_Halted","Admin")">Local Events Halted</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Home")">Log out</a>
+                            <script type="text/javascript">function preventBack() { window.history.forward(); }
+                                setTimeout("preventBack()", 0);
+                                window.onunload = function () { null };</script>
+                        </li>
+                    </ul>
+                </nav>
+
+            </main>
+            <main role="main" class="col-md-7" style="margin-left: 5%; margin-right: 5%;">
+                <h3>Admin Details</h3>
+                <table class="table">
+                    <tbody>
+
+                        <tr>
+                            <td>Who Are We</td>
+                            <td>@Html.DisplayFor(model => model.WhoAreWe)</td>
+                        </tr>
+                        <tr>
+                            <td>How We Work</td>
+                            <td>@Html.DisplayFor(model => model.HowWeWork)</td>
+                        </tr>
+                        <tr>
+                            <td>Help Us</td>
+                            <td>@Html.DisplayFor(model => model.HelpUs)</td>
+                        </tr>
+                        <tr>
+                            <td>Contact</td>
+                            <td>@Html.DisplayFor(model => model.Contact)</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal2">Edit Info</button>
+                            </td>
+                            
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </main>
+
+        </div>
+
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit User Info</h5>
+
+                </div>
+                <div class="modal-body">
+                    <form asp-action="Update_general_info_admin" method="post">
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Who Are We</label>
+                            <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" asp-for="WhoAreWe" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">How We Work</label>
+                            <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" asp-for="HowWeWork" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Help Us</label>
+                            <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" asp-for="HelpUs" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Contact</label>
+                            <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" asp-for="Contact" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" href="@Url.Action("Update_general_info_admin","Admin")" style="margin-top:5%">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer style="bottom: 0; width: 100%; white-space: nowrap; line-height:100px;">
+        <div class="container">
+            &copy; 2021 - Shahajjokori - <a href="@Url.Action("admin_index","Admin")">Admin Info</a> - <a href="@Url.Action("Event_Request","Admin")">Event Request</a> - <a href="@Url.Action("Approved_Events","Admin")">Approved Events</a> - <a href="@Url.Action("Halted_Events","Admin")">Halted Events</a> - <a href="@Url.Action("Event_Success","Admin")">Successful Events</a> - <a href="@Url.Action("Local_Events_Shown","Admin")">Local Events Shown</a> - <a href="@Url.Action("Local_Events_Halted","Admin")">Local Events Halted</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
+

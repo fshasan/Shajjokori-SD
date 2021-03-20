@@ -80,8 +80,7 @@ namespace Shahajjokori.Controllers
         {
             return View();
         }
-
-        public IActionResult Create_event_entry(PicEvent e)
+        public IActionResult Create_Event_Entry(PicEvent e)
         {
             string uniqueFileName = null;
             if(e.e_photo != null)
@@ -102,7 +101,7 @@ namespace Shahajjokori.Controllers
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             
             //event pic is neglected for the time being
-            string query = "INSERT INTO [dbo].[EVENT] ([e_title],[e_location],[e_opening_date],[e_closing_date],[e_exp_amount],[e_pic],[e_raised_amount],[e_donor_count],[e_state],[e_details],[f_id],[e_category],[e_trans] ) VALUES (@title,@location,@o_date,@c_date,@exp,@pic,0,0,0,@details,@f_id, @category, @trans)";
+            string query = "INSERT INTO [dbo].[EVENT] ([e_title],[e_location],[e_opening_date],[e_closing_date],[e_exp_amount],[e_pic],[e_raised_amount],[e_donor_count],[e_state],[e_details],[f_id],[e_category],[e_trans],[e_half_fund],[e_full_fund],[e_posted],[e_halted],[e_success],[e_expired]) VALUES (@title,@location,@o_date,@c_date,@exp,@pic,0,0,0,@details,@f_id, @category, @trans, 0, 0, 0, 0, 0, 0)";
             SqlCommand com = new SqlCommand(query, connection);
             com.Parameters.AddWithValue("@title", e.e_title);
             com.Parameters.AddWithValue("@location", e.e_location);
@@ -117,12 +116,13 @@ namespace Shahajjokori.Controllers
             com.Parameters.AddWithValue("@f_id", fr.f_id);
             com.Parameters.AddWithValue("@category", e.e_category);
             com.Parameters.AddWithValue("@trans", e.e_trans);
-            
+
+            ViewBag.f_id = fr.f_id;
+
             com.ExecuteNonQuery();
             //ViewData["e_key"] = uniqueFileName.ToString();
             connection.Close();
             return RedirectToAction("fundraiser_index", "Fundraiser", new { id = fr.f_id });
-            //return RedirectToAction("admin_index", "Admin", new { id = a_id });
             //return View(e);
 
         }
@@ -167,7 +167,6 @@ namespace Shahajjokori.Controllers
             return RedirectToAction("fundraiser_index", "Fundraiser", new { id = fr.f_id });
 
         }
-
         public IActionResult Event_state_delete(int id, int fid)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -181,7 +180,6 @@ namespace Shahajjokori.Controllers
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("See_Events", "Fundraiser", new { id = fid});
         }
-
         [Route("Fundraiser/See_Events/{id}")]
         public IActionResult See_Events(int id)
         {
@@ -225,7 +223,6 @@ namespace Shahajjokori.Controllers
 
             return View(model);
         }
-
         public IActionResult Update_info_fundraiser(Fundraiser fundraiser)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -246,7 +243,6 @@ namespace Shahajjokori.Controllers
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("fundraiser_index", "Fundraiser", new { id = f_id });
         }
-
         public IActionResult Update_info_fundraiser_password(Fundraiser fundraiser)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
@@ -337,7 +333,6 @@ namespace Shahajjokori.Controllers
             }
             return View(model);
         }
-
         public IActionResult Notification_from_admin(int id)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -381,7 +376,6 @@ namespace Shahajjokori.Controllers
             }
             return View(model);
         }
-
         public IActionResult Received(int id, int fid, int amount, int prim)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -409,7 +403,7 @@ namespace Shahajjokori.Controllers
             SqlCommand com3 = new SqlCommand(query3, connection);
             com3.ExecuteNonQuery();
 
-            string query5 = $"INSERT INTO SUCCESS_EVENT(e_id, e_title, e_details, e_exp_amount, e_raised_amount, e_donor_count, f_id, e_opening_date, e_closing_date, e_pic, e_state) SELECT e_id, e_title, e_details, e_exp_amount, e_raised_amount, e_donor_count, f_id, e_opening_date, e_closing_date, e_pic, e_state FROM EVENT WHERE e_state=10 and f_id={fid} and e_id not in (select e_id from SUCCESS_EVENT)";
+            string query5 = $"INSERT INTO SUCCESS_EVENT(e_id, e_location, e_title, e_details, e_exp_amount, e_raised_amount, e_donor_count, f_id, e_opening_date, e_closing_date, e_pic, e_state) SELECT e_id, e_location, e_title, e_details, e_exp_amount, e_raised_amount, e_donor_count, f_id, e_opening_date, e_closing_date, e_pic, e_state FROM EVENT WHERE e_state=10 and f_id={fid} and e_id not in (select e_id from SUCCESS_EVENT)";
 
             SqlCommand com5 = new SqlCommand(query5, connection);
             com5.ExecuteNonQuery();
@@ -418,7 +412,6 @@ namespace Shahajjokori.Controllers
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("Notification", "Fundraiser", new { id = fid });
         }
-
         
         public IActionResult Cancel_Received(int id, int fid, int amount, int prim)
         {
@@ -433,7 +426,6 @@ namespace Shahajjokori.Controllers
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("Notification", "Fundraiser", new { id = fid });
         }
-
         public IActionResult Cancel_Admin_Notification(int id, int fid, int aid)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -473,6 +465,14 @@ namespace Shahajjokori.Controllers
             connection.Close();
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("Notification_from_admin", "Fundraiser", new { id = fid });
+        }
+        
+        [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Log_out()
+        {
+            var fr = new Fundraiser() { f_id = 0, f_name = "", f_email = "", f_password = "", f_phone = "", f_about = "" };
+            HttpContext.Session.SetString("FundraiserSession", JsonConvert.SerializeObject(fr));
+            return RedirectToAction("Index", "Home");
         }
     }
 }
