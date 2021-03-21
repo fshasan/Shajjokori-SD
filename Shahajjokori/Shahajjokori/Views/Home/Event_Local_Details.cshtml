@@ -14,18 +14,19 @@
         </div>
         <div class="row" style="margin-top: 3%;">
             <div class="col-md-6">
-                <p style="font-size:large">Created by: <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" onclick="Copy2();" style="font-size:19px; text-decoration: none; margin-bottom:0.5%; color:black;">@ViewBag.org</button></p>
+                <p style="font-size:larger">Created by: @ViewBag.org<button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" onclick="Copy2();" style="font-size:19px; text-decoration: none; margin-bottom:0.5%; color:black;"><i class="fas fa-info-circle"></i></button></p>
                 <script type="text/javascript">
                     function Copy2() {
                         number.innerHTML='0'+@ViewBag.org_phone;
 
                     }
                 </script>
+
                 <p style="font-size:large">Location: @Html.DisplayFor(model => model.le_location)</p>
 
                 <p style="font-size:large">Opening: @Html.DisplayFor(model => model.le_opening_date)</p>
 
-                <p style="font-size:large">Closing: @Html.DisplayFor(model => model.le_closing_date)</p>
+                <p style="font-size:large">Closing: @Html.DisplayFor(model => model.le_closing_date) | @ViewBag.r_days</p>
                 <br>
 
 
@@ -77,7 +78,7 @@
             <div class="modal-footer">
                 <button onclick="myFunction()" style="border: none; background-color: transparent;">Copy Number</button>
                 <script>
-    function myFunction() {
+                    function myFunction() {
                         var copyText = document.getElementById("number");
                         copyText.select();
                         copyText.setSelectionRange(0, 99999)
@@ -99,6 +100,10 @@
             </div>
             <div class="modal-body">
                 <textarea id="urlCopied" style="width:100%;"></textarea>
+                <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook" style="padding: 10px 5px; font-size: 30px; width: 50px; text-align: center; text-decoration: none; margin: 5px 2px; background: #3B5998; color: white;"></a>
+                <a href="https://twitter.com" target="_blank" class="fa fa-twitter" style="padding: 10px 5px; font-size: 30px; width: 50px; text-align: center; text-decoration: none; margin: 5px 2px; background: #55ACEE;color: white;"></a>
+                <a href="https://linkedin.com" target="_blank" class="fa fa-linkedin" style="padding: 10px 5px; font-size: 30px; width: 50px; text-align: center; text-decoration: none; margin: 5px 2px; background: #007bb5;color: white;"></a>
+                <a href="https://instagram.com" target="_blank" class="fa fa-instagram" style="padding: 10px 5px; font-size: 30px; width: 50px; text-align: center; text-decoration: none; margin: 5px 2px; background: #125688;color: white;"></a>
             </div>
 
             <div class="modal-footer" style="text-align:center;">
@@ -111,7 +116,7 @@
                         copyText.select();
                         copyText.setSelectionRange(0, 99999)
                         document.execCommand("copy");
-                        alert("Copied the link: " + copyText.value);
+                        //alert("Copied the link: " + copyText.value);
                     }
                 </script>
 
@@ -122,4 +127,6 @@
         </div>
     </div>
 </div>
+
+
 

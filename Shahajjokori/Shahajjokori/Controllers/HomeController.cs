@@ -21,6 +21,7 @@ using MySqlX.XDevAPI;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using System.Text;
+using System.Globalization;
 
 namespace Shahajjokori.Controllers
 {
@@ -46,22 +47,27 @@ namespace Shahajjokori.Controllers
             connection.Open();
             
             //updating events whose closing date is gone
-            string query3 = "SELECT CONVERT(VARCHAR(10), getdate(),105)";
+            string query3 = "SELECT CONVERT(VARCHAR(10), getdate(),23)";
             SqlCommand com3 = new SqlCommand(query3, connection);
 
             string date = com3.ExecuteScalar().ToString();
 
-            string query = $"Update EVENT set e_state=7 where e_closing_date<='{date}'";
+            string query = $"Update EVENT set e_expired=1 where e_closing_date<='{date}'";
             SqlCommand com = new SqlCommand(query, connection);
 
             com.ExecuteNonQuery();
+
+            string query4 = $"Update LOCAL_EVENT set le_state=3 where le_closing_date<='{date}'";
+            SqlCommand com4 = new SqlCommand(query4, connection);
+
+            com4.ExecuteNonQuery();
 
             //string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             //SqlConnection connection = new SqlConnection(connection_string);
             //connection.Open();
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             //var id = fr.f_id;
-            string query1 = $"select TOP 3 * from EVENT where e_state=1 or e_state=3 order by e_id desc";
+            string query1 = $"select TOP 3 * from EVENT where (e_posted=1 or e_posted=2) and (e_success = 0) order by e_id desc";
 
             SqlCommand com1 = new SqlCommand(query1, connection);
 
@@ -97,7 +103,7 @@ namespace Shahajjokori.Controllers
             string connection_string1 = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection1 = new SqlConnection(connection_string1);
             connection1.Open();
-            string query2 = $"select * from SUCCESS_EVENT where e_state=11";
+            string query2 = $"select * from SUCCESS_EVENT where e_state=2";
 
             SqlCommand com2 = new SqlCommand(query2, connection1);
 
@@ -225,7 +231,7 @@ namespace Shahajjokori.Controllers
             {
                 value = 5;
             }
-            string query1 = $"select * from EVENT where e_category = {value} and e_state=1";
+            string query1 = $"select * from EVENT where e_category = {value} and (e_posted=1 or e_posted=2) and (e_success = 0) order by e_id desc";
                 SqlCommand com1 = new SqlCommand(query1, connection);
 
                 var model1 = new List<Event>();
@@ -263,7 +269,7 @@ namespace Shahajjokori.Controllers
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
             
-            string query1 = $"select * from EVENT where e_state=1";
+            string query1 = $"select * from EVENT where (e_posted=1 or e_posted=2) and (e_success = 0) order by e_id desc";
             SqlCommand com1 = new SqlCommand(query1, connection);
 
             var model1 = new List<Event>();
@@ -317,7 +323,15 @@ namespace Shahajjokori.Controllers
                 ViewBag.event_cat = (int)dr["e_category"];
                 e.e_location = (string)dr["e_location"];
                 e.e_opening_date = (string)dr["e_opening_date"];
+                
+
                 e.e_closing_date = (string)dr["e_closing_date"];
+                ViewBag.c_date = (string)dr["e_closing_date"];
+
+                
+                var daterenew = DateTime.ParseExact(ViewBag.c_date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                ViewBag.r_days = ((daterenew - DateTime.Today).Days) + " day(s) remaining";
+                
                 ViewBag.exp_amount = (int)dr["e_exp_amount"];
                 ViewBag.raised_amount = (int)dr["e_raised_amount"];
                 e.e_donor_count = (int)dr["e_donor_count"];
@@ -402,6 +416,10 @@ namespace Shahajjokori.Controllers
                 e.le_location = (string)dr["le_location"];
                 e.le_opening_date = (string)dr["le_opening_date"];
                 e.le_closing_date = (string)dr["le_closing_date"];
+                ViewBag.c_date = e.le_closing_date;
+                var daterenew = DateTime.ParseExact(ViewBag.c_date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                ViewBag.r_days = ((daterenew - DateTime.Today).Days) + " day(s) remaining";
+
                 e.le_state = (int)dr["le_state"];
                 e.le_pic = (string)dr["le_pic"];
                 ViewBag.event_pic = (string)dr["le_pic"];
@@ -553,13 +571,13 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            string query1 = $"Select count(*) from FUNDRAISERS where f_email = '{fundraiser.f_email}'";
+            string query1 = $"Select count(*) from FUNDRAISERS where (f_email = '{fundraiser.f_email}' or f_phone='{fundraiser.f_phone}') and f_category=1";
             SqlCommand com1 = new SqlCommand(query1, connection);
 
             var count = (int)com1.ExecuteScalar();
             if (count != 0)
             {
-                return RedirectToAction("SignUp_Fundraiser", "Home", new { message = "Account already exists with this email!"});
+                return RedirectToAction("SignUp_Fundraiser", "Home", new { message = "Account already exists with this email or phone number!"});
             
             }
             
@@ -726,7 +744,7 @@ namespace Shahajjokori.Controllers
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
 
-            string query = $"select * from EVENT where (e_state=1 or e_state=3) and (e_title LIKE '%{search}%' or e_location LIKE '%{search}%')";
+            string query = $"select * from EVENT where (e_posted=1 or e_posted=2) and (e_title LIKE '%{search}%' or e_location LIKE '%{search}%')";
             SqlCommand com = new SqlCommand(query, connection);
 
             var model = new List<Event>();

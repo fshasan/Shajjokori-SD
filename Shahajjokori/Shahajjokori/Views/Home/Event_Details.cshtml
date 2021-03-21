@@ -5,6 +5,7 @@
 
 @model Shahajjokori.Models.Event
 <!--<h1>@ViewBag.event_id</h1>-->
+
 <div style="background-color: #FDF5E6;">
     <div class="container" style="padding-top: 5%;">
         <div class="row">
@@ -14,7 +15,7 @@
         </div>
         <div class="row" style="margin-top: 3%;">
             <div class="col-md-6">
-                <p style="font-size:larger">Created by: <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" onclick="Copy2();" style="font-size:19px; text-decoration: none; margin-bottom:0.5%; color:black;">@ViewBag.org</button></p>
+                <p style="font-size:larger">Created by: @ViewBag.org<button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" onclick="Copy2();" style="font-size:19px; text-decoration: none; margin-bottom:0.5%; color:black;"><i class="fas fa-info-circle"></i></button></p>
                 <script type="text/javascript">
                     function Copy2() {
                         number.innerHTML='0'+@ViewBag.org_phone;
@@ -46,19 +47,19 @@
                 @if (ViewBag.event_cat == 5)
                 {
                 <p style="font-size:larger">Category: Others</p>
-                }
-
+                }    
+                
                 <p style="font-size:larger">Opening: @Html.DisplayFor(model => model.e_opening_date)</p>
 
-                <p style="font-size:larger">Closing: @Html.DisplayFor(model => model.e_closing_date)</p>
+                <p style="font-size:larger">Closing: @Html.DisplayFor(model => model.e_closing_date) | @ViewBag.r_days</p>
 
                 <p style="font-size:large;">Raised <span style="font-size:xx-large;">@ViewBag.raised_amount</span> Tk. out of @ViewBag.exp_amount</p>
-                <div class="progress" style="margin-top: 5%">
+                <div class="progress" style="margin-top: 5%; height:8px;">
                     @{ float raised = (float)ViewBag.raised_amount;
                                     float exp = (float)ViewBag.exp_amount;
                                     float percentage = (raised / exp) * 100;
                                     string perc = percentage + "%"; }
-                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="@ViewBag.raised_amount" aria-valuemin="0" aria-valuemax="@ViewBag.exp_amount" style="width:@perc; height:10px;">
+                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="@ViewBag.raised_amount" aria-valuemin="0" aria-valuemax="@ViewBag.exp_amount" style="width:@perc; height:8px;">
                         
                     </div>
                 </div>
@@ -159,10 +160,14 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">@ViewBag.event_title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">@ViewBag.e_title</h5>
             </div>
             <div class="modal-body">
                 <textarea id="urlCopied" style="width:100%;"></textarea>
+                <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook" style="padding: 10px 5px; font-size: 30px; width: 50px; text-align: center; text-decoration: none; margin: 5px 2px; background: #3B5998; color: white;"></a>
+                <a href="https://twitter.com" target="_blank" class="fa fa-twitter" style="padding: 10px 5px; font-size: 30px; width: 50px; text-align: center; text-decoration: none; margin: 5px 2px; background: #55ACEE;color: white;"></a>
+                <a href="https://linkedin.com" target="_blank" class="fa fa-linkedin" style="padding: 10px 5px; font-size: 30px; width: 50px; text-align: center; text-decoration: none; margin: 5px 2px; background: #007bb5;color: white;"></a>
+                <a href="https://instagram.com" target="_blank" class="fa fa-instagram" style="padding: 10px 5px; font-size: 30px; width: 50px; text-align: center; text-decoration: none; margin: 5px 2px; background: #125688;color: white;"></a>
             </div>
 
             <div class="modal-footer" style="text-align:center;">
@@ -175,7 +180,7 @@
                             copyText.select();
                             copyText.setSelectionRange(0, 99999)
                             document.execCommand("copy");
-                            alert("Copied the link: " + copyText.value);
+                            //alert("Copied the link: " + copyText.value);
                         }
                     </script>
                

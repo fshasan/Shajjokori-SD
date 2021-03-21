@@ -11,6 +11,8 @@ namespace Shahajjokori.Models
         public string HowWeWork { get; set; }
         public string HelpUs { get; set; }
         public string Contact { get; set; }
+        public string TermDonor { get; set; }
+        public string TermFundraiser { get; set; }
 
     }
 }

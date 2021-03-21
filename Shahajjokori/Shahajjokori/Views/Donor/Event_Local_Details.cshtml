@@ -14,16 +14,22 @@
         </div>
         <div class="row" style="margin-top: 3%;">
             <div class="col-md-6">
-                <h5>Created by: <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" style="font-size: 20px; text-decoration: none; margin-bottom:1%;">@ViewBag.org</button></h5>
+                <p style="font-size:larger">Created by: @ViewBag.org<button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" onclick="Copy2();" style="font-size:19px; text-decoration: none; margin-bottom:0.5%; color:black;"><i class="fas fa-info-circle"></i></button></p>
+                <script type="text/javascript">
+                    function Copy2() {
+                        number.innerHTML='0'+@ViewBag.org_phone;
+
+                    }
+                </script>
 
                 <h5>Location: @Html.DisplayFor(model => model.le_location)</h5>
-                
+
                 <br>
                 <h5>Opening: @Html.DisplayFor(model => model.le_opening_date)</h5>
                 <br>
                 <h5>Closing: @Html.DisplayFor(model => model.le_closing_date)</h5>
                 <br>
-                
+
 
             </div>
             <div class="col-md-6">

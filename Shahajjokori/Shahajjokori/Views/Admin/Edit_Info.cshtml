@@ -115,11 +115,19 @@
                             <td>@Html.DisplayFor(model => model.Contact)</td>
                         </tr>
                         <tr>
+                            <td>Fundraiser Terms</td>
+                            <td>@Html.DisplayFor(model => model.TermFundraiser)</td>
+                        </tr>
+                        <tr>
+                            <td>Donor Terms</td>
+                            <td>@Html.DisplayFor(model => model.TermDonor)</td>
+                        </tr>
+                        <tr>
                             <td></td>
                             <td>
                                 <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal2">Edit Info</button>
                             </td>
-                            
+
                         </tr>
 
                     </tbody>
@@ -158,6 +166,15 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Contact</label>
                             <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" asp-for="Contact" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Terms Fundraiser</label>
+                            <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" asp-for="TermFundraiser" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Terms Donor</label>
+                            <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" asp-for="TermDonor" required></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary" href="@Url.Action("Update_general_info_admin","Admin")" style="margin-top:5%">Update</button>

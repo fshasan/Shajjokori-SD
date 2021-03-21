@@ -105,15 +105,10 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            string query = $"Update EVENT set e_state=1, e_posted=1 where e_id={id}";
+            string query = $"Update EVENT set e_posted=1, e_halted=0 where e_id={id}";
             SqlCommand com = new SqlCommand(query, connection);
 
             com.ExecuteNonQuery();
-
-            //string query1 = $"Update EVENT set e_state=1 where e_id={id}";
-            //SqlCommand com1 = new SqlCommand(query1, connection);
-
-            //com1.ExecuteNonQuery();
 
             connection.Close();
             //return RedirectToAction("Create_event_entry","Fundraiser");
@@ -128,7 +123,7 @@ namespace Shahajjokori.Controllers
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
 
             //event pic is neglected for the time being
-            string query = $"Update EVENT set e_state=2, e_halted=1 where e_id={id}";
+            string query = $"Update EVENT set e_halted=1, e_posted=0 where e_id={id}";
             SqlCommand com = new SqlCommand(query, connection);
 
             com.ExecuteNonQuery();
@@ -143,12 +138,12 @@ namespace Shahajjokori.Controllers
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
 
-            string query1 = $"UPDATE SUCCESS_EVENT SET e_state=10 WHERE e_state=11";
+            string query1 = $"UPDATE SUCCESS_EVENT SET e_state=1 WHERE e_state=2";
             SqlCommand com1 = new SqlCommand(query1, connection);
 
             com1.ExecuteNonQuery();
 
-            string query = $"UPDATE SUCCESS_EVENT SET e_state=11 WHERE e_id = {id}";
+            string query = $"UPDATE SUCCESS_EVENT SET e_state=2 WHERE e_id = {id}";
             SqlCommand com = new SqlCommand(query, connection);
 
             com.ExecuteNonQuery();
@@ -166,7 +161,7 @@ namespace Shahajjokori.Controllers
             connection.Open();
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             //var id = fr.f_id;
-            string query = $"select * from EVENT where e_state = 1 or e_posted=1 order by e_id desc";
+            string query = $"select * from EVENT where e_posted=1 order by e_id desc";
 
             SqlCommand com = new SqlCommand(query, connection);
 
@@ -207,7 +202,7 @@ namespace Shahajjokori.Controllers
             connection.Open();
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             //var id = fr.f_id;
-            string query = $"select * from EVENT where e_state = 2 or e_halted=1 order by e_id desc";
+            string query = $"select * from EVENT where e_halted=1 order by e_id desc";
 
             SqlCommand com = new SqlCommand(query, connection);
 
@@ -474,6 +469,8 @@ namespace Shahajjokori.Controllers
                     a.HowWeWork = (string)rdr["HowWeWork"];
                     a.HelpUs = (string)rdr["HelpUs"];
                     a.Contact = (string)rdr["Contact"];
+                    a.TermDonor = (string)rdr["Term_donor"];
+                    a.TermFundraiser = (string)rdr["Term"];
                     return View(a);
 
                 }
@@ -486,13 +483,14 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            string query = $"Update INFO set WhoAreWe=@whoarewe, HowWeWork=@howwework, HelpUs=@helpus, Contact=@contact";
+            string query = $"Update INFO set WhoAreWe=@whoarewe, HowWeWork=@howwework, HelpUs=@helpus, Contact=@contact, Term=@fundraiser, Term_donor=@donor";
             SqlCommand com = new SqlCommand(query, connection);
             com.Parameters.AddWithValue("@whoarewe", info.WhoAreWe);
             com.Parameters.AddWithValue("@howwework", info.HowWeWork);
             com.Parameters.AddWithValue("@helpus", info.HelpUs);
             com.Parameters.AddWithValue("@contact", info.Contact);
-
+            com.Parameters.AddWithValue("@fundraiser", info.TermFundraiser);
+            com.Parameters.AddWithValue("@donor", info.TermDonor);
 
             com.ExecuteNonQuery();
 

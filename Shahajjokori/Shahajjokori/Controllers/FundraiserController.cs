@@ -398,7 +398,7 @@ namespace Shahajjokori.Controllers
             com4.ExecuteNonQuery();
 
             //e_rev_state=3 means funds fully collected
-            string query3 = $"update EVENT set e_state=10, e_full_fund=1 where e_exp_amount <= e_raised_amount and e_id = {id} and e_full_fund != 2";
+            string query3 = $"update EVENT set e_full_fund=1 where e_exp_amount <= e_raised_amount and e_id = {id} and e_full_fund != 2";
 
             SqlCommand com3 = new SqlCommand(query3, connection);
             com3.ExecuteNonQuery();
