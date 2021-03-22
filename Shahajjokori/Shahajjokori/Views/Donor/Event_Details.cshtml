@@ -28,32 +28,32 @@
             <p style="font-size:larger">Category: Education</p>}
                 @if (ViewBag.event_cat == 1)
                 {
-            <p style="font-size:larger">Category: Education</p>}
+            <p style="font-size:larger">Category: Sponsoring</p>}
                 @if (ViewBag.event_cat == 2)
                 {
             <p style="font-size:larger">Category: Emergency Aid</p>}
                 @if (ViewBag.event_cat == 3)
                 {
-            <p style="font-size:larger">Category: Education</p>}
+            <p style="font-size:larger">Category: Medical Care</p>}
                 @if (ViewBag.event_cat == 4)
                 {
-            <p style="font-size:larger">Category: Education</p>}
+            <p style="font-size:larger">Category: Accidents</p>}
                 @if (ViewBag.event_cat == 5)
                 {
-            <p style="font-size:larger">Category: Education</p>}
+            <p style="font-size:larger">Category: Others</p>}
 
                 <p style="font-size:larger">Opening: @Html.DisplayFor(model => model.e_opening_date)</p>
 
-                <p style="font-size:larger">Closing: @Html.DisplayFor(model => model.e_closing_date)</p>
+                <p style="font-size:larger">Closing: @Html.DisplayFor(model => model.e_closing_date) | @ViewBag.r_days</p>
 
                 <p style="font-size:large;">Raised <span style="font-size:xx-large;">@ViewBag.raised_amount</span> Tk. out of @ViewBag.exp_amount</p>
-                <div class="progress" style="margin-top: 5%">
+                <div class="progress" style="margin-top: 5%; height:8px;">
                     @{ float raised = (float)ViewBag.raised_amount;
                         float exp = (float)ViewBag.exp_amount;
                         float percentage = (raised / exp) * 100;
                         string perc = percentage + "%"; }
-                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="@ViewBag.raised_amount" aria-valuemin="0" aria-valuemax="@ViewBag.exp_amount" style="width:@perc">
-                        @ViewBag.raised_amount
+                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="@ViewBag.raised_amount" aria-valuemin="0" aria-valuemax="@ViewBag.exp_amount" style="width:@perc; height:8px;">
+
                     </div>
                 </div>
                 <br>
@@ -128,7 +128,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">@ViewBag.e_title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">@ViewBag.event_title</h5>
             </div>
             <div class="modal-body" style="white-space:pre-line;">
                 <p>Available accounts for transaction:</p>
@@ -137,7 +137,7 @@
 
             <div class="modal-footer" style="text-align:center;">
 
-                <a class="btn btn-primary" asp-controller="Home" asp-action="Donated" asp-route-id="@ViewBag.event_id" style="margin-top:5%">I have donated</a>
+                <a class="btn btn-primary" asp-controller="Donor" asp-action="Donated" asp-route-id="@ViewBag.event_id" style="margin-top:5%">I have donated</a>
 
                 <!--<input class="modal-footer" id="myInput" value="@ViewBag.org_phone" style="border: none; background-color: transparent;" readonly>-->
                 <!--<button onclick="myFunction()" style="border: none; background-color: transparent;">Copy Number</button>-->
@@ -151,7 +151,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">@ViewBag.e_title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">@ViewBag.event_title</h5>
             </div>
             <div class="modal-body">
                 <textarea id="urlCopied" style="width:100%;"></textarea>

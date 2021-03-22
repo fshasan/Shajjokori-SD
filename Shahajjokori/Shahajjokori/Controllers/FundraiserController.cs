@@ -304,7 +304,7 @@ namespace Shahajjokori.Controllers
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
             //state 0 means notification that has not been dealt with
-            string query = $"select * from DONATED where state=0 and e_id in (select e_id from EVENT where f_id ={id}) order by date desc";
+            string query = $"select * from DONATED where state=1 and e_id in (select e_id from EVENT where f_id ={id}) order by date desc";
             SqlCommand com = new SqlCommand(query, connection);
             
             var model = new List<Donation>();
@@ -387,7 +387,7 @@ namespace Shahajjokori.Controllers
             com.ExecuteNonQuery();
            
             //setting the state of received so that donor may be notified
-            string query2 = $"Update DONATED set state = 1,d_received = 1 where e_prim = {prim}";
+            string query2 = $"Update DONATED set state = 2,d_received = 1 where e_prim = {prim}";
             SqlCommand com2 = new SqlCommand(query2, connection);
             com2.ExecuteNonQuery();
             
@@ -398,7 +398,7 @@ namespace Shahajjokori.Controllers
             com4.ExecuteNonQuery();
 
             //e_rev_state=3 means funds fully collected
-            string query3 = $"update EVENT set e_full_fund=1 where e_exp_amount <= e_raised_amount and e_id = {id} and e_full_fund != 2";
+            string query3 = $"update EVENT set e_full_fund=1,e_state=10 where e_exp_amount <= e_raised_amount and e_id = {id} and e_full_fund != 2";
 
             SqlCommand com3 = new SqlCommand(query3, connection);
             com3.ExecuteNonQuery();
@@ -418,7 +418,7 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            string query2 = $"Update DONATED set state = 2 where e_prim = {prim}";
+            string query2 = $"Update DONATED set state = 3 where e_prim = {prim}";
             SqlCommand com2 = new SqlCommand(query2, connection);
 
             com2.ExecuteNonQuery();

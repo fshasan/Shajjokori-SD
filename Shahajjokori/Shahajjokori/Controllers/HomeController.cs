@@ -52,7 +52,7 @@ namespace Shahajjokori.Controllers
 
             string date = com3.ExecuteScalar().ToString();
 
-            string query = $"Update EVENT set e_expired=1 where e_closing_date<='{date}'";
+            string query = $"Update EVENT set e_expired=1,e_posted=0,e_halted=0,e_state=7 where e_closing_date<='{date}'";
             SqlCommand com = new SqlCommand(query, connection);
 
             com.ExecuteNonQuery();
@@ -186,8 +186,8 @@ namespace Shahajjokori.Controllers
             if (dr.Read())
             {
                 var a_id = (int)dr["a_id"];
-                //var ad = new Admin() { admin_id = (int)dr["a_id"], admin_email = (string)dr["a_email"], admin_password = (string)dr["a_password"] };
-                //HttpContext.Session.SetString("AdminSession", JsonConvert.SerializeObject(ad));
+                var ad = new Admin() { admin_id = (int)dr["a_id"], admin_email = (string)dr["a_email"], admin_password = (string)dr["a_password"] };
+                HttpContext.Session.SetString("AdminSession", JsonConvert.SerializeObject(ad));
                 connection.Close();
                 //return View();
                 return RedirectToAction("admin_index", "Admin", new { id = a_id });
@@ -448,19 +448,9 @@ namespace Shahajjokori.Controllers
         }
         public IActionResult SignIn( string message)
         {
-            /*string connection_string = configuration.GetConnectionString("DefaultConnectionString");
-            SqlConnection connection = new SqlConnection(connection_string);
-            connection.Open();
-            //string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
-            string query = "Select count(*) from FUNDRAISERS";
-            SqlCommand com = new SqlCommand(query, connection);
-            var count = com.ExecuteScalar();
-            ViewData["Total_fundraiser"] = count;
-            connection.Close();*/
             ViewBag.error_message = message;
             return View();
         }
-
         public IActionResult SignIn_Panel(Fundraiser fundraiser)
         {
             MD5 md5 = new MD5CryptoServiceProvider();

@@ -1087,3 +1087,4 @@ E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netco
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Local_Events_Shown.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Edit_Info.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\Terms.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignUp_Donor_Entry.cshtml.g.cs

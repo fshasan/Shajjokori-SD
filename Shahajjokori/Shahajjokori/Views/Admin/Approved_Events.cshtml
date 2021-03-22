@@ -106,21 +106,7 @@
             <td>Event Name</td>
             <td>@e.e_title</td>
         </tr>
-        <tr class="thead-light">
-            <td>Status</td>
-            @if (e.e_state == 0)
-            {
-<td style="color:darkblue">Requested</td>
-}
-            @if (e.e_state == 1)
-            {
-<td style="color:green">Posted</td>
-}
-            @if (e.e_state == 2)
-            {
-<td style="color:red">Halted</td>
-}
-        </tr>
+        
         <tr class="thead-light">
             <td>Category</td>
             @if (e.e_category == 0)

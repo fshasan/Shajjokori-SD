@@ -144,7 +144,12 @@
 
                         </div>
 
-                        <button type="submit" class="btn btn-primary" href="@Url.Action("Update_info_admin","Admin")" style="margin-top:5%">Update</button>
+                        <button type="submit" class="btn btn-primary" onclick="myFunction()" href="@Url.Action("Update_info_admin","Admin")" style="margin-top:5%" >Update</button>
+                        <script>
+                            function myFunction() {
+                                alert("Password changed successfully.");
+                            }
+                        </script>
                     </form>
                 </div>
             </div>

@@ -34,6 +34,8 @@ namespace Shahajjokori.Controllers
 
         public IActionResult admin_index(int id)
         {
+            var ad = JsonConvert.DeserializeObject<Admin>(HttpContext.Session.GetString("AdminSession"));
+            
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
@@ -56,7 +58,7 @@ namespace Shahajjokori.Controllers
                 }
 
             }
-            return View();
+            return View(ad);
         }
 
         public IActionResult Event_Request()
@@ -64,9 +66,8 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
-            //var id = fr.f_id;
-            string query = $"select * from EVENT where e_state = 0 order by e_id desc";
+
+            string query = $"select * from EVENT where e_state = 0 and e_posted !=1 and e_halted !=1 order by e_id desc";
 
             SqlCommand com = new SqlCommand(query, connection);
 
@@ -105,7 +106,7 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            string query = $"Update EVENT set e_posted=1, e_halted=0 where e_id={id}";
+            string query = $"Update EVENT set e_posted=1, e_halted=0, e_state=1 where e_id={id}";
             SqlCommand com = new SqlCommand(query, connection);
 
             com.ExecuteNonQuery();
@@ -114,7 +115,6 @@ namespace Shahajjokori.Controllers
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("Event_Request","Admin");
         }
-
         public IActionResult Event_state_handle_halt(int id)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -123,15 +123,14 @@ namespace Shahajjokori.Controllers
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
 
             //event pic is neglected for the time being
-            string query = $"Update EVENT set e_halted=1, e_posted=0 where e_id={id}";
+            string query = $"Update EVENT set e_halted=1, e_posted=0, e_state=2 where e_id={id}";
             SqlCommand com = new SqlCommand(query, connection);
 
             com.ExecuteNonQuery();
             connection.Close();
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("Event_Request", "Admin");
-        }
-        
+        }     
         public IActionResult Event_state_handle_set_show_success(int id)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -140,20 +139,15 @@ namespace Shahajjokori.Controllers
 
             string query1 = $"UPDATE SUCCESS_EVENT SET e_state=1 WHERE e_state=2";
             SqlCommand com1 = new SqlCommand(query1, connection);
-
             com1.ExecuteNonQuery();
 
             string query = $"UPDATE SUCCESS_EVENT SET e_state=2 WHERE e_id = {id}";
             SqlCommand com = new SqlCommand(query, connection);
-
             com.ExecuteNonQuery();
 
             connection.Close();
-            //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("Event_Success", "Admin");
         }
-
-
         public IActionResult Approved_Events()
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -194,7 +188,6 @@ namespace Shahajjokori.Controllers
 
             return View(model);
         }
-
         public IActionResult Halted_Events()
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -235,7 +228,6 @@ namespace Shahajjokori.Controllers
 
             return View(model);
         }
-
         public IActionResult Event_Success()
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -275,7 +267,6 @@ namespace Shahajjokori.Controllers
 
             return View(model);
         }
-
         public IActionResult Update_info_admin(Admin admin)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -285,27 +276,19 @@ namespace Shahajjokori.Controllers
             string query = $"Update ADMIN set a_email=@email where a_id={a_id}";
             SqlCommand com = new SqlCommand(query, connection);
             com.Parameters.AddWithValue("@email", admin.admin_email);
-
-
             com.ExecuteNonQuery();
 
             connection.Close();
-            //return View();
-            //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("admin_index", "Admin", new { id = a_id });
 
         }
-
         public IActionResult Update_info_admin_password(Admin admin)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
-
             //compute hash from the bytes of text  
             md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(admin.admin_password));
-
             //get hash result after compute it  
             byte[] result = md5.Hash;
-
             StringBuilder strBuilder = new StringBuilder();
             for (int i = 0; i < result.Length; i++)
             {
@@ -326,13 +309,10 @@ namespace Shahajjokori.Controllers
             if (count == 1)
             {
                 MD5 md52 = new MD5CryptoServiceProvider();
-
                 //compute hash from the bytes of text  
                 md52.ComputeHash(ASCIIEncoding.ASCII.GetBytes(admin.admin_password1));
-
                 //get hash result after compute it  
                 byte[] result2 = md52.Hash;
-
                 StringBuilder strBuilder2 = new StringBuilder();
                 for (int i = 0; i < result.Length; i++)
                 {
@@ -346,12 +326,12 @@ namespace Shahajjokori.Controllers
                 com.ExecuteNonQuery();
 
             }
+            
             connection.Close();
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("admin_index", "Admin", new { id = a_id });
 
         }
-
         public IActionResult Local_Events_Shown()
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -420,7 +400,6 @@ namespace Shahajjokori.Controllers
 
             return View(model);
         }
-
         public IActionResult Local_Event_state_handle_approve(int id)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -434,7 +413,6 @@ namespace Shahajjokori.Controllers
             connection.Close();
             return RedirectToAction("Local_Events_Halted", "Admin");
         }
-
         public IActionResult Local_Event_state_handle_halt(int id)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -448,7 +426,6 @@ namespace Shahajjokori.Controllers
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("Local_Events_Shown", "Admin");
         }
-
         public IActionResult Edit_Info()
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -469,8 +446,8 @@ namespace Shahajjokori.Controllers
                     a.HowWeWork = (string)rdr["HowWeWork"];
                     a.HelpUs = (string)rdr["HelpUs"];
                     a.Contact = (string)rdr["Contact"];
-                    a.TermDonor = (string)rdr["Term_donor"];
-                    a.TermFundraiser = (string)rdr["Term"];
+                    a.TermDonor = (string)rdr["Terms_donor"];
+                    a.TermFundraiser = (string)rdr["Terms"];
                     return View(a);
 
                 }
@@ -483,7 +460,7 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            string query = $"Update INFO set WhoAreWe=@whoarewe, HowWeWork=@howwework, HelpUs=@helpus, Contact=@contact, Term=@fundraiser, Term_donor=@donor";
+            string query = $"Update INFO set WhoAreWe=@whoarewe, HowWeWork=@howwework, HelpUs=@helpus, Contact=@contact, Terms=@fundraiser, Terms_donor=@donor";
             SqlCommand com = new SqlCommand(query, connection);
             com.Parameters.AddWithValue("@whoarewe", info.WhoAreWe);
             com.Parameters.AddWithValue("@howwework", info.HowWeWork);

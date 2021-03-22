@@ -146,11 +146,11 @@
                 <tr class="thead-light">
                     <td>Action</td>
                     <td>
-                        @if (e.e_state == 11)
+                        @if (e.e_state == 2)
                         {
                             <p style="color:green">Shown in the site</p>
                         }
-                        @if (e.e_state == 10)
+                        @if (e.e_state == 1)
                         {
                             <form asp-action="Event_state_handle_set_show_success" method="post">
 

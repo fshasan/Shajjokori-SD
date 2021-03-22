@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-
+using System.Globalization;
 namespace Shahajjokori.Controllers
 {
     public class DonorController : Controller
@@ -31,34 +31,28 @@ namespace Shahajjokori.Controllers
             configuration = config;
             this.hostingEnvironment = hostingEnvironment;
         }
-
         public IActionResult Index()
         {
-            var fr = JsonConvert.DeserializeObject<Fundraiser>(HttpContext.Session.GetString("FundraiserSession"));
-            ViewBag.d_name = fr.f_name;
-            ViewBag.d_id = fr.f_id;
+            var dnr = JsonConvert.DeserializeObject<Fundraiser>(HttpContext.Session.GetString("FundraiserSession"));
+            ViewBag.d_name = dnr.f_name;
+            ViewBag.d_id = dnr.f_id;
             //ViewBag.d_name = fr.f_id;
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
 
             //updating events whose closing date is gone
-            string query3 = "SELECT CONVERT(VARCHAR(10), getdate(),105)";
+            string query3 = "SELECT CONVERT(VARCHAR(10), getdate(),23)";
             SqlCommand com3 = new SqlCommand(query3, connection);
 
             string date = com3.ExecuteScalar().ToString();
 
-            string query = $"Update EVENT set e_state=7 where e_closing_date<='{date}'";
+            string query = $"Update EVENT set e_expired=1,e_posted=0,e_halted=0 where e_closing_date<='{date}'";
             SqlCommand com = new SqlCommand(query, connection);
 
             com.ExecuteNonQuery();
 
-            //string connection_string = configuration.GetConnectionString("DefaultConnectionString");
-            //SqlConnection connection = new SqlConnection(connection_string);
-            //connection.Open();
-            ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
-            //var id = fr.f_id;
-            string query1 = $"select TOP 3 * from EVENT where e_state=1 order by e_id desc";
+            string query1 = $"select TOP 3 * from EVENT where (e_posted=1 or e_posted=2) and (e_success = 0) order by e_id desc";
 
             SqlCommand com1 = new SqlCommand(query1, connection);
 
@@ -94,7 +88,7 @@ namespace Shahajjokori.Controllers
             string connection_string1 = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection1 = new SqlConnection(connection_string1);
             connection1.Open();
-            string query2 = $"select * from SUCCESS_EVENT where e_state=11";
+            string query2 = $"select * from SUCCESS_EVENT where e_state=2";
 
             SqlCommand com2 = new SqlCommand(query2, connection1);
 
@@ -141,16 +135,20 @@ namespace Shahajjokori.Controllers
             string connection_string1 = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection1 = new SqlConnection(connection_string1);
             connection1.Open();
-            //string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             string query1 = $"select sum(amount) from DONATED where d_id = {fr.f_id}";
             SqlCommand com1 = new SqlCommand(query1, connection1);
-
-            var count = (int)com1.ExecuteScalar();
+            var count = 0;
+            if(Convert.IsDBNull(com1.ExecuteScalar()))
+            {
+                count = 0;
+            }
+            else
+            {
+                count = (int)com1.ExecuteScalar();
+            }
             ViewData["total_amount"] = count;
             //ViewData["message"] = message;
             connection1.Close();
-
-
 
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
@@ -180,16 +178,9 @@ namespace Shahajjokori.Controllers
                 conn.Close();
 
             }
-
-
-
-
-
-
             return View(fr);
 
         }
-
         public IActionResult Update_info_donor(Fundraiser fundraiser)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -200,17 +191,11 @@ namespace Shahajjokori.Controllers
             SqlCommand com = new SqlCommand(query, connection);
             com.Parameters.AddWithValue("@name", fundraiser.f_name);
             com.Parameters.AddWithValue("@email", fundraiser.f_email);
-
-
             com.ExecuteNonQuery();
 
             connection.Close();
-            //return View();
-            //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("donor_index", "Donor", new { id = f_id });
         }
-
-
         public IActionResult Update_info_donor_password(Fundraiser fundraiser)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
@@ -265,7 +250,8 @@ namespace Shahajjokori.Controllers
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("donor_index", "Donor", new { id = f_id });
         }
-
+        
+        //notification from fundraisers
         public IActionResult Donor_Notification(int id)
         {
             var fr = JsonConvert.DeserializeObject<Fundraiser>(HttpContext.Session.GetString("FundraiserSession"));
@@ -339,7 +325,7 @@ namespace Shahajjokori.Controllers
             {
                 value = 5;
             }
-            string query1 = $"select * from EVENT where e_category = {value} and e_state=1";
+            string query1 = $"select * from EVENT where e_category = {value} and (e_posted=1 or e_posted=2) and (e_success = 0) order by e_id desc";
             SqlCommand com1 = new SqlCommand(query1, connection);
 
             var model1 = new List<Event>();
@@ -381,7 +367,7 @@ namespace Shahajjokori.Controllers
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
 
-            string query1 = $"select * from EVENT where e_state=1";
+            string query1 = $"select * from EVENT where (e_posted=1 or e_posted=2) and (e_success = 0) order by e_id desc";
             SqlCommand com1 = new SqlCommand(query1, connection);
 
             var model1 = new List<Event>();
@@ -413,6 +399,47 @@ namespace Shahajjokori.Controllers
             return View(model1);
         }
 
+        public IActionResult Search_Event(string search)
+        {
+            var fr = JsonConvert.DeserializeObject<Fundraiser>(HttpContext.Session.GetString("FundraiserSession"));
+            ViewBag.d_name = fr.f_name;
+            ViewBag.d_id = fr.f_id;
+
+            string connection_string = configuration.GetConnectionString("DefaultConnectionString");
+            SqlConnection connection = new SqlConnection(connection_string);
+            connection.Open();
+
+            string query = $"select * from EVENT where (e_posted=1 or e_posted=2) and (e_title LIKE '%{search}%' or e_location LIKE '%{search}%')";
+            SqlCommand com = new SqlCommand(query, connection);
+
+            var model = new List<Event>();
+            using (SqlConnection conn = new SqlConnection(connection_string))
+            {
+                conn.Open();
+                SqlDataReader rdr = com.ExecuteReader();
+                while (rdr.Read())
+                {
+                    var e = new Event();
+                    e.e_id = (int)rdr["e_id"];
+                    e.e_title = (string)rdr["e_title"];
+                    e.e_category = (int)rdr["e_category"];
+                    e.e_location = (string)rdr["e_location"];
+                    e.e_opening_date = (string)rdr["e_opening_date"];
+                    e.e_closing_date = (string)rdr["e_closing_date"];
+                    e.e_exp_amount = (int)rdr["e_exp_amount"];
+                    e.e_raised_amount = (int)rdr["e_raised_amount"];
+                    e.e_donor_count = (int)rdr["e_donor_count"];
+                    e.e_state = (int)rdr["e_state"];
+                    e.e_pic = (string)rdr["e_pic"];
+                    e.e_details = (string)rdr["e_details"];
+
+                    model.Add(e);
+                }
+
+            }
+
+            return View(model);
+        }
         [Route("Donor/Event_Details/{id}")]
         public IActionResult Event_Details(int id)
         {
@@ -438,7 +465,13 @@ namespace Shahajjokori.Controllers
                 ViewBag.event_cat = (int)dr["e_category"];
                 e.e_location = (string)dr["e_location"];
                 e.e_opening_date = (string)dr["e_opening_date"];
+
                 e.e_closing_date = (string)dr["e_closing_date"];
+                ViewBag.c_date = (string)dr["e_closing_date"];
+
+                var daterenew = DateTime.ParseExact(ViewBag.c_date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                ViewBag.r_days = ((daterenew - DateTime.Today).Days) + " day(s) remaining";
+
                 ViewBag.exp_amount = (int)dr["e_exp_amount"];
                 ViewBag.raised_amount = (int)dr["e_raised_amount"];
                 e.e_donor_count = (int)dr["e_donor_count"];
@@ -468,7 +501,6 @@ namespace Shahajjokori.Controllers
             }
             return View();
         }
-
         public IActionResult Local_event_show()
         {
             var fr = JsonConvert.DeserializeObject<Fundraiser>(HttpContext.Session.GetString("FundraiserSession"));
@@ -496,6 +528,7 @@ namespace Shahajjokori.Controllers
                     e.le_location = (string)rdr["le_location"];
                     e.le_opening_date = (string)rdr["le_opening_date"];
                     e.le_closing_date = (string)rdr["le_closing_date"];
+                    
                     e.le_state = (int)rdr["le_state"];
                     e.le_pic = (string)rdr["le_pic"];
                     e.le_details = (string)rdr["le_details"];
@@ -530,6 +563,11 @@ namespace Shahajjokori.Controllers
                 e.le_location = (string)dr["le_location"];
                 e.le_opening_date = (string)dr["le_opening_date"];
                 e.le_closing_date = (string)dr["le_closing_date"];
+                ViewBag.c_date = (string)dr["le_closing_date"];
+
+                var daterenew = DateTime.ParseExact(ViewBag.c_date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                ViewBag.r_days = ((daterenew - DateTime.Today).Days) + " day(s) remaining";
+
                 e.le_state = (int)dr["le_state"];
                 e.le_pic = (string)dr["le_pic"];
                 ViewBag.event_pic = (string)dr["le_pic"];
@@ -586,15 +624,15 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
+            
             string query1 = "SELECT CONVERT(VARCHAR(10), getdate(),105)";
             SqlCommand com1 = new SqlCommand(query1, connection);
-
             string date = com1.ExecuteScalar().ToString();
 
             string query2 = "SELECT CONVERT(VARCHAR(8),GETDATE(),108)";
             SqlCommand com2 = new SqlCommand(query2, connection);
-
             string time = com2.ExecuteScalar().ToString();
+            
             if (donation.d_tid == null)
             {
                 donation.d_tid = "Not provided";
@@ -622,9 +660,9 @@ namespace Shahajjokori.Controllers
             return RedirectToAction("Index", "Donor");
         }
 
+        //kobe kothay koto taka pathaisis
         public IActionResult DonationHistory()
         {
-
             var fr = JsonConvert.DeserializeObject<Fundraiser>(HttpContext.Session.GetString("FundraiserSession"));
             ViewBag.d_name = fr.f_name;
             ViewBag.d_id = fr.f_id;
@@ -689,6 +727,13 @@ namespace Shahajjokori.Controllers
             connection.Close();
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("Donor_Notification", "Donor", new { id = fid });
+        }
+
+        public IActionResult Log_out()
+        {
+            var fr = new Fundraiser() { f_id = 0, f_name = "", f_email = "", f_password = "", f_phone = "", f_about = "" };
+            HttpContext.Session.SetString("FundraiserSession", JsonConvert.SerializeObject(fr));
+            return RedirectToAction("Index", "Home");
         }
     }
 }
