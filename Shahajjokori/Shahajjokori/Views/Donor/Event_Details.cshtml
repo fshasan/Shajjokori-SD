@@ -14,7 +14,7 @@
         </div>
         <div class="row" style="margin-top: 3%;">
             <div class="col-md-6">
-                <p style="font-size:larger">Created by: <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" onclick="Copy2();" style="font-size:19px; text-decoration: none; margin-bottom:0.5%; color:black;">@ViewBag.org</button></p>
+                <p style="font-size:larger">Created by: @ViewBag.org<button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" onclick="Copy2();" style="font-size:19px; text-decoration: none; margin-bottom:0.5%; color:black;"><i class="fas fa-info-circle"></i></button></p>
                 <script type="text/javascript">
                     function Copy2() {
                         number.innerHTML='0'+@ViewBag.org_phone;

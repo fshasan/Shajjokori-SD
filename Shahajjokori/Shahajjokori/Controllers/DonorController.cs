@@ -670,7 +670,7 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            string query = $"select * from DONATED where state=1 and d_id = {fr.f_id} order by date, time desc";
+            string query = $"select * from DONATED where (state=1 or state=2) and d_id = {fr.f_id} order by date, time desc";
             SqlCommand com = new SqlCommand(query, connection);
 
             var model = new List<Donation>();
@@ -701,6 +701,7 @@ namespace Shahajjokori.Controllers
 
         }
 
+        //history of donation
         public IActionResult Clear_Notification(int id, int fid, int amount, int prim)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -715,6 +716,7 @@ namespace Shahajjokori.Controllers
             return RedirectToAction("DonationHistory", "Donor", new { id = fid });
         }
 
+        //notification from fundraiser
         public IActionResult Cancel_Notification(int id, int fid, int prim)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");

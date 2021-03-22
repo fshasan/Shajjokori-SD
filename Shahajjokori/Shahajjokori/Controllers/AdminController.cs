@@ -60,7 +60,6 @@ namespace Shahajjokori.Controllers
             }
             return View(ad);
         }
-
         public IActionResult Event_Request()
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -100,7 +99,6 @@ namespace Shahajjokori.Controllers
 
             return View(model);
         }
-
         public IActionResult Event_state_handle_approve(int id)
         {
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
@@ -137,11 +135,11 @@ namespace Shahajjokori.Controllers
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
 
-            string query1 = $"UPDATE SUCCESS_EVENT SET e_state=1 WHERE e_state=2";
+            string query1 = $"UPDATE SUCCESS_EVENT SET e_state=10 WHERE e_state=11";
             SqlCommand com1 = new SqlCommand(query1, connection);
             com1.ExecuteNonQuery();
 
-            string query = $"UPDATE SUCCESS_EVENT SET e_state=2 WHERE e_id = {id}";
+            string query = $"UPDATE SUCCESS_EVENT SET e_state=11 WHERE e_id = {id}";
             SqlCommand com = new SqlCommand(query, connection);
             com.ExecuteNonQuery();
 
@@ -155,7 +153,7 @@ namespace Shahajjokori.Controllers
             connection.Open();
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             //var id = fr.f_id;
-            string query = $"select * from EVENT where e_posted=1 order by e_id desc";
+            string query = $"select * from EVENT where (e_posted=1 or e_posted=2) and e_success not in(select e_success from EVENT where e_success=1 or e_success=2 ) and e_expired not in(select e_expired from EVENT where e_expired=1 or e_expired=2 ) order by e_id desc";
 
             SqlCommand com = new SqlCommand(query, connection);
 
@@ -195,7 +193,7 @@ namespace Shahajjokori.Controllers
             connection.Open();
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
             //var id = fr.f_id;
-            string query = $"select * from EVENT where e_halted=1 order by e_id desc";
+            string query = $"select * from EVENT where (e_halted=1 or e_halted=2) and e_success not in(select e_success from EVENT where e_success=1 or e_success=2 ) and e_expired not in(select e_expired from EVENT where e_expired=1 or e_expired=2 ) order by e_id desc";
 
             SqlCommand com = new SqlCommand(query, connection);
 

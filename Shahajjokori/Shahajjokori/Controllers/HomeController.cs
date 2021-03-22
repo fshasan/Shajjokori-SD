@@ -52,7 +52,7 @@ namespace Shahajjokori.Controllers
 
             string date = com3.ExecuteScalar().ToString();
 
-            string query = $"Update EVENT set e_expired=1,e_posted=0,e_halted=0,e_state=7 where e_closing_date<='{date}'";
+            string query = $"Update EVENT set e_expired=1, e_state=7 where e_closing_date<='{date}'";
             SqlCommand com = new SqlCommand(query, connection);
 
             com.ExecuteNonQuery();
@@ -103,7 +103,7 @@ namespace Shahajjokori.Controllers
             string connection_string1 = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection1 = new SqlConnection(connection_string1);
             connection1.Open();
-            string query2 = $"select * from SUCCESS_EVENT where e_state=2";
+            string query2 = $"select * from SUCCESS_EVENT where e_state=11";
 
             SqlCommand com2 = new SqlCommand(query2, connection1);
 
@@ -682,7 +682,7 @@ namespace Shahajjokori.Controllers
             }
             //ViewData["Total_fundraiser"] = count;
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
-            string query = "INSERT INTO [dbo].[DONATED]([e_id],[e_title],[amount],[tid],[name],[state],[date],[time]) VALUES(@e_id,@e_title,@amount,@tid, @name,0,@date, @time)";
+            string query = "INSERT INTO [dbo].[DONATED]([e_id],[e_title],[amount],[tid],[name],[state],[date],[time]) VALUES(@e_id,@e_title,@amount,@tid, @name,1,@date, @time)";
             SqlCommand com = new SqlCommand(query, connection);
             com.Parameters.AddWithValue("@e_id", donation.d_id);
             com.Parameters.AddWithValue("@e_title", donation.d_title);
@@ -693,29 +693,6 @@ namespace Shahajjokori.Controllers
             com.Parameters.AddWithValue("@time", time);
 
             com.ExecuteNonQuery();
-            //ViewData["Total_fundraiser"] = count;
-            //connection.Close();
-
-            //string connection_string1 = configuration.GetConnectionString("DefaultConnectionString");
-            //SqlConnection connection1 = new SqlConnection(connection_string1);
-            //connection1.Open();
-            ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
-            //var id = fr.f_id;
-
-            //e_rev_state=3 means funds fully collected
-           /* string query3 = $"update EVENT set e_state=10, e_rev_state = 3 where (e_exp_amount <= e_raised_amount) and e_id = {donation.d_id}";
-
-            SqlCommand com3 = new SqlCommand(query3, connection);
-            com3.ExecuteNonQuery();
-
-            //e_rev_state=2 means funds half collected
-            string query4 = $"Update EVENT set e_rev_state = 2 where e_raised_amount>=(e_exp_amount/2)";
-
-            SqlCommand com4 = new SqlCommand(query4, connection);
-            com4.ExecuteNonQuery();
-
-            
-            */
 
             return RedirectToAction("Index","Home");
         }
