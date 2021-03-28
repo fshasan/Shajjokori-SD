@@ -13,16 +13,17 @@
             </div>
         </div>
         <div class="row" style="margin-top: 3%;">
-            <div class="col-md-6">
-                <p style="font-size:larger">Created by: @ViewBag.org<button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" onclick="Copy2();" style="font-size:19px; text-decoration: none; margin-bottom:0.5%; color:black;"><i class="fas fa-info-circle"></i></button></p>
+            <div class="col-md-6" style="margin-bottom:5%;">
+                <p style="font-size:large;">Organized by: @Html.DisplayFor(model => model.le_org_by)</p>
+
+                <p style="font-size:large;margin-top:-1%;">Shared by: @ViewBag.org<button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" onclick="Copy2();" style="font-size:19px; text-decoration: none; margin-bottom:0.5%; color:black;"><i class="fas fa-info-circle"></i></button></p>
                 <script type="text/javascript">
                     function Copy2() {
                         number.innerHTML='0'+@ViewBag.org_phone;
 
                     }
                 </script>
-
-                <p style="font-size:large">Location: @Html.DisplayFor(model => model.le_location)</p>
+                <p style="font-size:large; margin-top:-2%;">Location: @Html.DisplayFor(model => model.le_location)</p>
 
                 <p style="font-size:large">Opening: @Html.DisplayFor(model => model.le_opening_date)</p>
 
@@ -35,7 +36,7 @@
                 @{ string pic_name = ViewBag.event_pic;
                     string path = $"~/images/{pic_name}"; }
 
-                <img src="@path" alt="" style="height: 20vw; max-width: 100%;" asp-append-version="true">
+                <img class="img-fluid" src="@path" alt=""style="height: 320px; width: 800px;" asp-append-version="true">
                 <br>
                 <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal3" onclick="Copy();" style="margin-top:5%;">Share</button>
                 <script type="text/javascript">
@@ -46,7 +47,7 @@
                 </script>
             </div>
         </div>
-        <div class="row" style="margin-top: 5%;">
+        <div class="row" style="margin-top: 5%; padding-bottom: 5%;">
             <div class="col-md-12">
                 <h4>About the Event: </h4>
                 <p style="font-size:large">@Html.DisplayFor(model => model.le_details)</p>

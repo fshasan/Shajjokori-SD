@@ -25,7 +25,6 @@ namespace Shahajjokori.Controllers
         private readonly ILogger<FundraiserController> _logger;
         private readonly IConfiguration configuration;
         private readonly IWebHostEnvironment hostingEnvironment;
-
         public FundraiserController(ILogger<FundraiserController> logger, IConfiguration config, IWebHostEnvironment hostingEnvironment)
         {
             _logger = logger;
@@ -40,7 +39,7 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            string query = $"select * from FUNDRAISERS where f_id = {id}";
+            string query = $"select * from USERS where f_id = {id}";
 
             SqlCommand com = new SqlCommand(query, connection);
 
@@ -70,7 +69,6 @@ namespace Shahajjokori.Controllers
             return View(fr);
 
         }
-
         [Route("Fundraiser/Create_Event/{id}")]
         public IActionResult Create_Event(int id)
         {
@@ -146,7 +144,7 @@ namespace Shahajjokori.Controllers
             ////string query = "SELECT [f_id],[f_name],[f_email],[f_password],[f_phone],[f_about],[f_category] FROM [dbo].[FUNDRAISERS]"
 
             //event pic is neglected for the time being
-            string query = "INSERT INTO [dbo].[LOCAL_EVENT] ([le_title],[le_org_by],[le_location],[le_opening_date],[le_closing_date],[le_pic],[le_state],[le_details],[f_id]) VALUES (@title, @org_by,@location,@o_date,@c_date,@pic,0,@details,@f_id)";
+            string query = "INSERT INTO [dbo].[LOCAL_EVENT] ([le_title],[le_org_by],[le_location],[le_opening_date],[le_closing_date],[le_pic],[le_state],[le_details],[f_id]) VALUES (@title, @org_by,@location,@o_date,@c_date,@pic,1,@details,@f_id)";
             SqlCommand com = new SqlCommand(query, connection);
             com.Parameters.AddWithValue("@title", e.le_title);
             com.Parameters.AddWithValue("@org_by", e.le_org_by);
@@ -229,7 +227,7 @@ namespace Shahajjokori.Controllers
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
             var f_id = fundraiser.f_id;
-            string query = $"Update FUNDRAISERS set f_name=@name, f_email=@email, f_about=@about, f_phone=@phone where f_id={f_id}";
+            string query = $"Update USERS set f_name=@name, f_email=@email, f_about=@about, f_phone=@phone where f_id={f_id}";
             SqlCommand com = new SqlCommand(query, connection);
             com.Parameters.AddWithValue("@name", fundraiser.f_name);
             com.Parameters.AddWithValue("@email", fundraiser.f_email);
@@ -266,7 +264,7 @@ namespace Shahajjokori.Controllers
             connection.Open();
             string f_pass = fundraiser.f_password;
             var f_id = fundraiser.f_id;
-            string query1 = $"Select count(*) from FUNDRAISERS where f_id = {f_id} and f_password='{strBuilder.ToString()}'";
+            string query1 = $"Select count(*) from USERS where f_id = {f_id} and f_password='{strBuilder.ToString()}'";
             SqlCommand com1 = new SqlCommand(query1, connection);
 
             var count = (int)com1.ExecuteScalar();

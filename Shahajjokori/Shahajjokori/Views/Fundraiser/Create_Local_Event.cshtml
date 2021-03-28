@@ -165,7 +165,13 @@
                     </div>
                     <div style="text-align:center">
                         <div class="form-group row">
-                            <button type="submit" id="button1" class="btn btn-primary" href="@Url.Action("Create_local_event_entry","Fundraiser")" style="margin-top:5%">Create Event</button>
+                            <button type="submit" id="button1" class="btn btn-primary" onclick="myFunction()" href="@Url.Action("Create_local_event_entry","Fundraiser")" style="margin-top:5%">Create Event</button>
+                        
+                            <script>
+                                function myFunction() {
+                                    alert("Local Event has been created and \nposted successfully.");
+                                }
+                            </script>
                         </div>
                     </div>
                 </form>

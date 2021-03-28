@@ -31,7 +31,6 @@ namespace Shahajjokori.Controllers
             configuration = config;
             this.hostingEnvironment = hostingEnvironment;
         }
-
         public IActionResult admin_index(int id)
         {
             var ad = JsonConvert.DeserializeObject<Admin>(HttpContext.Session.GetString("AdminSession"));

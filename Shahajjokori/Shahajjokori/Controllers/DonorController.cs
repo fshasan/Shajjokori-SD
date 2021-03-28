@@ -52,7 +52,11 @@ namespace Shahajjokori.Controllers
 
             com.ExecuteNonQuery();
 
-            string query1 = $"select TOP 3 * from EVENT where (e_posted=1 or e_posted=2) and (e_success = 0) order by e_id desc";
+            string query4 = $"Update LOCAL_EVENT set le_state=3 where le_closing_date<='{date}'";
+            SqlCommand com4 = new SqlCommand(query4, connection);
+
+            com4.ExecuteNonQuery();
+            string query1 = $"select TOP 3 * from EVENT where (e_posted=1 or e_posted=2) and (e_success = 0) and (e_expired=0) order by e_id desc";
 
             SqlCommand com1 = new SqlCommand(query1, connection);
 
@@ -153,7 +157,7 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
-            string query = $"select * from FUNDRAISERS where f_id = {id}";
+            string query = $"select * from USERS where f_id = {id}";
             SqlCommand com = new SqlCommand(query, connection);
 
 
@@ -187,7 +191,7 @@ namespace Shahajjokori.Controllers
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
             var f_id = fundraiser.f_id;
-            string query = $"Update FUNDRAISERS set f_name=@name, f_email=@email where f_id={f_id}";
+            string query = $"Update USERS set f_name=@name, f_email=@email where f_id={f_id}";
             SqlCommand com = new SqlCommand(query, connection);
             com.Parameters.AddWithValue("@name", fundraiser.f_name);
             com.Parameters.AddWithValue("@email", fundraiser.f_email);
@@ -219,7 +223,7 @@ namespace Shahajjokori.Controllers
             connection.Open();
             string f_pass = fundraiser.f_password;
             var f_id = fundraiser.f_id;
-            string query1 = $"Select count(*) from FUNDRAISERS where f_id = {f_id} and f_password='{strBuilder.ToString()}'";
+            string query1 = $"Select count(*) from USERS where f_id = {f_id} and f_password='{strBuilder.ToString()}'";
             SqlCommand com1 = new SqlCommand(query1, connection);
 
             var count = (int)com1.ExecuteScalar();
@@ -240,7 +244,7 @@ namespace Shahajjokori.Controllers
                     //for each byte  
                     strBuilder2.Append(result2[i].ToString("x2"));
                 }
-                string query = $"Update FUNDRAISERS set f_password=@password where f_id={f_id}";
+                string query = $"Update USERS set f_password=@password where f_id={f_id}";
                 SqlCommand com = new SqlCommand(query, connection);
                 com.Parameters.AddWithValue("@password", strBuilder2.ToString());
                 com.ExecuteNonQuery();
@@ -325,7 +329,7 @@ namespace Shahajjokori.Controllers
             {
                 value = 5;
             }
-            string query1 = $"select * from EVENT where e_category = {value} and (e_posted=1 or e_posted=2) and (e_success = 0) order by e_id desc";
+            string query1 = $"select * from EVENT where e_category = {value} and (e_posted=1 or e_posted=2) and (e_success = 0) and (e_expired=0) order by e_id desc";
             SqlCommand com1 = new SqlCommand(query1, connection);
 
             var model1 = new List<Event>();
@@ -367,7 +371,7 @@ namespace Shahajjokori.Controllers
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
 
-            string query1 = $"select * from EVENT where (e_posted=1 or e_posted=2) and (e_success = 0) order by e_id desc";
+            string query1 = $"select * from EVENT where (e_posted=1 or e_posted=2) and (e_success = 0) and (e_expired=0) order by e_id desc";
             SqlCommand com1 = new SqlCommand(query1, connection);
 
             var model1 = new List<Event>();
@@ -398,7 +402,6 @@ namespace Shahajjokori.Controllers
 
             return View(model1);
         }
-
         public IActionResult Search_Event(string search)
         {
             var fr = JsonConvert.DeserializeObject<Fundraiser>(HttpContext.Session.GetString("FundraiserSession"));
@@ -409,7 +412,7 @@ namespace Shahajjokori.Controllers
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
 
-            string query = $"select * from EVENT where (e_posted=1 or e_posted=2) and (e_title LIKE '%{search}%' or e_location LIKE '%{search}%')";
+            string query = $"select * from EVENT where (e_posted=1 or e_posted=2) and (e_expired=0) and (e_title LIKE '%{search}%' or e_location LIKE '%{search}%')";
             SqlCommand com = new SqlCommand(query, connection);
 
             var model = new List<Event>();
@@ -540,7 +543,6 @@ namespace Shahajjokori.Controllers
 
             return View(model);
         }
-
         [Route("Donor/Event_Local_Details/{id}")]
         public IActionResult Event_Local_Details(int id)
         {
@@ -579,7 +581,7 @@ namespace Shahajjokori.Controllers
                 string connection_string2 = configuration.GetConnectionString("DefaultConnectionString");
                 SqlConnection connection2 = new SqlConnection(connection_string2);
                 connection2.Open();
-                string query2 = $"Select * from FUNDRAISERS where f_id = {f_id}";
+                string query2 = $"Select * from USERS where f_id = {f_id}";
                 SqlCommand com2 = new SqlCommand(query2, connection2);
                 SqlDataReader dr2 = com2.ExecuteReader();
 
@@ -594,7 +596,6 @@ namespace Shahajjokori.Controllers
             }
             return View();
         }
-
         [Route("Donor/Donated/{id}")]
         public IActionResult Donated(int id)
         {
@@ -605,6 +606,7 @@ namespace Shahajjokori.Controllers
             string connection_string = configuration.GetConnectionString("DefaultConnectionString");
             SqlConnection connection = new SqlConnection(connection_string);
             connection.Open();
+
             string query1 = $"SELECT e_title from EVENT where e_id={id}";
             SqlCommand com1 = new SqlCommand(query1, connection);
 
@@ -614,7 +616,6 @@ namespace Shahajjokori.Controllers
             ViewBag.e_title = title;
             return View();
         }
-
         public IActionResult Donation_entry(Donation donation)
         {
             var fr = JsonConvert.DeserializeObject<Fundraiser>(HttpContext.Session.GetString("FundraiserSession"));
@@ -659,7 +660,6 @@ namespace Shahajjokori.Controllers
             //connection.Close();
             return RedirectToAction("Index", "Donor");
         }
-
         //kobe kothay koto taka pathaisis
         public IActionResult DonationHistory()
         {
@@ -700,7 +700,6 @@ namespace Shahajjokori.Controllers
             return View(model);
 
         }
-
         //history of donation
         public IActionResult Clear_Notification(int id, int fid, int amount, int prim)
         {
@@ -715,7 +714,6 @@ namespace Shahajjokori.Controllers
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("DonationHistory", "Donor", new { id = fid });
         }
-
         //notification from fundraiser
         public IActionResult Cancel_Notification(int id, int fid, int prim)
         {
@@ -730,7 +728,6 @@ namespace Shahajjokori.Controllers
             //return RedirectToAction("Create_event_entry","Fundraiser");
             return RedirectToAction("Donor_Notification", "Donor", new { id = fid });
         }
-
         public IActionResult Log_out()
         {
             var fr = new Fundraiser() { f_id = 0, f_name = "", f_email = "", f_password = "", f_phone = "", f_about = "" };

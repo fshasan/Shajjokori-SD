@@ -1,11 +1,6 @@
 ﻿@{ ViewData["Title"] = "Home Page"; }
 @model List<Event>
-<style>
-    .see_more a.main-nav-item:hover {
-        color: #DDD;
-        border: 1px;
-    }
-</style>
+
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -29,7 +24,7 @@
     </a>
 </div>
 <!--Recent Fundraising Events-->
-<div style="background-color: #FDF5E6;">
+<div style="        background-color: #fff5ee;">
     <div class="container" style="padding-top: 5%; padding-bottom:5%; text-align: center;">
         <h2 style="margin-bottom: 2%;">Recent Fundraising Events</h2>
         <br />
@@ -37,11 +32,11 @@
 
             @foreach (var e in Model)
             {
-            <div class="col-md-4">
+            <div class="col-md-4" style="margin-bottom:3%;">
                 <a class="main-nav-item" asp-controller="Home" asp-action="Event_Details" asp-route-id="@e.e_id" style="text-decoration: none; color:black;">
                 <div class="card">
                     @{ string path = "~/images/" + e.e_pic; }
-                    <img class="card-img-top" src="@path" alt="logo" style="display: block; height: 15vw; width: 100%; object-fit: cover;" asp-append-version="true">
+                    <img class="img-fluid" src="@path" alt="logo" style="display: block; height: 230px; width: 100%; object-fit: cover;" asp-append-version="true">
 
                     <div class="card-body">
                         <h4 class="card-title">@e.e_title</h4>
@@ -71,11 +66,35 @@
 </div>
 
 <!--Local Events-->
-<div style="background: url('@Url.Content("~/images/pexels-photo-6994985.jpeg")'); padding-top:10%; padding-bottom: 10%;">
+<div style="background: url('@Url.Content("~/images/pexels-photo-6994985.jpeg")'); padding-top:13%; padding-bottom: 13%;">
     <div class="container" style="text-align:center">
         <div class="row">
             <div class="col-md-6" style="font-size:large">
-                <p style="color: white; font-size:larger; ">Check out the events happening where you can participate yourself!</p><br>
+                
+                <p class="ml12">Check out the events happening where you can participate yourself!</p>
+                <script>
+                    var textWrapper = document.querySelector('.ml12');
+                    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                    anime.timeline({ loop: true })
+                        .add({
+                            targets: '.ml12 .letter',
+                            translateX: [40, 0],
+                            translateZ: 0,
+                            opacity: [0, 1],
+                            easing: "easeOutExpo",
+                            duration: 1200,
+                            delay: (el, i) => 500 + 30 * i
+                        }).add({
+                            targets: '.ml12 .letter',
+                            translateX: [0, -30],
+                            opacity: [1, 0],
+                            easing: "easeInExpo",
+                            duration: 1100,
+                            delay: (el, i) => 100 + 30 * i
+                        });
+                </script>
+                <p style="color: white; font-size:larger; "></p><br>
                 <a class="btn btn-success" name="option" asp-controller="Home" asp-action="Local_event_show" style="color: white;font-size: large;text-decoration: none;margin-top: 5%;">Local Events</a>
             </div>
             <div class="col-md-6">
@@ -87,7 +106,7 @@
 
 </div>
 <!--Success Stories-->
-<div style="padding-top:5%; padding-bottom: 5%;background-color: #FDF5E6;">
+<div style="padding-top:5%; padding-bottom: 5%;background-color: #fff5ee;">
     <div class="container" style="text-align:left">
         <div style="text-align:center">
             <h2 style="margin-bottom: 5%;">Success Stories</h2>
@@ -95,17 +114,17 @@
         
         <div class="row">
 
-            <div class="col-md-6">
+            <div class="col-md-6" style="margin-top:1%; margin-bottom:3%;">
                 @{ string pic_name = ViewBag.e_pic;
                     string path1 = $"~/images/{pic_name}"; }
 
-                <img src="@path1" alt="" style="height: 20vw; max-width: 100%;" asp-append-version="true">
+                <img class="img-fluid" src="@path1" alt="" style="height: auto; max-width: 100%;" asp-append-version="true">
 
             </div>
             <div class="col-md-6" style="font-size:large">
                 <h4>@ViewBag.e_title</h4>
                 <p style="color: black;">@ViewBag.e_details</p><br>
-                <p style="color: black; font-size:larger; ">They managed to raise @ViewBag.e_raised_amount Tk. with us!</p><br>
+                <p style="color: black; font-size:larger; ">@ViewBag.org managed to raise @ViewBag.e_raised_amount Tk. with us!</p><br>
                 <div style="text-align:center">
                     <a class="btn btn-outline-secondary" name="option" asp-controller="Home" asp-action="Success_event_show" style="font-size: large;text-decoration: none;margin-top: 5%;">See All</a>
                 </div>

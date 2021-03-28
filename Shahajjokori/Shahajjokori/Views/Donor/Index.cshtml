@@ -1,9 +1,6 @@
-﻿@{
-    ViewData["Title"] = "Donor index";
-
-}
+﻿@{ ViewData["Title"] = "Donor index"; }
 @model List<Event>
-    
+
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -27,7 +24,7 @@
     </a>
 </div>
 
-<div style="background-color: #FDF5E6;">
+<div style="        background-color: #fff5ee;">
     <div class="container" style="padding-top: 5%; padding-bottom:5%; text-align: center;">
         <h2 style="margin-bottom: 2%;">Recent Fundraising Events</h2>
         <br />
@@ -35,21 +32,21 @@
 
             @foreach (var e in Model)
             {
-            <div class="col-md-4">
-                <a class="main-nav-item" asp-controller="Donor" asp-action="Event_Details" asp-route-id="@e.e_id" asp-route-fid="@ViewBag.d_id" style="text-decoration: none; color:black;">
-                    <div class="card">
-                        @{ string path = "~/images/" + e.e_pic; }
-                        <img class="card-img-top" src="@path" alt="logo" style="display: block; height: 15vw; width: 100%; object-fit: cover;" asp-append-version="true">
+<div class="col-md-4" style="margin-bottom:3%;">
+    <a class="main-nav-item" asp-controller="Donor" asp-action="Event_Details" asp-route-id="@e.e_id" asp-route-fid="@ViewBag.d_id" style="text-decoration: none; color:black;">
+        <div class="card">
+            @{ string path = "~/images/" + e.e_pic; }
+            <img class="card-img-top" src="@path" alt="logo" style="display: block; height: 230px; width: 100%; object-fit: cover;" asp-append-version="true">
 
-                        <div class="card-body">
-                            <h4 class="card-title">@e.e_title</h4>
-                            <p>@e.e_location</p>
+            <div class="card-body">
+                <h4 class="card-title">@e.e_title</h4>
+                <p>@e.e_location</p>
 
 
-                        </div>
-                    </div>
-                </a>
-            </div>}
+            </div>
+        </div>
+    </a>
+</div>}
 
         </div>
     </div>
@@ -67,12 +64,37 @@
 
 </div>
 
-<div style="background: url('@Url.Content("~/images/pexels-photo-6994985.jpeg")'); padding-top:5%; padding-bottom: 5%;">
+<!--Local Events-->
+<div style="background: url('@Url.Content("~/images/pexels-photo-6994985.jpeg")'); padding-top:13%; padding-bottom: 13%;">
     <div class="container" style="text-align:center">
         <div class="row">
             <div class="col-md-6" style="font-size:large">
-                <p style="color: white; font-size:larger; ">Check out the events happening where you can participate yourself!</p><br>
-                <a class="btn btn-success" name="option" asp-controller="Donor" asp-action="Local_event_show" asp-route-id="@ViewBag.d_id" style="color: white;font-size: large;text-decoration: none;margin-top: 5%;">Local Events</a>
+
+                <p class="ml12">Check out the events happening where you can participate yourself!</p>
+                <script>
+                    var textWrapper = document.querySelector('.ml12');
+                    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                    anime.timeline({ loop: true })
+                        .add({
+                            targets: '.ml12 .letter',
+                            translateX: [40, 0],
+                            translateZ: 0,
+                            opacity: [0, 1],
+                            easing: "easeOutExpo",
+                            duration: 1200,
+                            delay: (el, i) => 500 + 30 * i
+                        }).add({
+                            targets: '.ml12 .letter',
+                            translateX: [0, -30],
+                            opacity: [1, 0],
+                            easing: "easeInExpo",
+                            duration: 1100,
+                            delay: (el, i) => 100 + 30 * i
+                        });
+                </script>
+                <p style="color: white; font-size:larger; "></p><br>
+                <a class="btn btn-success" name="option" asp-controller="Home" asp-action="Local_event_show" style="color: white;font-size: large;text-decoration: none;margin-top: 5%;">Local Events</a>
             </div>
             <div class="col-md-6">
 

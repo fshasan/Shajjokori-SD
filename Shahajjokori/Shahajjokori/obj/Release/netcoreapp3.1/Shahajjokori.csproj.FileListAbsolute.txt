@@ -212,7 +212,6 @@ E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Release\net
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Release\netcoreapp3.1\Razor\Views\Home\Search_Event.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Release\netcoreapp3.1\Razor\Views\Home\SignIn.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Release\netcoreapp3.1\Razor\Views\Home\Signin_Admin.cshtml.g.cs
-E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Release\netcoreapp3.1\Razor\Views\Home\SignIn_Panel.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Release\netcoreapp3.1\Razor\Views\Home\SignUp_Donor.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Release\netcoreapp3.1\Razor\Views\Home\SignUp_Fundraiser.cshtml.g.cs
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Release\netcoreapp3.1\Razor\Views\Home\SignUp_Fundraiser_entry.cshtml.g.cs
@@ -230,3 +229,5 @@ E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Release\net
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Release\netcoreapp3.1\Shahajjokori.dll
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Release\netcoreapp3.1\Shahajjokori.pdb
 E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Release\netcoreapp3.1\Shahajjokori.genruntimeconfig.cache
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Release\netcoreapp3.1\Razor\Views\Home\SignUp_Donor_Entry.cshtml.g.cs
+E:\3.2\SD - 5\Project-SD\Shajjokori-SD\Shahajjokori\Shahajjokori\obj\Release\netcoreapp3.1\Razor\Views\Home\Terms.cshtml.g.cs

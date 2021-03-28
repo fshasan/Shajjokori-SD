@@ -1,0 +1,40 @@
+{
+  "dependencies": {
+    "mssql4": {
+      "restored": true,
+      "restoreTime": "2021-03-24T08:39:46.7923164Z"
+    },
+    "mssql3": {
+      "restored": true,
+      "restoreTime": "2021-03-24T08:39:45.1353947Z"
+    },
+    "mssql2": {
+      "restored": true,
+      "restoreTime": "2021-03-24T08:39:42.1933914Z"
+    },
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2021-03-24T08:38:56.4967134Z"
+    },
+    "mssql6": {
+      "restored": true,
+      "restoreTime": "2021-03-24T09:02:18.4161706Z"
+    },
+    "mssql5": {
+      "restored": true,
+      "restoreTime": "2021-03-24T08:39:48.9876985Z"
+    }
+  },
+  "parameters": {
+    "mssql6.subscriptionId": {
+      "Name": "mssql6.subscriptionId",
+      "Type": "subscription",
+      "Value": "402062a5-c029-4d84-b393-040ede1bae2f"
+    },
+    "mssql6.resourceGroupName": {
+      "Name": "mssql6.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "Shahajjokori2021032414300ResourceGroup"
+    }
+  }
+}

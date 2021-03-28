@@ -5,15 +5,15 @@
 
 @model Shahajjokori.Models.Event
 <!--<h1>@ViewBag.event_id</h1>-->
-<div style="background-color: #FDF5E6;">
+<div style="        background-color: #fff5ee;">
     <div class="container" style="padding-top: 5%;">
         <div class="row">
             <div class="col-md-12">
-                <h3 style="text-decoration: underline;text-decoration-color: cadetblue">@Html.DisplayFor(model => model.e_title)</h3>
+                <h3>@Html.DisplayFor(model => model.e_title)</h3>
             </div>
         </div>
         <div class="row" style="margin-top: 3%;">
-            <div class="col-md-6">
+            <div class="col-md-6" style="margin-bottom:5%;">
                 <p style="font-size:larger">Created by: @ViewBag.org<button class="btn btn-link" data-toggle="modal" data-target="#exampleModal1" onclick="Copy2();" style="font-size:19px; text-decoration: none; margin-bottom:0.5%; color:black;"><i class="fas fa-info-circle"></i></button></p>
                 <script type="text/javascript">
                     function Copy2() {
@@ -21,7 +21,7 @@
 
                     }
                 </script>
-                <p style="font-size:larger; margin-top:-1%">Location: @Html.DisplayFor(model => model.e_location)</p>
+                <p style="font-size:larger; margin-top:-2%">Location: @Html.DisplayFor(model => model.e_location)</p>
 
                 @if (ViewBag.event_cat == 0)
                 {
@@ -63,7 +63,7 @@
                 @{ string pic_name = ViewBag.event_pic;
                                 string path = $"~/images/{pic_name}"; }
 
-                <img src="@path" alt="" style="height: 20vw; max-width: 100%;" asp-append-version="true">
+                <img class="img-fluid" src="@path" alt="" style="height: 320px; width: 800px" asp-append-version="true">
 
                 <p style="font-size:larger; margin-top: 3%;">This event has received @Html.DisplayFor(model => model.e_donor_count) donations.</p>
                 <br />
